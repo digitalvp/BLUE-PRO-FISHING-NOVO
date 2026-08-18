@@ -1,0 +1,371 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+:root {
+  --blue-dark: #031b3d;
+  --blue-main: #0085ca;
+  --blue-accent: #00a8e8;
+  --gray-light: #f3f4f6;
+  --white: #ffffff;
+
+  --container: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  color: var(--blue-dark);
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: min(90%, var(--container));
+  margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+
+  z-index: 1000;
+
+  transition:
+    background 0.3s ease,
+    height 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.header.scrolled {
+  height: 72px;
+  background: rgba(3, 27, 61, 0.96);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  width: 145px;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.nav > a {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  text-transform: uppercase;
+
+  transition: color 0.2s ease;
+}
+
+.nav > a:hover {
+  color: var(--blue-accent);
+}
+
+.nav .btn-header {
+  padding: 12px 24px;
+  border-radius: 30px;
+
+  background: var(--blue-main);
+  color: var(--white);
+
+  text-transform: none;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.nav .btn-header:hover {
+  background: var(--blue-accent);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   MENU MOBILE
+========================= */
+
+.menu-toggle {
+  display: none;
+
+  width: 32px;
+
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+
+  width: 100%;
+  height: 2px;
+
+  margin: 6px 0;
+
+  background: var(--white);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    url("../img/hero/hero-blue-pro-fishing.webp")
+    center center / cover no-repeat;
+
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    rgba(3, 27, 61, 0.90) 0%,
+    rgba(3, 27, 61, 0.70) 50%,
+    rgba(0, 133, 202, 0.60) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+  color: var(--white);
+
+  padding-top: 50px;
+}
+
+.hero-eyebrow {
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  color: var(--blue-accent);
+}
+
+.hero h1 {
+  font-family: "Montserrat", Arial, sans-serif;
+
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 0.95;
+
+  font-weight: 800;
+
+  margin-bottom: 22px;
+}
+
+.hero h1 span {
+  color: var(--blue-accent);
+}
+
+.hero p {
+  max-width: 720px;
+
+  margin: 0 auto 30px;
+
+  font-size: 17px;
+  line-height: 1.5;
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================
+   BOTÕES HERO
+========================= */
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 170px;
+
+  padding: 14px 25px;
+
+  border-radius: 4px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--blue-main);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--blue-accent);
+}
+
+.btn-outline {
+  border: 1px solid var(--white);
+  color: var(--white);
+}
+
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--blue-dark);
+}
+
+
+/* =========================
+   SETA HERO
+========================= */
+
+.hero-scroll {
+  position: absolute;
+
+  bottom: 28px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 3;
+
+  color: var(--white);
+
+  font-size: 24px;
+
+  animation: scrollArrow 1.8s infinite;
+}
+
+@keyframes scrollArrow {
+
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+
+  50% {
+    transform: translate(-50%, 8px);
+  }
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 768px) {
+
+  .header {
+    height: 75px;
+  }
+
+  .logo img {
+    width: 125px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .hero-content {
+    padding-top: 70px;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero p br {
+    display: none;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: min(100%, 280px);
+  }
+
+}
