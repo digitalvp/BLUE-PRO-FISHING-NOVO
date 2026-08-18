@@ -583,12 +583,6 @@ img { max-width: 100%; }
 #contact-form button { display: flex; width: 100%; align-items: center; justify-content: center; gap: 8px; padding: 16px; color: #fff; font-weight: 700; background: var(--bluepro-dark); border: 0; border-radius: 8px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / .1); cursor: pointer; transition: background 150ms ease; }
 #contact-form button:hover { background: var(--bluepro-light); }
 #contact-form button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.form-success { display: none; min-height: 276px; align-items: center; justify-content: center; flex-direction: column; padding: 32px; color: #16a34a; text-align: center; background: #f0fdf4; border-radius: 8px; }
-.form-success.visible { display: flex; }
-.form-success span { display: grid; width: 64px; height: 64px; place-items: center; margin-bottom: 16px; color: #16a34a; font-size: 32px; background: #dcfce7; border-radius: 50%; }
-.form-success h3 { margin: 0 0 8px; color: #166534; font-size: 20px; }
-.form-success p { margin: 0; }
-
 .footer { padding: 64px 0 32px; color: #fff; background: #111827; border-top: 1px solid #1f2937; }
 .footer-grid { display: grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 48px; }
 .footer h2 { margin: 0 0 16px; color: var(--bluepro-light); font-size: 18px; }
