@@ -60,19 +60,25 @@ Array.from(brandsTrack.children).forEach((brand) => {
 });
 
 const contactForm = document.getElementById("contact-form");
-const formSuccess = document.getElementById("form-success");
-let successTimer;
 
 contactForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  contactForm.reset();
-  contactForm.hidden = true;
-  formSuccess.classList.add("visible");
-  clearTimeout(successTimer);
-  successTimer = setTimeout(() => {
-    formSuccess.classList.remove("visible");
-    contactForm.hidden = false;
-  }, 3000);
+  const formData = new FormData(contactForm);
+  const name = formData.get("name").trim();
+  const email = formData.get("email").trim();
+  const message = formData.get("message").trim();
+  const whatsappMessage = [
+    "Olá! Entrei em contato pelo site da Blue Pro Fishing.",
+    `Nome: ${name}`,
+    `Email: ${email}`,
+    `Mensagem: ${message}`,
+  ].join("\n");
+
+  window.open(
+    `https://wa.me/5563992569790?text=${encodeURIComponent(whatsappMessage)}`,
+    "_blank",
+    "noopener,noreferrer",
+  );
 });
 
 document.getElementById("current-year").textContent = new Date().getFullYear();
