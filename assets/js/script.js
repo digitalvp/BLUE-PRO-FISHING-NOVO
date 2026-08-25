@@ -59,6 +59,72 @@ Array.from(brandsTrack.children).forEach((brand) => {
   brandsTrack.appendChild(duplicate);
 });
 
+function initializeCarousels() {
+  document.querySelectorAll("[data-carousel]:not([data-carousel-ready])").forEach((carousel) => {
+  carousel.dataset.carouselReady = "true";
+  const slides = Array.from(carousel.querySelectorAll(".about-carousel-slide"));
+  const dots = Array.from(carousel.querySelectorAll("[data-carousel-dot]"));
+  const previousButton = carousel.querySelector("[data-carousel-prev]");
+  const nextButton = carousel.querySelector("[data-carousel-next]");
+  let activeIndex = 0;
+  let timerId;
+
+  const showSlide = (index) => {
+    activeIndex = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => {
+      const isActive = slideIndex === activeIndex;
+      slide.classList.toggle("is-active", isActive);
+      slide.setAttribute("aria-hidden", String(!isActive));
+    });
+    dots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === activeIndex;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-selected", String(isActive));
+    });
+  };
+
+  const startAutoPlay = () => {
+    window.clearInterval(timerId);
+    timerId = window.setInterval(() => showSlide(activeIndex + 1), 5000);
+  };
+
+  previousButton?.addEventListener("click", () => {
+    showSlide(activeIndex - 1);
+    startAutoPlay();
+  });
+  nextButton?.addEventListener("click", () => {
+    showSlide(activeIndex + 1);
+    startAutoPlay();
+  });
+  dots.forEach((dot, index) => dot.addEventListener("click", () => {
+    showSlide(index);
+    startAutoPlay();
+  }));
+  carousel.addEventListener("mouseenter", () => window.clearInterval(timerId));
+  carousel.addEventListener("mouseleave", startAutoPlay);
+  carousel.addEventListener("focusin", () => window.clearInterval(timerId));
+  carousel.addEventListener("focusout", (event) => {
+    if (!carousel.contains(event.relatedTarget)) startAutoPlay();
+  });
+  startAutoPlay();
+  });
+}
+
+const aboutCarousel = document.getElementById("about-carousel");
+fetch("assets/php/about-carousel.php")
+  .then((response) => {
+    if (!response.ok) throw new Error("Não foi possível carregar o carrossel.");
+    return response.text();
+  })
+  .then((markup) => {
+    if (!markup.trim()) throw new Error("Não há imagens disponíveis para o carrossel.");
+    aboutCarousel.innerHTML = markup;
+    initializeCarousels();
+  })
+  .catch(() => {
+    aboutCarousel.classList.add("about-carousel-fallback");
+  });
+
 const contactForm = document.getElementById("contact-form");
 
 contactForm.addEventListener("submit", (event) => {
