@@ -30,6 +30,43 @@ syncHeader();
 const heroCarousel = document.querySelector("[data-hero-carousel]");
 const heroTrack = document.getElementById("hero-track");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const portableHeroSlides = [
+  {
+    desktopSrc: "assets/images/hero/desktop/blue-pro-banner-01-conheca.svg",
+    mobileSrc: "assets/images/hero/mobile/blue-pro-banner-01-conheca.svg",
+    alt: "Venha conhecer a Blue Pro Fishing",
+  },
+];
+
+function appendPortableHeroSlides() {
+  if (!heroTrack) return;
+
+  portableHeroSlides.forEach((slideData) => {
+    const alreadyExists = Array.from(heroTrack.querySelectorAll("img")).some(
+      (image) => image.getAttribute("src") === slideData.desktopSrc,
+    );
+    if (alreadyExists) return;
+
+    const figure = document.createElement("figure");
+    figure.className = "hero-slide";
+    figure.setAttribute("aria-hidden", "true");
+
+    const picture = document.createElement("picture");
+    const source = document.createElement("source");
+    source.media = "(max-width: 767px)";
+    source.srcset = slideData.mobileSrc;
+
+    const image = document.createElement("img");
+    image.src = slideData.desktopSrc;
+    image.alt = slideData.alt;
+    image.loading = "lazy";
+    image.decoding = "async";
+
+    picture.append(source, image);
+    figure.appendChild(picture);
+    heroTrack.appendChild(figure);
+  });
+}
 
 function initializeHeroCarousel() {
   if (!heroCarousel || heroCarousel.dataset.ready === "true") return;
@@ -127,7 +164,10 @@ fetch("assets/php/hero-carousel.php")
     heroTrack.innerHTML = markup;
   })
   .catch(() => {})
-  .finally(initializeHeroCarousel);
+  .finally(() => {
+    appendPortableHeroSlides();
+    initializeHeroCarousel();
+  });
 
 const benefitsTrack = document.querySelector("[data-hero-benefits]");
 const benefitCards = Array.from(benefitsTrack?.querySelectorAll(".benefit-card") || []);
