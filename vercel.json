@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/assets/php/hero-carousel.php",
+      "destination": "/assets/hero-carousel.html"
+    }
+  ]
+}
