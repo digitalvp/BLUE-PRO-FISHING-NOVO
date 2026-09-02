@@ -735,3 +735,24 @@ img { max-width: 100%; }
     will-change: auto;
   }
 }
+
+/* MOBILE HEADER COMPACT — reduz a faixa azul sem afetar tablet/desktop */
+@media (max-width: 767px) {
+  .header {
+    padding: 14px 0;
+  }
+
+  .header.scrolled {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .logo img {
+    height: 36px;
+  }
+
+  .hero {
+    padding-top: 76px;
+    background: linear-gradient(to bottom, var(--bluepro-dark) 0 76px, #f6f8fb 76px 100%);
+  }
+}
