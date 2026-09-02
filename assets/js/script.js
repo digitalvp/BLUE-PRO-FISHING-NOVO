@@ -239,7 +239,11 @@ fetch("assets/php/about-carousel.php")
     initializeCarousels();
   })
   .catch(() => {
+    aboutCarousel.innerHTML =
+      '<img src="assets/img/sobre/sobre-blue-pro-fishing.webp" alt="Blue Pro Fishing" loading="lazy" decoding="async">';
+    aboutCarousel.classList.remove("about-carousel-loading");
     aboutCarousel.classList.add("about-carousel-fallback");
+    aboutCarousel.removeAttribute("aria-busy");
   });
 
 const contactForm = document.getElementById("contact-form");
