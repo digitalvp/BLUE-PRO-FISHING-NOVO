@@ -222,25 +222,86 @@ function initializeCarousels() {
 }
 
 const aboutCarousel = document.getElementById("about-carousel");
-fetch("assets/php/about-carousel.php")
+
+function renderAboutCarousel(images) {
+  const validImages = Array.isArray(images)
+    ? images.filter((image) => image && typeof image.src === "string" && image.src.trim())
+    : [];
+
+  if (!validImages.length) throw new Error("Manifesto do carrossel Sobre sem imagens válidas.");
+
+  const carousel = document.createElement("div");
+  carousel.className = "about-carousel";
+  carousel.dataset.carousel = "";
+  carousel.setAttribute("aria-label", "Galeria de fotos da Blue Pro Fishing");
+
+  const track = document.createElement("div");
+  track.className = "about-carousel-track";
+
+  validImages.forEach((image, index) => {
+    const figure = document.createElement("figure");
+    figure.className = `about-carousel-slide${index === 0 ? " is-active" : ""}`;
+    figure.setAttribute("aria-hidden", String(index !== 0));
+
+    const img = document.createElement("img");
+    img.src = image.src;
+    img.alt = image.alt || `Blue Pro Fishing — foto ${index + 1}`;
+    img.loading = index === 0 ? "eager" : "lazy";
+    img.decoding = "async";
+
+    figure.appendChild(img);
+    track.appendChild(figure);
+  });
+
+  carousel.appendChild(track);
+
+  if (validImages.length > 1) {
+    const previousButton = document.createElement("button");
+    previousButton.className = "about-carousel-control about-carousel-control-prev";
+    previousButton.type = "button";
+    previousButton.dataset.carouselPrev = "";
+    previousButton.setAttribute("aria-label", "Foto anterior");
+    previousButton.innerHTML = "&#10094;";
+
+    const nextButton = document.createElement("button");
+    nextButton.className = "about-carousel-control about-carousel-control-next";
+    nextButton.type = "button";
+    nextButton.dataset.carouselNext = "";
+    nextButton.setAttribute("aria-label", "Próxima foto");
+    nextButton.innerHTML = "&#10095;";
+
+    const dots = document.createElement("div");
+    dots.className = "about-carousel-dots";
+    dots.setAttribute("role", "tablist");
+    dots.setAttribute("aria-label", "Selecionar foto");
+
+    validImages.forEach((_, index) => {
+      const dot = document.createElement("button");
+      dot.className = `about-carousel-dot${index === 0 ? " is-active" : ""}`;
+      dot.type = "button";
+      dot.dataset.carouselDot = String(index);
+      dot.setAttribute("role", "tab");
+      dot.setAttribute("aria-label", `Ver foto ${index + 1}`);
+      dot.setAttribute("aria-selected", String(index === 0));
+      dots.appendChild(dot);
+    });
+
+    carousel.append(previousButton, nextButton, dots);
+  }
+
+  aboutCarousel.replaceChildren(carousel);
+  aboutCarousel.classList.remove("about-carousel-loading", "about-carousel-fallback");
+  aboutCarousel.removeAttribute("aria-busy");
+  initializeCarousels();
+}
+
+fetch("assets/img/sobre/carousel.json", { cache: "no-cache" })
   .then((response) => {
-    if (!response.ok) throw new Error("Não foi possível carregar o carrossel.");
-    if (response.headers.get("content-type")?.includes("application/x-httpd-php")) {
-      throw new Error("O servidor local não executa o PHP do carrossel.");
-    }
-    return response.text();
+    if (!response.ok) throw new Error("Não foi possível carregar o manifesto do carrossel Sobre.");
+    return response.json();
   })
-  .then((markup) => {
-    if (!markup.trim() || markup.includes("<?php")) {
-      throw new Error("O servidor local não executa o PHP do carrossel.");
-    }
-    aboutCarousel.innerHTML = markup;
-    aboutCarousel.removeAttribute("aria-busy");
-    initializeCarousels();
-  })
+  .then((manifest) => renderAboutCarousel(manifest.images))
   .catch(() => {
-    aboutCarousel.innerHTML =
-      '<img src="assets/img/sobre/sobre-blue-pro-fishing.webp" alt="Blue Pro Fishing" loading="lazy" decoding="async">';
     aboutCarousel.classList.remove("about-carousel-loading");
     aboutCarousel.classList.add("about-carousel-fallback");
     aboutCarousel.removeAttribute("aria-busy");
