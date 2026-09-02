@@ -130,13 +130,50 @@ fetch("assets/php/hero-carousel.php")
   .finally(initializeHeroCarousel);
 
 const benefitsTrack = document.querySelector("[data-hero-benefits]");
-const scrollBenefits = (direction) => {
-  const firstCard = benefitsTrack?.querySelector(".benefit-card");
-  if (!firstCard) return;
-  benefitsTrack.scrollBy({ left: direction * (firstCard.offsetWidth + 12), behavior: reducedMotionQuery.matches ? "auto" : "smooth" });
+const benefitCards = Array.from(benefitsTrack?.querySelectorAll(".benefit-card") || []);
+const benefitPreviousButton = document.querySelector("[data-benefit-prev]");
+const benefitNextButton = document.querySelector("[data-benefit-next]");
+const benefitMobileQuery = window.matchMedia("(max-width: 767px)");
+let activeBenefitIndex = 0;
+let benefitTimerId = null;
+
+const stopBenefitsAutoPlay = () => {
+  window.clearInterval(benefitTimerId);
+  benefitTimerId = null;
 };
-document.querySelector("[data-benefit-prev]")?.addEventListener("click", () => scrollBenefits(-1));
-document.querySelector("[data-benefit-next]")?.addEventListener("click", () => scrollBenefits(1));
+
+const showBenefit = (index, restart = false) => {
+  if (!benefitsTrack || !benefitCards.length) return;
+
+  const isMobile = benefitMobileQuery.matches;
+  activeBenefitIndex = (index + benefitCards.length) % benefitCards.length;
+  benefitsTrack.classList.toggle("is-ready", isMobile);
+
+  benefitCards.forEach((card, cardIndex) => {
+    const isActive = !isMobile || cardIndex === activeBenefitIndex;
+    card.classList.toggle("is-active", isMobile && cardIndex === activeBenefitIndex);
+    card.setAttribute("aria-hidden", String(!isActive));
+  });
+
+  if (restart) startBenefitsAutoPlay();
+};
+
+const startBenefitsAutoPlay = () => {
+  stopBenefitsAutoPlay();
+  if (!benefitMobileQuery.matches || benefitCards.length < 2 || reducedMotionQuery.matches || document.hidden) return;
+  benefitTimerId = window.setInterval(() => showBenefit(activeBenefitIndex + 1), 5000);
+};
+
+benefitPreviousButton?.addEventListener("click", () => showBenefit(activeBenefitIndex - 1, true));
+benefitNextButton?.addEventListener("click", () => showBenefit(activeBenefitIndex + 1, true));
+benefitMobileQuery.addEventListener?.("change", () => {
+  showBenefit(activeBenefitIndex);
+  startBenefitsAutoPlay();
+});
+reducedMotionQuery.addEventListener?.("change", startBenefitsAutoPlay);
+document.addEventListener("visibilitychange", () => document.hidden ? stopBenefitsAutoPlay() : startBenefitsAutoPlay());
+showBenefit(0);
+startBenefitsAutoPlay();
 
 const revealElements = document.querySelectorAll(".reveal");
 revealElements.forEach((element) => {

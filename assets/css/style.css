@@ -652,6 +652,12 @@ img { max-width: 100%; }
 
 @media (max-width: 767px) {
   body { overflow-x: hidden; }
+  .hero-benefits-wrap { padding: 0 44px; }
+  .hero-benefits { overflow: hidden; padding: 0; scroll-padding-inline: 0; scroll-snap-type: none; }
+  .hero-benefits.is-ready .benefit-card:not(.is-active) { display: none; }
+  .benefit-card { width: 100%; min-width: 0; flex: 0 0 100%; scroll-snap-align: none; }
+  .benefit-control-prev { left: 2px; }
+  .benefit-control-next { right: 2px; }
   .section { padding: 64px 0; }
   .about-grid { gap: 48px; }
   .about-media { width: calc(100% - 16px); }
