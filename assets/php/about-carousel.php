@@ -5,7 +5,8 @@ $imageDirectory = dirname(__DIR__) . '/img/sobre';
 $extensions = ['jpg', 'jpeg', 'png', 'webp', 'avif'];
 $images = glob($imageDirectory . '/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}', GLOB_BRACE) ?: [];
 $images = array_values(array_filter($images, static function (string $image) use ($extensions): bool {
-    return in_array(strtolower(pathinfo($image, PATHINFO_EXTENSION)), $extensions, true);
+    return basename($image) !== 'sobre-blue-pro-fishing.webp'
+        && in_array(strtolower(pathinfo($image, PATHINFO_EXTENSION)), $extensions, true);
 }));
 natsort($images);
 $images = array_slice(array_values($images), 0, 9);
