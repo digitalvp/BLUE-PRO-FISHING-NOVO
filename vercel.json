@@ -1,8 +1,13 @@
 {
-  "rewrites": [
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "routes": [
     {
-      "source": "/assets/php/hero-carousel.php",
-      "destination": "/assets/hero-carousel.html"
+      "src": "/assets/php/hero-carousel.php",
+      "dest": "/assets/hero-carousel.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
   ]
 }
