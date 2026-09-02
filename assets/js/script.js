@@ -32,14 +32,36 @@ const heroTrack = document.getElementById("hero-track");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 const portableHeroSlides = [
   {
-    desktopSrc: "assets/images/hero/desktop/blue-pro-banner-01-conheca.svg",
-    mobileSrc: "assets/images/hero/mobile/blue-pro-banner-01-conheca.svg",
-    alt: "Venha conhecer a Blue Pro Fishing",
+    desktopSrc: "assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-01.png",
+    mobileSrc: "assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-01.png",
+    alt: "Blue Pro Fishing, referência em pesca em Palmas",
+  },
+  {
+    desktopSrc: "assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-02.png",
+    mobileSrc: "assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-02.png",
+    alt: "Blue Pro Fishing para quem vive a pesca",
+  },
+  {
+    desktopSrc: "assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-03.png",
+    mobileSrc: "assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-03.png",
+    alt: "Aventura, pesca, náutica e camping na Blue Pro Fishing",
+  },
+  {
+    desktopSrc: "assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-04.png",
+    mobileSrc: "assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-04.png",
+    alt: "Equipamentos de pesca para todos os estilos na Blue Pro Fishing",
   },
 ];
 
 function appendPortableHeroSlides() {
   if (!heroTrack) return;
+
+  const existingSources = new Set(
+    Array.from(heroTrack.querySelectorAll("img")).map((image) => image.getAttribute("src")),
+  );
+  const hasCurrentHeroSet = portableHeroSlides.some((slideData) => existingSources.has(slideData.desktopSrc));
+
+  if (!hasCurrentHeroSet) heroTrack.replaceChildren();
 
   portableHeroSlides.forEach((slideData) => {
     const alreadyExists = Array.from(heroTrack.querySelectorAll("img")).some(
@@ -47,9 +69,10 @@ function appendPortableHeroSlides() {
     );
     if (alreadyExists) return;
 
+    const isFirstSlide = heroTrack.children.length === 0;
     const figure = document.createElement("figure");
-    figure.className = "hero-slide";
-    figure.setAttribute("aria-hidden", "true");
+    figure.className = `hero-slide${isFirstSlide ? " is-active" : ""}`;
+    figure.setAttribute("aria-hidden", String(!isFirstSlide));
 
     const picture = document.createElement("picture");
     const source = document.createElement("source");
@@ -59,8 +82,9 @@ function appendPortableHeroSlides() {
     const image = document.createElement("img");
     image.src = slideData.desktopSrc;
     image.alt = slideData.alt;
-    image.loading = "lazy";
+    image.loading = isFirstSlide ? "eager" : "lazy";
     image.decoding = "async";
+    if (isFirstSlide) image.fetchPriority = "high";
 
     picture.append(source, image);
     figure.appendChild(picture);

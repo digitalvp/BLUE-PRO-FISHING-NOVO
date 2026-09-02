@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 $desktopDirectory = dirname(__DIR__) . '/images/hero/desktop';
 $mobileDirectory = dirname(__DIR__) . '/images/hero/mobile';
-$desktopImages = glob($desktopDirectory . '/blue-pro-banner-*.svg') ?: [];
+$desktopImages = glob($desktopDirectory . '/LOJA-DE-PESCA-EM-PALMAS-*.png') ?: [];
 
 natsort($desktopImages);
 $desktopImages = array_values($desktopImages);
@@ -27,7 +27,7 @@ foreach ($desktopImages as $index => $desktopPath) {
     <figure class="hero-slide<?= $isActive ? ' is-active' : '' ?>" aria-hidden="<?= $isActive ? 'false' : 'true' ?>">
       <picture>
         <source media="(max-width: 767px)" srcset="<?= htmlspecialchars($mobileUrl, ENT_QUOTES, 'UTF-8') ?>">
-        <img src="<?= htmlspecialchars($desktopUrl, ENT_QUOTES, 'UTF-8') ?>" width="1310" height="433" alt="Banner Blue Pro Fishing <?= $index + 1 ?>" loading="<?= $isActive ? 'eager' : 'lazy' ?>" decoding="async"<?= $isActive ? ' fetchpriority="high"' : '' ?>>
+        <img src="<?= htmlspecialchars($desktopUrl, ENT_QUOTES, 'UTF-8') ?>" width="1920" height="800" alt="Banner Blue Pro Fishing <?= $index + 1 ?>" loading="<?= $isActive ? 'eager' : 'lazy' ?>" decoding="async"<?= $isActive ? ' fetchpriority="high"' : '' ?>>
       </picture>
     </figure>
     <?php
