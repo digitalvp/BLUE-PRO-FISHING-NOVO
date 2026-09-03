@@ -1,0 +1,1 @@
+Adicione aqui as fotos reais dos molinetes. Para os 4 cards iniciais, use molinete-01.webp, molinete-02.webp, molinete-03.webp e molinete-04.webp. Se o arquivo não existir, o site usa uma imagem de fallback e não quebra o layout.
