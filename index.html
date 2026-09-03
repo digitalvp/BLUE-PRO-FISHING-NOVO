@@ -20,7 +20,6 @@
   <meta property="og:image:height" content="809">
   <meta name="twitter:image" content="https://blue-pro-fishing-novo.vercel.app/assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-01.png">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/catalogo-produtos.css">
 </head>
 
 <body>
@@ -46,7 +45,7 @@
     <div class="container header-container">
       <a href="#inicio" class="logo" aria-label="Blue Pro Fishing - início"><img src="assets/logos/logo-blue-pro-mescla.svg" alt="Blue Pro Fishing"></a>
       <nav class="nav" id="nav" aria-label="Navegação principal">
-        <a href="#inicio">Início</a><a href="#video">YouTube</a><a href="#produtos">Produtos</a><a href="#servicos">O que fazemos</a><a href="#sobre">Sobre nós</a><a href="#faq">FAQ</a><a href="#contato">Contato</a><a href="https://wa.me/5563992569790" class="btn-header" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+<a href="#inicio">Início</a><a href="#video">YouTube</a><a href="produtos.html">Produtos</a><a href="#servicos">O que fazemos</a><a href="#sobre">Sobre nós</a><a href="#faq">FAQ</a><a href="#contato">Contato</a><a href="https://wa.me/5563992569790" class="btn-header" target="_blank" rel="noopener noreferrer">WhatsApp</a>
       </nav>
       <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="nav" aria-expanded="false">
         <svg class="menu-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -61,70 +60,149 @@
         <div class="hero-carousel" data-hero-carousel tabindex="0" aria-roledescription="carrossel" aria-label="Banners em destaque">
           <div class="hero-viewport">
             <div class="hero-track" id="hero-track" aria-live="off">
-              <figure class="hero-slide is-active" aria-hidden="false"><picture><source media="(max-width: 767px)" srcset="assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-01.png"><img src="assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-01.png" width="1942" height="809" alt="Blue Pro Fishing, referência em pesca em Palmas" fetchpriority="high" decoding="async"></picture></figure>
-              <figure class="hero-slide" aria-hidden="true"><picture><source media="(max-width: 767px)" srcset="assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-02.png"><img src="assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-02.png" width="1920" height="800" alt="Blue Pro Fishing para quem vive a pesca" loading="lazy" decoding="async"></picture></figure>
-              <figure class="hero-slide" aria-hidden="true"><picture><source media="(max-width: 767px)" srcset="assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-03.png"><img src="assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-03.png" width="1920" height="800" alt="Aventura, pesca, náutica e camping na Blue Pro Fishing" loading="lazy" decoding="async"></picture></figure>
-              <figure class="hero-slide" aria-hidden="true"><picture><source media="(max-width: 767px)" srcset="assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-04.png"><img src="assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-04.png" width="1920" height="800" alt="Equipamentos de pesca para todos os estilos na Blue Pro Fishing" loading="lazy" decoding="async"></picture></figure>
+              <figure class="hero-slide is-active" aria-hidden="false">
+                <picture>
+                  <source media="(max-width: 767px)" srcset="assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-01.png">
+                  <img src="assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-01.png" width="1942" height="809" alt="Blue Pro Fishing, referência em pesca em Palmas" fetchpriority="high" decoding="async">
+                </picture>
+              </figure>
+              <figure class="hero-slide" aria-hidden="true">
+                <picture>
+                  <source media="(max-width: 767px)" srcset="assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-02.png">
+                  <img src="assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-02.png" width="1920" height="800" alt="Blue Pro Fishing para quem vive a pesca" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="hero-slide" aria-hidden="true">
+                <picture>
+                  <source media="(max-width: 767px)" srcset="assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-03.png">
+                  <img src="assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-03.png" width="1920" height="800" alt="Aventura, pesca, náutica e camping na Blue Pro Fishing" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="hero-slide" aria-hidden="true">
+                <picture>
+                  <source media="(max-width: 767px)" srcset="assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-04.png">
+                  <img src="assets/images/hero/desktop/LOJA-DE-PESCA-EM-PALMAS-04.png" width="1920" height="800" alt="Equipamentos de pesca para todos os estilos na Blue Pro Fishing" loading="lazy" decoding="async">
+                </picture>
+              </figure>
             </div>
           </div>
           <button class="hero-control hero-control-prev" type="button" data-hero-prev aria-label="Banner anterior">&#10094;</button>
           <button class="hero-control hero-control-next" type="button" data-hero-next aria-label="Próximo banner">&#10095;</button>
-          <div class="hero-dots" data-hero-dots role="tablist" aria-label="Selecionar banner"><button class="hero-dot is-active" type="button" data-hero-dot="0" role="tab" aria-label="Ver banner 1" aria-selected="true"></button></div>
+          <div class="hero-dots" data-hero-dots role="tablist" aria-label="Selecionar banner">
+            <button class="hero-dot is-active" type="button" data-hero-dot="0" role="tab" aria-label="Ver banner 1" aria-selected="true"></button>
+          </div>
         </div>
 
         <div class="hero-benefits-wrap">
           <button class="benefit-control benefit-control-prev" type="button" data-benefit-prev aria-label="Benefício anterior">&#10094;</button>
           <div class="hero-benefits" data-hero-benefits>
-            <article class="benefit-card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg><strong>Atendimento especializado</strong></article>
-            <article class="benefit-card"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h2"/></svg><strong>Parcelamento em até 10x sem juros</strong></article>
-            <article class="benefit-card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h7M16 3h5v5M10 14 21 3"/></svg><strong>Melhor preço do Brasil</strong></article>
-            <article class="benefit-card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 8-9-5-9 5 9 5 9-5ZM3 8v8l9 5 9-5V8M12 13v8"/></svg><strong>Estoque à pronta entrega</strong></article>
+            <article class="benefit-card">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <strong>Atendimento especializado</strong>
+            </article>
+            <article class="benefit-card">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h2"/></svg>
+              <strong>Parcelamento em até 10x sem juros</strong>
+            </article>
+            <article class="benefit-card">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h7M16 3h5v5M10 14 21 3"/></svg>
+              <strong>Melhor preço do Brasil</strong>
+            </article>
+            <article class="benefit-card">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 8-9-5-9 5 9 5 9-5ZM3 8v8l9 5 9-5V8M12 13v8"/></svg>
+              <strong>Estoque à pronta entrega</strong>
+            </article>
           </div>
           <button class="benefit-control benefit-control-next" type="button" data-benefit-next aria-label="Próximo benefício">&#10095;</button>
         </div>
       </div>
     </section>
 
-    <section class="video-presentation section" id="video"><div class="container section-container video-presentation-grid"><div class="video-presentation-content reveal reveal-up"><p class="section-kicker">Blue Pro no YouTube</p><h2>Conheça a Blue Pro Fishing em vídeo.</h2><p>Acompanhe nossa paixão pela pesca, pelo mundo náutico e pelas experiências que movem cada aventura.</p><a class="btn btn-primary" href="https://www.youtube.com/@BLUEPROFISHING" target="_blank" rel="noopener noreferrer">Visitar nosso canal</a></div><div class="video-presentation-player reveal reveal-up" data-delay="200" style="aspect-ratio: 16 / 9; width: 100%; max-width: 640px;"><iframe src="https://www.youtube-nocookie.com/embed/U31P2NqpGyQ?autoplay=1&amp;mute=1&amp;playsinline=1&amp;loop=1&amp;playlist=U31P2NqpGyQ&amp;rel=0" title="Blue Pro Fishing no YouTube" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div></section>
+    <section class="video-presentation section" id="video">
+      <div class="container section-container video-presentation-grid">
+        <div class="video-presentation-content reveal reveal-up">
+          <p class="section-kicker">Blue Pro no YouTube</p>
+          <h2>Conheça a Blue Pro Fishing em vídeo.</h2>
+          <p>Acompanhe nossa paixão pela pesca, pelo mundo náutico e pelas experiências que movem cada aventura.</p>
+          <a class="btn btn-primary" href="https://www.youtube.com/@BLUEPROFISHING" target="_blank" rel="noopener noreferrer">Visitar nosso canal</a>
+        </div>
+        <div class="video-presentation-player reveal reveal-up" data-delay="200" style="aspect-ratio: 16 / 9; width: 100%; max-width: 640px;">
+          <iframe src="https://www.youtube-nocookie.com/embed/U31P2NqpGyQ?autoplay=1&amp;mute=1&amp;playsinline=1&amp;loop=1&amp;playlist=U31P2NqpGyQ&amp;rel=0" title="Blue Pro Fishing no YouTube" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
 
     <section class="products section" id="produtos">
       <div class="container section-container">
-        <div class="section-heading reveal reveal-down"><p class="section-kicker">Produtos</p><h2>Encontre o equipamento certo</h2><p>Conheça nossas categorias de produtos para pesca e aventura.</p></div>
+        <div class="section-heading reveal reveal-down"><p class="section-kicker">Produtos</p><h2>Encontre o equipamento certo</h2><p><a href="produtos.html">Conheça nossos produtos!</a></p></div>
         <div class="products-carousel" data-products-carousel aria-label="Categorias de produtos">
           <button class="products-control products-control-prev" type="button" data-products-prev aria-label="Categoria anterior">&#10094;</button>
           <div class="products-window"><div class="products-track">
-            <article class="product-card"><img src="assets/img/produtos/varas.webp" alt="Varas" loading="lazy"><h3>Varas</h3></article>
-            <article class="product-card"><img src="assets/img/produtos/molinetes.webp" alt="Molinetes" loading="lazy"><h3>Molinetes</h3></article>
-            <article class="product-card"><img src="assets/img/produtos/carretilhas.webp" alt="Carretilhas" loading="lazy"><h3>Carretilhas</h3></article>
-            <article class="product-card"><img src="assets/img/produtos/iscas.webp" alt="Iscas" loading="lazy"><h3>Iscas</h3></article>
-            <article class="product-card"><img src="assets/img/produtos/linhas.webp" alt="Linhas" loading="lazy"><h3>Linhas</h3></article>
-            <article class="product-card"><img src="assets/img/produtos/acessorios.webp" alt="Acessórios" loading="lazy"><h3>Acessórios</h3></article>
+            <a class="product-card" href="produtos.html"><img src="assets/img/produtos/varas.webp" alt="Varas" loading="lazy"><h3>Varas</h3></a>
+            <a class="product-card" href="produtos.html"><img src="assets/img/produtos/molinetes.webp" alt="Molinetes" loading="lazy"><h3>Molinetes</h3></a>
+            <a class="product-card" href="produtos.html"><img src="assets/img/produtos/carretilhas.webp" alt="Carretilhas" loading="lazy"><h3>Carretilhas</h3></a>
+            <a class="product-card" href="produtos.html"><img src="assets/img/produtos/iscas.webp" alt="Iscas" loading="lazy"><h3>Iscas</h3></a>
+            <a class="product-card" href="produtos.html"><img src="assets/img/produtos/linhas.webp" alt="Linhas" loading="lazy"><h3>Linhas</h3></a>
+            <a class="product-card" href="produtos.html"><img src="assets/img/produtos/acessorios.webp" alt="Acessórios" loading="lazy"><h3>Acessórios</h3></a>
           </div></div>
           <button class="products-control products-control-next" type="button" data-products-next aria-label="Próxima categoria">&#10095;</button>
         </div>
       </div>
     </section>
 
-    <section class="services section" id="servicos"><div class="container section-container"><div class="section-heading reveal reveal-down"><p class="section-kicker">O que fazemos</p><h2>Soluções Completas</h2><p>Oferecemos um ecossistema completo para suas necessidades náuticas e de pesca, com a qualidade e garantia que você merece.</p></div><div class="services-grid">
-      <article class="service-card reveal reveal-up"><div class="service-image"><img src="assets/img/servicos/servico-pesca-camping.webp" alt="Artigos de Pesca, Caça e Camping" loading="lazy"><span class="service-cover"></span></div><div class="service-body"><span class="service-icon"><svg><use href="#icon-tent"/></svg></span><h3>Artigos de Pesca, Caça e Camping</h3><p>Venda varejista completa. As melhores iscas, varas, barracas e equipamentos táticos das marcas líderes.</p><a href="#contato">Saiba mais <svg><use href="#icon-arrow"/></svg></a></div></article>
-      <article class="service-card reveal reveal-up" data-delay="100"><div class="service-image"><img src="assets/img/servicos/servico-embarcacoes.webp" alt="Embarcações" loading="lazy"><span class="service-cover"></span></div><div class="service-body"><span class="service-icon"><svg><use href="#icon-ship"/></svg></span><h3>Embarcações</h3><p>Venda de barcos e veículos recreativos, com manutenção especializada para embarcações, estruturas flutuantes e motores.</p><a href="#contato">Saiba mais <svg><use href="#icon-arrow"/></svg></a></div></article>
-      <article class="service-card reveal reveal-up" data-delay="300"><div class="service-image"><img src="assets/img/servicos/servico-turismo.webp" alt="Agência de Turismo" loading="lazy"><span class="service-cover"></span></div><div class="service-body"><span class="service-icon"><svg><use href="#icon-map"/></svg></span><h3>Camping e pesca</h3><p>Operadora turística completa. Reservas, pacotes de pesca e experiências exclusivas nos melhores destinos.</p><a href="https://www.instagram.com/javae_camp?utm_source=ig_web_button_share_sheet&amp;igsi=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">Saiba mais <svg><use href="#icon-arrow"/></svg></a></div></article>
-    </div></div></section>
+    <section class="services section" id="servicos">
+      <div class="container section-container">
+        <div class="section-heading reveal reveal-down"><p class="section-kicker">O que fazemos</p><h2>Soluções Completas</h2><p>Oferecemos um ecossistema completo para suas necessidades náuticas e de pesca, com a qualidade e garantia que você merece.</p></div>
+        <div class="services-grid">
+          <article class="service-card reveal reveal-up"><div class="service-image"><img src="assets/img/servicos/servico-pesca-camping.webp" alt="Artigos de Pesca, Caça e Camping" loading="lazy"><span class="service-cover"></span></div><div class="service-body"><span class="service-icon"><svg><use href="#icon-tent"/></svg></span><h3>Artigos de Pesca, Caça e Camping</h3><p>Venda varejista completa. As melhores iscas, varas, barracas e equipamentos táticos das marcas líderes.</p><a href="produtos.html">Saiba mais <svg><use href="#icon-arrow"/></svg></a></div></article>
+          <article class="service-card reveal reveal-up" data-delay="100"><div class="service-image"><img src="assets/img/servicos/servico-embarcacoes.webp" alt="Embarcações" loading="lazy"><span class="service-cover"></span></div><div class="service-body"><span class="service-icon"><svg><use href="#icon-ship"/></svg></span><h3>Embarcações</h3><p>Venda de barcos e veículos recreativos, com manutenção especializada para embarcações, estruturas flutuantes e motores.</p><a href="#contato">Saiba mais <svg><use href="#icon-arrow"/></svg></a></div></article>
+          <article class="service-card reveal reveal-up" data-delay="300"><div class="service-image"><img src="assets/img/servicos/servico-turismo.webp" alt="Agência de Turismo" loading="lazy"><span class="service-cover"></span></div><div class="service-body"><span class="service-icon"><svg><use href="#icon-map"/></svg></span><h3>Camping e pesca</h3><p>Operadora turística completa. Reservas, pacotes de pesca e experiências exclusivas nos melhores destinos.</p><a href="https://www.instagram.com/javae_camp?utm_source=ig_web_button_share_sheet&amp;igsi=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">Saiba mais <svg><use href="#icon-arrow"/></svg></a></div></article>
+        </div>
+      </div>
+    </section>
 
-    <section class="brands section" id="marcas"><span class="brands-glow brands-glow-left" aria-hidden="true"></span><span class="brands-glow brands-glow-right" aria-hidden="true"></span><div class="brands-heading reveal reveal-up"><h2>Nossas Marcas</h2><p>Trabalhamos apenas com o melhor do mercado mundial.</p></div><div class="brands-window"><div class="brands-track" id="brands-track"><div class="brand-item" title="Blue Pro Fishing"><img src="assets/logos/logo-blue-pro-mescla.svg" alt="Blue Pro Fishing"></div><div class="brand-item" title="Daiwa"><img src="assets/logos/logo-daiwa.webp" alt="Daiwa"></div><div class="brand-item" title="Shimano"><img src="assets/logos/logo-shimano.webp" alt="Shimano"></div><div class="brand-item" title="Mercury"><img src="assets/logos/logo-mercury.webp" alt="Mercury"></div><div class="brand-item" title="Yamaha"><img src="assets/logos/logo-yamaha.webp" alt="Yamaha"></div><div class="brand-item" title="Monster 3X"><img src="assets/logos/logo-monster-3x.webp" alt="Monster 3X"></div><div class="brand-item" title="Marine Sports"><img src="assets/logos/logo-marine-sports.webp" alt="Marine Sports"></div><div class="brand-item" title="Lumis"><img src="assets/logos/logo-lumis.webp" alt="Lumis"></div><div class="brand-item" title="Humminbird"><img src="assets/logos/logo-humminbird.webp" alt="Humminbird"></div><div class="brand-item" title="Minn Kota"><img src="assets/logos/logo-minn-kota.webp" alt="Minn Kota"></div></div></div></section>
+    <section class="brands section" id="marcas">
+      <span class="brands-glow brands-glow-left" aria-hidden="true"></span><span class="brands-glow brands-glow-right" aria-hidden="true"></span>
+      <div class="brands-heading reveal reveal-up"><h2>Nossas Marcas</h2><p>Trabalhamos apenas com o melhor do mercado mundial.</p></div>
+      <div class="brands-window"><div class="brands-track" id="brands-track">
+        <div class="brand-item" title="Blue Pro Fishing"><img src="assets/logos/logo-blue-pro-mescla.svg" alt="Blue Pro Fishing"></div><div class="brand-item" title="Daiwa"><img src="assets/logos/logo-daiwa.webp" alt="Daiwa"></div><div class="brand-item" title="Shimano"><img src="assets/logos/logo-shimano.webp" alt="Shimano"></div><div class="brand-item" title="Mercury"><img src="assets/logos/logo-mercury.webp" alt="Mercury"></div><div class="brand-item" title="Yamaha"><img src="assets/logos/logo-yamaha.webp" alt="Yamaha"></div><div class="brand-item" title="Monster 3X"><img src="assets/logos/logo-monster-3x.webp" alt="Monster 3X"></div><div class="brand-item" title="Marine Sports"><img src="assets/logos/logo-marine-sports.webp" alt="Marine Sports"></div><div class="brand-item" title="Lumis"><img src="assets/logos/logo-lumis.webp" alt="Lumis"></div><div class="brand-item" title="Humminbird"><img src="assets/logos/logo-humminbird.webp" alt="Humminbird"></div><div class="brand-item" title="Minn Kota"><img src="assets/logos/logo-minn-kota.webp" alt="Minn Kota"></div>
+      </div></div>
+    </section>
 
-    <section class="about section" id="sobre"><div class="container section-container about-container"><div class="about-content reveal reveal-up"><p class="section-kicker">Sobre Nós</p><h2>Mais que uma loja, uma paixão pela pesca e pelas águas.</h2><p>A <strong>Blue Pro Fishing</strong> nasceu da necessidade de oferecer um serviço completo e especializado para os amantes da náutica e pesca esportiva. Não vendemos apenas produtos; entregamos soluções e experiências.</p><p>Desde a escolha do equipamento ideal, passando pela manutenção da sua embarcação, até o planejamento da sua próxima aventura de turismo, nossa equipe está pronta para atender com excelência. Somos distribuidores oficiais das maiores marcas do mundo.</p></div><div class="about-visuals"><div class="about-media reveal reveal-up"><div id="about-carousel" class="about-carousel-loading" aria-busy="true"><img src="assets/img/sobre/sobre-blue-pro-fishing.webp" alt="Blue Pro Fishing"></div><span class="about-fill" aria-hidden="true"></span><span class="about-frame" aria-hidden="true"></span></div><div class="instagram-widget" aria-label="Instagram da Blue Pro Fishing"><div class="elfsight-app-435bd8ca-7237-47fc-805e-800ec14da050" data-elfsight-app-lazy></div></div></div></div></section>
+    <section class="about section" id="sobre">
+      <div class="container section-container about-container">
+        <div class="about-content reveal reveal-up">
+          <p class="section-kicker">Sobre Nós</p>
+          <h2>Mais que uma loja, uma paixão pela pesca e pelas águas.</h2>
+          <p>A <strong>Blue Pro Fishing</strong> nasceu da necessidade de oferecer um serviço completo e especializado para os amantes da náutica e pesca esportiva. Não vendemos apenas produtos; entregamos soluções e experiências.</p>
+          <p>Desde a escolha do equipamento ideal, passando pela manutenção da sua embarcação, até o planejamento da sua próxima aventura de turismo, nossa equipe está pronta para atender com excelência. Somos distribuidores oficiais das maiores marcas do mundo.</p>
+        </div>
+        <div class="about-visuals">
+          <div class="about-media reveal reveal-up"><div id="about-carousel" class="about-carousel-loading" aria-busy="true"><img src="assets/img/sobre/sobre-blue-pro-fishing.webp" alt="Blue Pro Fishing"></div><span class="about-fill" aria-hidden="true"></span><span class="about-frame" aria-hidden="true"></span></div>
+          <div class="instagram-widget" aria-label="Instagram da Blue Pro Fishing"><div class="elfsight-app-435bd8ca-7237-47fc-805e-800ec14da050" data-elfsight-app-lazy></div></div>
+        </div>
+      </div>
+    </section>
 
-    <section class="faq section" id="faq"><div class="container section-container"><div class="section-heading reveal reveal-down"><p class="section-kicker">Dúvidas</p><h2>Perguntas frequentes</h2></div><div class="faq-list">
-      <details class="faq-item"><summary>Onde fica a Blue Pro Fishing?</summary><p>Estamos na Q. ACSU SE 20, Avenida LO 03, Conjunto 02, Lote 18, Bloco 02, Plano Diretor Sul, Palmas - TO, 77020-456.</p></details>
-      <details class="faq-item"><summary>Como falar com a equipe pelo WhatsApp?</summary><p>Fale conosco pelo WhatsApp (63) 99256-9790.</p></details>
-      <details class="faq-item"><summary>A Blue Pro trabalha com artigos de pesca?</summary><p>Sim. A loja trabalha com artigos e equipamentos de pesca.</p></details>
-      <details class="faq-item"><summary>A Blue Pro também trabalha com embarcações e náutica?</summary><p>Sim. Também atuamos com embarcações e náutica.</p></details>
-      <details class="faq-item"><summary>Onde posso acompanhar os conteúdos da Blue Pro?</summary><p>Acompanhe a Blue Pro Fishing pelo Instagram e pelo YouTube.</p></details>
-      <details class="faq-item"><summary>Como chegar até a loja?</summary><p>Use o mapa desta página ou abra a localização no Google Maps.</p></details>
-    </div></div></section>
+    <section class="faq section" id="faq">
+      <div class="container section-container"><div class="section-heading reveal reveal-down"><p class="section-kicker">Dúvidas</p><h2>Perguntas frequentes</h2></div><div class="faq-list">
+        <details class="faq-item"><summary>Onde fica a Blue Pro Fishing?</summary><p>Estamos na Q. ACSU SE 20, Avenida LO 03, Conjunto 02, Lote 18, Bloco 02, Plano Diretor Sul, Palmas - TO, 77020-456.</p></details>
+        <details class="faq-item"><summary>Como falar com a equipe pelo WhatsApp?</summary><p>Fale conosco pelo WhatsApp (63) 99256-9790.</p></details>
+        <details class="faq-item"><summary>A Blue Pro trabalha com artigos de pesca?</summary><p>Sim. A loja trabalha com artigos e equipamentos de pesca.</p></details>
+        <details class="faq-item"><summary>A Blue Pro também trabalha com embarcações e náutica?</summary><p>Sim. Também atuamos com embarcações e náutica.</p></details>
+        <details class="faq-item"><summary>Onde posso acompanhar os conteúdos da Blue Pro?</summary><p>Acompanhe a Blue Pro Fishing pelo Instagram e pelo YouTube.</p></details>
+        <details class="faq-item"><summary>Como chegar até a loja?</summary><p>Use o mapa desta página ou abra a localização no Google Maps.</p></details>
+      </div></div>
+    </section>
 
-    <section class="contact section" id="contato"><div class="container section-container"><div class="contact-card"><div class="contact-info reveal reveal-right"><span class="contact-glow" aria-hidden="true"></span><div><h2>Entre em contato</h2><p class="contact-intro">Interessado em artigos de pesca, manutenção de embarcações ou pacotes turísticos? Fale com nossos especialistas.</p><div class="contact-list"><div class="contact-row"><svg><use href="#icon-phone"/></svg><div><span>WhatsApp</span><strong><a href="https://wa.me/5563992569790" target="_blank" rel="noopener noreferrer">(63) 99256-9790</a></strong></div></div><div class="contact-row"><svg><use href="#icon-mail"/></svg><div><span>Email</span><strong>contato@blueprofishing.com.br</strong></div></div><div class="contact-row"><svg><use href="#icon-pin"/></svg><div><span>Endereço</span><strong>Q. ACSU SE 20, Avenida LO 03, Conjunto 02, Lote 18, Bloco 02<br>Plano Diretor Sul<br>Palmas - TO, 77020-456</strong></div></div></div><a class="btn btn-primary contact-directions" href="https://maps.app.goo.gl/jRJrAxJXZTNbBWg68" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a></div><div class="socials"><p>Siga-nos nas redes sociais</p><div><a href="https://www.instagram.com/blueprofishing?utm_source=ig_web_button_share_sheet&amp;igsi=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg><use href="#icon-instagram"/></svg></a><a href="https://www.facebook.com/share/18Z7tbHTbK/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg><use href="#icon-facebook"/></svg></a></div></div></div><div class="contact-map reveal reveal-left" data-delay="200"><iframe title="Mapa da Blue Pro Fishing" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4765.404261356875!2d-48.33364632417355!3d-10.19228808992317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9324cb1b0cf47fed%3A0xb0015e11825b71a3!2sBlue%20Pro%20Fishing!5e1!3m2!1spt-BR!2sbr!4v1788410177433!5m2!1spt-BR!2sbr" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div></div></section>
+    <section class="contact section" id="contato">
+      <div class="container section-container"><div class="contact-card">
+        <div class="contact-info reveal reveal-right"><span class="contact-glow" aria-hidden="true"></span><div><h2>Entre em contato</h2><p class="contact-intro">Interessado em artigos de pesca, manutenção de embarcações ou pacotes turísticos? Fale com nossos especialistas.</p>
+          <div class="contact-list"><div class="contact-row"><svg><use href="#icon-phone"/></svg><div><span>WhatsApp</span><strong><a href="https://wa.me/5563992569790" target="_blank" rel="noopener noreferrer">(63) 99256-9790</a></strong></div></div><div class="contact-row"><svg><use href="#icon-mail"/></svg><div><span>Email</span><strong>contato@blueprofishing.com.br</strong></div></div><div class="contact-row"><svg><use href="#icon-pin"/></svg><div><span>Endereço</span><strong>Q. ACSU SE 20, Avenida LO 03, Conjunto 02, Lote 18, Bloco 02<br>Plano Diretor Sul<br>Palmas - TO, 77020-456</strong></div></div></div><a class="btn btn-primary contact-directions" href="https://maps.app.goo.gl/jRJrAxJXZTNbBWg68" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>
+        </div><div class="socials"><p>Siga-nos nas redes sociais</p><div><a href="https://www.instagram.com/blueprofishing?utm_source=ig_web_button_share_sheet&amp;igsi=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg><use href="#icon-instagram"/></svg></a><a href="https://www.facebook.com/share/18Z7tbHTbK/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg><use href="#icon-facebook"/></svg></a></div></div></div>
+        <div class="contact-map reveal reveal-left" data-delay="200"><iframe title="Mapa da Blue Pro Fishing" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4765.404261356875!2d-48.33364632417355!3d-10.19228808992317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9324cb1b0cf47fed%3A0xb0015e11825b71a3!2sBlue%20Pro%20Fishing!5e1!3m2!1spt-BR!2sbr!4v1788410177433!5m2!1spt-BR!2sbr" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+      </div></div>
+    </section>
   </main>
   <script src="https://elfsightcdn.com/platform.js" async></script>
 
@@ -132,11 +210,11 @@
     <div class="footer-brand"><img src="assets/logos/logo-blue-pro-mescla.svg" alt="Blue Pro Fishing"><p>Excelência em artigos de pesca, camping e náutica. Sua parceira oficial em aventuras e manutenção especializada.</p><strong>BLUEPROFISHING COMÉRCIO DE PESCA LTDA</strong></div>
     <div><h2>Departamentos</h2><ul><li><a href="#servicos">Pesca e Camping</a></li><li><a href="#servicos">Embarcações</a></li><li><a href="#servicos">Peças e Motores</a></li><li><a href="#servicos">Turismo e Viagens</a></li></ul></div>
     <div><h2>Endereço</h2><address><p>Q. ACSU SE 20, Avenida LO 03, Conjunto 02, Lote 18, Bloco 02</p><p>Plano Diretor Sul</p><p>Palmas - TO</p><p>CEP: 77020-456</p></address></div>
-    <div><h2>Contato</h2><ul><li><span>WhatsApp:</span><a href="https://wa.me/5563992569790" target="_blank" rel="noopener noreferrer">  (63) 99256-9790</a></li><li><span>Email:</span> contato@blueprofishing.com.br</li></ul><div class="hours"><strong>HORÁRIO DE FUNCIONAMENTO</strong><p>Seg - Sex: 08:00 - 18:00</p><p>Sáb: 08:00 - 13:00</p></div></div>
+    <div><h2>Contato</h2><ul><li>
+  <span>WhatsApp:</span><a href="https://wa.me/5563992569790" target="_blank" rel="noopener noreferrer">  (63) 99256-9790</a></li><li><span>Email:</span> contato@blueprofishing.com.br</li></ul><div class="hours"><strong>HORÁRIO DE FUNCIONAMENTO</strong><p>Seg - Sex: 08:00 - 18:00</p><p>Sáb: 08:00 - 13:00</p></div></div>
   </div><div class="footer-bottom"><p>© <span id="current-year"></span> Blue Pro Fishing. Todos os direitos reservados.</p><div><a href="#">Política de Privacidade</a><a href="#">Termos de Uso</a></div></div></div></footer>
 
   <a class="whatsapp-button" href="https://wa.me/5563992569790?text=Ol%C3%A1%21%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20produtos%20e%20servi%C3%A7os%20da%20Blue%20Pro%20Fishing." target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp"><span class="whatsapp-tooltip">Fale conosco!</span><span class="whatsapp-pulse"></span><span class="whatsapp-icon-container"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.296-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26C2.168 6.443 6.603 2.01 12.055 2.01c2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884M20.463 3.488A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></span></a>
   <script src="assets/js/script.js"></script>
-  <script src="assets/js/catalogo-produtos.js"></script>
 </body>
 </html>

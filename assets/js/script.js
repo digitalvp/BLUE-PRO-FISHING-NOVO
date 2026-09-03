@@ -265,7 +265,7 @@ if ("IntersectionObserver" in window) {
 }
 
 const brandsTrack = document.getElementById("brands-track");
-Array.from(brandsTrack.children).forEach((brand) => {
+if (brandsTrack) Array.from(brandsTrack.children).forEach((brand) => {
   const duplicate = brand.cloneNode(true);
   duplicate.setAttribute("aria-hidden", "true");
   brandsTrack.appendChild(duplicate);
@@ -396,7 +396,7 @@ function renderAboutCarousel(images) {
   initializeCarousels();
 }
 
-fetch("assets/img/sobre/carousel.json", { cache: "no-cache" })
+if (aboutCarousel) fetch("assets/img/sobre/carousel.json", { cache: "no-cache" })
   .then((response) => {
     if (!response.ok) throw new Error("Não foi possível carregar o manifesto do carrossel Sobre.");
     return response.json();
@@ -412,10 +412,11 @@ const productsCarousel = document.querySelector("[data-products-carousel]");
 if (productsCarousel) {
   const track = productsCarousel.querySelector(".products-track");
   const cards = Array.from(track.querySelectorAll(".product-card"));
+  cards.slice(0, 3).forEach((card) => { const clone = card.cloneNode(true); clone.setAttribute("aria-hidden", "true"); track.appendChild(clone); });
   let index = 0;
   let timerId;
   const visible = () => window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
-  const update = () => { const count = visible(); index = (index + cards.length) % cards.length; track.style.transform = `translateX(-${index * (100 / count)}%)`; };
+  const update = () => { const count = visible(); index = index % cards.length; track.style.transform = `translateX(-${index * (100 / count)}%)`; };
   const move = (step) => { index = (index + step + cards.length) % cards.length; update(); start(); };
   const start = () => { clearInterval(timerId); if (!reducedMotionQuery.matches && !document.hidden) timerId = setInterval(() => move(1), 3000); };
   productsCarousel.querySelector("[data-products-prev]").addEventListener("click", () => move(-1));
@@ -428,4 +429,5 @@ if (productsCarousel) {
   document.addEventListener("visibilitychange", start);
   update(); start();
 }
-document.getElementById("current-year").textContent = new Date().getFullYear();
+const currentYear = document.getElementById("current-year");
+if (currentYear) currentYear.textContent = new Date().getFullYear();
