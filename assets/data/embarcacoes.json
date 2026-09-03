@@ -1,0 +1,44 @@
+{
+  "config": {
+    "whatsappNumero": "5563992569790",
+    "whatsappMensagem": "Olá! Vi \"{nome}\" no site da Blue Pro Fishing e gostaria de mais informações.",
+    "mostrarMarcasSemItens": false,
+    "fallbackImagem": "../assets/img/servicos/servico-embarcacoes.webp"
+  },
+  "categorias": [
+    { "id": "barcos", "nome": "Barcos", "ativo": true },
+    { "id": "motores", "nome": "Motores de Popa", "ativo": true },
+    { "id": "gps", "nome": "GPS Náutico", "ativo": true },
+    { "id": "sonares", "nome": "Sonares", "ativo": true },
+    { "id": "eletronicos", "nome": "Eletrônicos Náuticos", "ativo": true },
+    { "id": "acessorios", "nome": "Acessórios para Embarcações", "ativo": true }
+  ],
+  "marcas": [
+    { "id": "yamaha", "nome": "Yamaha", "logo": "../assets/logos/logo-yamaha.webp", "ativo": true },
+    { "id": "mercury", "nome": "Mercury", "logo": "../assets/logos/logo-mercury.webp", "ativo": true },
+    { "id": "garmin", "nome": "Garmin", "logo": "", "ativo": true },
+    { "id": "humminbird", "nome": "Humminbird", "logo": "../assets/logos/logo-humminbird.webp", "ativo": true },
+    { "id": "minn-kota", "nome": "Minn Kota", "logo": "../assets/logos/logo-minn-kota.webp", "ativo": true }
+  ],
+  "itens": [
+    { "id": "yamaha-190-fsh-sport", "nome": "Yamaha 190 FSH Sport", "categoria": "barcos", "marca": "yamaha", "imagem": "../assets/img/embarcacoes/barcos/yamaha-190-fsh-sport.svg", "descricao": "Barco esportivo para pesca e lazer. Consulte versões e configuração com a equipe.", "ativo": true },
+    { "id": "yamaha-195-fsh-sport", "nome": "Yamaha 195 FSH Sport", "categoria": "barcos", "marca": "yamaha", "imagem": "../assets/img/embarcacoes/barcos/yamaha-195-fsh-sport.svg", "descricao": "Barco da linha FSH para pesca e lazer. Consulte versões e configuração com a equipe.", "ativo": true },
+    { "id": "yamaha-222-fsh-sport", "nome": "Yamaha 222 FSH Sport", "categoria": "barcos", "marca": "yamaha", "imagem": "../assets/img/embarcacoes/barcos/yamaha-222-fsh-sport.svg", "descricao": "Barco da linha FSH com proposta esportiva. Consulte versões e configuração com a equipe.", "ativo": true },
+    { "id": "yamaha-f150", "nome": "Yamaha F150", "categoria": "motores", "marca": "yamaha", "imagem": "../assets/img/embarcacoes/motores/yamaha-f150.svg", "descricao": "Motor de popa Yamaha. Consulte configuração e aplicação adequadas à sua embarcação.", "ativo": true },
+    { "id": "yamaha-f200", "nome": "Yamaha F200", "categoria": "motores", "marca": "yamaha", "imagem": "../assets/img/embarcacoes/motores/yamaha-f200.svg", "descricao": "Motor de popa Yamaha. Consulte configuração e aplicação adequadas à sua embarcação.", "ativo": true },
+    { "id": "mercury-fourstroke-150", "nome": "Mercury FourStroke 150 hp", "categoria": "motores", "marca": "mercury", "imagem": "../assets/img/embarcacoes/motores/mercury-fourstroke-150.svg", "descricao": "Motor de popa Mercury FourStroke. Consulte configuração e aplicação com a equipe.", "ativo": true },
+    { "id": "mercury-fourstroke-200", "nome": "Mercury FourStroke 200 hp", "categoria": "motores", "marca": "mercury", "imagem": "../assets/img/embarcacoes/motores/mercury-fourstroke-200.svg", "descricao": "Motor de popa Mercury FourStroke. Consulte configuração e aplicação com a equipe.", "ativo": true },
+    { "id": "garmin-gpsmap-723", "nome": "Garmin GPSMAP 723", "categoria": "gps", "marca": "garmin", "imagem": "../assets/img/embarcacoes/gps/garmin-gpsmap-723.svg", "descricao": "Chartplotter da linha GPSMAP. Consulte recursos, acessórios e compatibilidade.", "ativo": true },
+    { "id": "garmin-gpsmap-923", "nome": "Garmin GPSMAP 923", "categoria": "gps", "marca": "garmin", "imagem": "../assets/img/embarcacoes/gps/garmin-gpsmap-923.svg", "descricao": "Chartplotter da linha GPSMAP. Consulte recursos, acessórios e compatibilidade.", "ativo": true },
+    { "id": "garmin-echomap-uhd2-72sv", "nome": "Garmin ECHOMAP UHD2 72sv", "categoria": "gps", "marca": "garmin", "imagem": "../assets/img/embarcacoes/gps/garmin-echomap-uhd2-72sv.svg", "descricao": "Equipamento náutico da linha ECHOMAP UHD2. Consulte configuração e compatibilidade.", "ativo": true },
+    { "id": "humminbird-helix-7-msi-gps-g4", "nome": "Humminbird HELIX 7 MSI GPS G4", "categoria": "sonares", "marca": "humminbird", "imagem": "../assets/img/embarcacoes/sonares/humminbird-helix-7-msi-gps-g4.svg", "descricao": "Equipamento da linha HELIX. Consulte transdutor, instalação e compatibilidade.", "ativo": true },
+    { "id": "humminbird-helix-9-msi-plus-gps-g4n", "nome": "Humminbird HELIX 9 MSI+ GPS G4N", "categoria": "sonares", "marca": "humminbird", "imagem": "../assets/img/embarcacoes/sonares/humminbird-helix-9-msi-plus-gps-g4n.svg", "descricao": "Equipamento da linha HELIX. Consulte configuração, instalação e compatibilidade.", "ativo": true },
+    { "id": "humminbird-mega-live-2", "nome": "Humminbird MEGA Live 2", "categoria": "sonares", "marca": "humminbird", "imagem": "../assets/img/embarcacoes/sonares/humminbird-mega-live-2.svg", "descricao": "Sistema de sonar para uso náutico. Consulte compatibilidade e componentes necessários.", "ativo": true },
+    { "id": "garmin-reactor-40-kicker", "nome": "Garmin Reactor 40 Kicker Autopilot", "categoria": "eletronicos", "marca": "garmin", "imagem": "../assets/img/embarcacoes/eletronicos/garmin-reactor-40-kicker.svg", "descricao": "Sistema de piloto automático náutico. Consulte compatibilidade e instalação.", "ativo": true },
+    { "id": "garmin-vhf-215-ais", "nome": "Garmin VHF 215 AIS", "categoria": "eletronicos", "marca": "garmin", "imagem": "../assets/img/embarcacoes/eletronicos/garmin-vhf-215-ais.svg", "descricao": "Rádio VHF náutico com recursos AIS. Consulte integração e instalação.", "ativo": true },
+    { "id": "garmin-ais-800", "nome": "Garmin AIS 800", "categoria": "eletronicos", "marca": "garmin", "imagem": "../assets/img/embarcacoes/eletronicos/garmin-ais-800.svg", "descricao": "Transceptor AIS para integração náutica. Consulte compatibilidade e instalação.", "ativo": true },
+    { "id": "minn-kota-terrova-quest", "nome": "Minn Kota Terrova QUEST", "categoria": "acessorios", "marca": "minn-kota", "imagem": "../assets/img/embarcacoes/acessorios/minn-kota-terrova-quest.svg", "descricao": "Motor elétrico de proa da linha QUEST. Consulte versão, aplicação e instalação.", "ativo": true },
+    { "id": "minn-kota-ultrex-quest", "nome": "Minn Kota Ultrex QUEST", "categoria": "acessorios", "marca": "minn-kota", "imagem": "../assets/img/embarcacoes/acessorios/minn-kota-ultrex-quest.svg", "descricao": "Motor elétrico de proa da linha QUEST. Consulte versão, aplicação e instalação.", "ativo": true },
+    { "id": "garmin-force-kraken", "nome": "Garmin Force Kraken", "categoria": "acessorios", "marca": "garmin", "imagem": "../assets/img/embarcacoes/acessorios/garmin-force-kraken.svg", "descricao": "Motor elétrico de proa Garmin. Consulte versão, aplicação e instalação.", "ativo": true }
+  ]
+}
