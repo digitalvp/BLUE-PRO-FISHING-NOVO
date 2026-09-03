@@ -125,3 +125,5 @@
   .catalog-tab:hover,
   .products-page-link:hover { transform: none; }
 }
+.catalog-layout { display:grid; grid-template-columns:220px minmax(0,1fr); gap:32px; }.catalog-sidebar { padding:20px; background:#f8fafc; border:1px solid #dbeafe; border-radius:12px; }.catalog-brands { display:grid; gap:12px; margin:18px 0; }.catalog-brands label { color:var(--bluepro-dark); font-size:14px; }.catalog-clear,.catalog-filter-toggle { width:100%; padding:10px 12px; color:var(--bluepro-dark); background:#fff; border:1px solid #bfdbfe; border-radius:8px; cursor:pointer; }.catalog-filter-toggle { display:none; }.catalog-results { min-width:0; }.catalog-card small { padding:16px 18px 0; color:#087bc1; font-weight:700; }.catalog-card-body h3 { margin-top:6px; }
+@media (max-width:767px){.catalog-layout{display:block}.catalog-filter-toggle{display:block}.catalog-brands{display:none}.catalog-sidebar.is-open .catalog-brands{display:grid}.catalog-sidebar{margin-bottom:20px}.catalog-grid{grid-template-columns:1fr}}
