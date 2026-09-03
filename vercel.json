@@ -6,6 +6,10 @@
       "dest": "/produtos.html"
     },
     {
+      "src": "/embarcacoes",
+      "dest": "/embarcacoes.html"
+    },
+    {
       "src": "/assets/php/hero-carousel.php",
       "dest": "/assets/hero-carousel.html"
     },

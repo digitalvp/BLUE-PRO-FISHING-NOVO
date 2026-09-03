@@ -1,0 +1,9 @@
+{
+  "config": { "whatsappNumero": "5563992569790", "whatsappMensagem": "Olá! Vi \"{nome}\" no site da Blue Pro Fishing e gostaria de mais informações.", "fallbackImagem": "assets/img/servicos/servico-embarcacoes.webp" },
+  "categorias": [
+    {"id":"barcos","nome":"Barcos"},{"id":"motores","nome":"Motores de popa"},{"id":"gps","nome":"GPS náutico"},{"id":"sonares","nome":"Sonares"},{"id":"eletronicos","nome":"Eletrônicos náuticos"},{"id":"acessorios","nome":"Acessórios para embarcações"}
+  ],
+  "produtos": [
+    {"nome":"Barco de alumínio","marca":"Blue Pro Fishing","categoria":"barcos"},{"nome":"Motor de popa","marca":"Yamaha","categoria":"motores"},{"nome":"Motor de popa","marca":"Mercury","categoria":"motores"},{"nome":"GPS náutico","marca":"Garmin","categoria":"gps"},{"nome":"GPS náutico","marca":"Humminbird","categoria":"gps"},{"nome":"Sonar","marca":"Garmin","categoria":"sonares"},{"nome":"Sonar","marca":"Humminbird","categoria":"sonares"},{"nome":"Eletrônico náutico","marca":"Garmin","categoria":"eletronicos"},{"nome":"Eletrônico náutico","marca":"Humminbird","categoria":"eletronicos"},{"nome":"Acessório náutico","marca":"Minn Kota","categoria":"acessorios"},{"nome":"Acessório náutico","marca":"Blue Pro Fishing","categoria":"acessorios"}
+  ]
+}
