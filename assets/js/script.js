@@ -408,26 +408,24 @@ fetch("assets/img/sobre/carousel.json", { cache: "no-cache" })
     aboutCarousel.removeAttribute("aria-busy");
   });
 
-const contactForm = document.getElementById("contact-form");
-
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const formData = new FormData(contactForm);
-  const name = formData.get("name").trim();
-  const email = formData.get("email").trim();
-  const message = formData.get("message").trim();
-  const whatsappMessage = [
-    "Olá! Entrei em contato pelo site da Blue Pro Fishing.",
-    `Nome: ${name}`,
-    ...(email ? [`Email: ${email}`] : []),
-    `Mensagem: ${message}`,
-  ].join("\n");
-
-  window.open(
-    `https://wa.me/5563992569790?text=${encodeURIComponent(whatsappMessage)}`,
-    "_blank",
-    "noopener,noreferrer",
-  );
-});
-
+const productsCarousel = document.querySelector("[data-products-carousel]");
+if (productsCarousel) {
+  const track = productsCarousel.querySelector(".products-track");
+  const cards = Array.from(track.querySelectorAll(".product-card"));
+  let index = 0;
+  let timerId;
+  const visible = () => window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+  const update = () => { const count = visible(); index = (index + cards.length) % cards.length; track.style.transform = `translateX(-${index * (100 / count)}%)`; };
+  const move = (step) => { index = (index + step + cards.length) % cards.length; update(); start(); };
+  const start = () => { clearInterval(timerId); if (!reducedMotionQuery.matches && !document.hidden) timerId = setInterval(() => move(1), 3000); };
+  productsCarousel.querySelector("[data-products-prev]").addEventListener("click", () => move(-1));
+  productsCarousel.querySelector("[data-products-next]").addEventListener("click", () => move(1));
+  let startX = 0;
+  productsCarousel.addEventListener("touchstart", (event) => { startX = event.changedTouches[0].clientX; clearInterval(timerId); }, { passive: true });
+  productsCarousel.addEventListener("touchend", (event) => { const distance = event.changedTouches[0].clientX - startX; if (Math.abs(distance) > 45) move(distance < 0 ? 1 : -1); else start(); }, { passive: true });
+  window.addEventListener("resize", update);
+  reducedMotionQuery.addEventListener?.("change", start);
+  document.addEventListener("visibilitychange", start);
+  update(); start();
+}
 document.getElementById("current-year").textContent = new Date().getFullYear();
