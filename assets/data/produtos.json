@@ -2,7 +2,7 @@
   "config": {
     "whatsappNumero": "5563992569790",
     "whatsappMensagem": "Olá! Vi \"{nome}\" no site da Blue Pro Fishing e gostaria de mais informações.",
-    "fallbackImagem": "assets/img/produtos/fallback-produto.webp"
+    "fallbackImagem": "assets/img/produtos/varas.webp"
   },
   "categorias": [
     {"id":"varas","nome":"Varas","imagem":"assets/img/produtos/varas.webp","ativo":true},
