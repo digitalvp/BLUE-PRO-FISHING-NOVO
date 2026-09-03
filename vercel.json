@@ -1,17 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "routes": [
-    {
-      "src": "/produtos",
-      "dest": "/produtos.html"
-    },
-    {
-      "src": "/assets/php/hero-carousel.php",
-      "dest": "/assets/hero-carousel.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
+    { "src": "/produtos", "dest": "/produtos.html" },
+    { "src": "/embarcacoes", "dest": "/embarcacoes/index.html" },
+    { "src": "/assets/php/hero-carousel.php", "dest": "/assets/hero-carousel.html" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
