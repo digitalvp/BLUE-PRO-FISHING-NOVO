@@ -303,7 +303,11 @@ button {
   border-radius: 10px;
   box-shadow: 0 8px 22px -18px rgb(3 27 61 / .5);
   scroll-snap-align: center;
+  color: inherit;
+  text-decoration: none;
 }
+.hero-benefits-cta { display: flex; justify-content: center; margin: 22px 0 0; }
+.products-cta { display: inline-flex; margin-top: 12px; }
 
 .benefit-card svg {
   width: 30px;
