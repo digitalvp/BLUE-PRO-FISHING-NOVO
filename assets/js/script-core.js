@@ -258,11 +258,27 @@ if ("IntersectionObserver" in window) {
 }
 
 const brandsTrack = document.getElementById("brands-track");
-if (brandsTrack) Array.from(brandsTrack.children).forEach((brand) => {
-  const duplicate = brand.cloneNode(true);
-  duplicate.setAttribute("aria-hidden", "true");
-  brandsTrack.appendChild(duplicate);
-});
+const brandsSection = document.getElementById("marcas");
+const brandLabel = (filename) => filename.replace(/\.[^.]+$/, "").replace(/^logo[-_]/i, "").replace(/[-_]+/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+if (brandsTrack && brandsSection) fetch("assets/data/marcas.json", { cache: "no-cache" })
+  .then((response) => { if (!response.ok) throw new Error("Manifesto de marcas indisponível."); return response.json(); })
+  .then((brands) => {
+    if (!Array.isArray(brands) || !brands.length) throw new Error("Nenhuma marca disponível.");
+    brands.forEach((brand) => {
+      const item = document.createElement("div");
+      item.className = "brand-item";
+      item.title = brand.alt;
+      const image = document.createElement("img");
+      image.src = brand.src;
+      image.alt = brand.alt || brandLabel(brand.src);
+      image.loading = "lazy";
+      image.decoding = "async";
+      item.appendChild(image);
+      brandsTrack.appendChild(item);
+    });
+    Array.from(brandsTrack.children).forEach((brand) => { const duplicate = brand.cloneNode(true); duplicate.setAttribute("aria-hidden", "true"); brandsTrack.appendChild(duplicate); });
+  })
+  .catch(() => brandsSection.hidden = true);
 
 function initializeCarousels() {
   document.querySelectorAll("[data-carousel]:not([data-carousel-ready])").forEach((carousel) => {

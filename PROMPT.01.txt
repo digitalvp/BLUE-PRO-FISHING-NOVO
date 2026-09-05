@@ -1,0 +1,583 @@
+Trabalhe EXCLUSIVAMENTE na pasta local:
+
+C:\Users\JM\Meus sites\Blue Pro Fishing\BLUE-PRO-CODEX
+
+==================================================
+MISSÃO
+==================================================
+
+Fechar em um único lote os ajustes restantes da HOME da Blue Pro Fishing.
+
+Este é um projeto existente.
+
+NÃO recrie o site.
+NÃO faça redesign geral.
+NÃO altere identidade visual.
+NÃO invente informações comerciais.
+NÃO invente links, redes sociais, serviços ou marcas.
+
+Antes de editar, leia integralmente os arquivos locais relacionados à Home e entenda o estado REAL atual.
+
+A versão local é a fonte de verdade para o código.
+
+==================================================
+REGRA ABSOLUTA — SOMENTE LOCAL
+==================================================
+
+NÃO:
+
+- fazer commit
+- fazer git push
+- fazer merge
+- abrir PR
+- fazer deploy
+- acessar GitHub
+- acessar Vercel
+- acessar Google Drive
+- publicar nada
+- alterar produção
+
+Trabalhe somente nesta pasta local.
+
+==================================================
+NÃO ALTERAR O QUE JÁ ESTÁ APROVADO
+==================================================
+
+Não mexer no visual ou comportamento de:
+
+1. Hero principal
+2. banners do Hero
+3. carrossel do Hero
+4. quatro benefícios abaixo do Hero
+5. CTA principal "Falar no WhatsApp"
+6. header fixo/sticky já corrigido
+7. WhatsApp flutuante
+8. layout atualmente aprovado do carrossel de marcas
+9. timing atual do carrossel de marcas
+10. pausa do carrossel ao passar o mouse
+11. retomada ao retirar o mouse
+
+Não reintroduzir a classe/lógica dinâmica `.scrolled` no header.
+
+==================================================
+1 — MARCAS: SOMENTE FINALIZAR A PARTE TÉCNICA
+==================================================
+
+O carrossel de marcas JÁ FOI movido para a posição correta:
+
+Hero / benefícios / CTA
+→ marcas
+→ vídeo institucional
+
+O fundo já foi ajustado para:
+
+#f6f8fb
+
+Não mudar essa posição.
+
+Não adicionar título.
+Não adicionar "Nossas Marcas".
+Não adicionar descrição.
+Não adicionar botão.
+
+A seção deve continuar mostrando SOMENTE logos.
+
+A pasta oficial atual é:
+
+assets/img/marcas/
+
+Verifique a implementação automática criada anteriormente.
+
+Objetivo:
+
+- qualquer logo válido existente em assets/img/marcas/ deve fazer parte do manifesto;
+- o HTML não deve conter uma lista manual fixa de marcas;
+- caminhos devem funcionar corretamente;
+- não pode existir referência antiga para extensão de arquivo que foi substituída;
+- corrigir especificamente qualquer imagem quebrada, incluindo a Blue Pro se o manifesto ainda estiver apontando para arquivo antigo;
+- manter logos transparentes;
+- manter o comportamento atual;
+- manter autoplay;
+- manter loop;
+- manter timing existente;
+- manter pause no hover;
+- manter responsividade.
+
+Se existir:
+
+assets/data/marcas.json
+
+verifique se está coerente com os arquivos reais.
+
+Se existir gerador/watch de marcas:
+
+- valide-o;
+- corrija se necessário;
+- garanta que adicionar/remover/renomear arquivo na pasta possa regenerar o manifesto;
+- não criar dependência de Vercel/GitHub.
+
+Não altere visualmente as logos recém-padronizadas.
+
+==================================================
+2 — BLOCO INSTITUCIONAL / VÍDEO
+==================================================
+
+O vídeo atual deve permanecer.
+
+Não trocar o vídeo.
+Não alterar player sem necessidade.
+Não transformar a seção em divulgação do canal.
+
+Hoje existem textos como:
+
+"BLUE PRO NO YOUTUBE"
+
+"Conheça a Blue Pro Fishing em vídeo."
+
+"Visitar nosso canal"
+
+Remover esse foco de YouTube.
+
+Usar:
+
+KICKER:
+BLUE PRO FISHING • PALMAS - TO
+
+HEADLINE:
+Conheça a Blue Pro Fishing
+
+TEXTO:
+
+Pesca, náutica, camping e aventura fazem parte do universo Blue Pro Fishing. Conheça um pouco mais da nossa loja e da paixão que move cada experiência.
+
+CTA:
+
+Falar no WhatsApp
+
+Usar o WhatsApp atual da Blue:
+
+5563992569790
+
+O botão deve abrir o WhatsApp.
+
+Remover desta seção o botão principal para visitar YouTube.
+
+O YouTube continuará existindo apenas como rede social secundária posteriormente.
+
+Preservar:
+
+- fundo azul institucional;
+- layout desktop;
+- layout mobile;
+- vídeo à direita no desktop;
+- identidade visual atual.
+
+==================================================
+3 — PRODUTOS DA HOME
+==================================================
+
+A Blue ainda NÃO será e-commerce nesta etapa.
+
+A página /produtos existente NÃO deve ser apagada ou recriada.
+
+Na HOME, o objetivo comercial é facilitar o atendimento.
+
+Categorias desejadas:
+
+- Carretilhas / Molinetes
+- Iscas
+- Varas
+- Acessórios
+- Camping
+- Barcos
+- Caiaques
+- Motores
+
+Antes de criar qualquer card novo, verifique os assets existentes.
+
+NÃO inventar imagens.
+
+Se houver imagens locais adequadas para as oito categorias, usar as oito.
+
+Se faltar imagem apropriada para alguma categoria:
+
+- não usar imagem aleatória;
+- não gerar imagem;
+- manter somente as categorias visualmente suportadas;
+- informar a categoria faltante no relatório final.
+
+Cada card da Home deve abrir o WhatsApp com mensagem específica.
+
+Exemplo:
+
+"Olá! Vim pelo site da Blue Pro Fishing e gostaria de conhecer as opções de carretilhas e molinetes disponíveis."
+
+Adaptar a mensagem para cada categoria.
+
+Adicionar/manter abaixo dos produtos o CTA:
+
+Encontrar meu equipamento
+
+Esse CTA deve abrir WhatsApp com mensagem geral.
+
+Preservar o carrossel e o visual já existente sempre que possível.
+
+==================================================
+4 — O QUE FAZEMOS
+==================================================
+
+Revisar esta seção.
+
+Remover completamente qualquer ocorrência de:
+
+- caça
+- equipamentos táticos
+- linguagem que apresente a Blue como operadora de pacotes turísticos
+
+Não afirmar serviços que não estejam confirmados.
+
+Organizar a comunicação em três eixos:
+
+1. Equipamentos de pesca
+2. Embarcações e náutica
+3. Acampamento, pesca e acessórios
+
+Usar fundo azul institucional, mantendo coerência com o site.
+
+Tornar o CARD INTEIRO clicável.
+
+Destinos:
+
+EMBARCAÇÕES E NÁUTICA:
+usar a página /embarcacoes existente.
+
+EQUIPAMENTOS DE PESCA:
+se existir destino local válido relacionado a produtos, utilizar.
+Caso a estrutura atual seja atendimento, usar WhatsApp.
+
+ACAMPAMENTO, PESCA E ACESSÓRIOS:
+usar destino local válido existente ou WhatsApp.
+
+NÃO criar nova subpágina nesta missão.
+
+Adicionar CTA principal:
+
+Falar com um especialista
+
+→ WhatsApp da Blue.
+
+==================================================
+5 — SOBRE NÓS
+==================================================
+
+Preservar estrutura existente.
+
+Preservar:
+
+- fotos reais;
+- carrossel de fotos;
+- Instagram;
+- identidade visual.
+
+No desktop:
+
+- aumentar largura útil do texto;
+- diminuir quebras de linha desnecessárias;
+- reduzir espaços vazios excessivos;
+- melhorar equilíbrio visual.
+
+Revisar copy somente quando necessário para remover afirmações não confirmadas.
+
+Não afirmar manutenção própria da Blue se isso não estiver comprovado.
+
+Não apresentar turismo/pacotes como serviço próprio.
+
+Existe intenção de botão:
+
+Ver nossas redes
+
+Esse botão só deve ser criado/ativado se existir no projeto local uma URL/rota real e verificável para o Link Bio.
+
+Se não existir destino confirmado:
+
+NÃO inventar URL.
+Informe como pendência.
+
+==================================================
+6 — FAQ
+==================================================
+
+Manter exatamente 6 perguntas.
+
+Todas devem iniciar fechadas.
+
+Validar funcionamento de abrir/fechar.
+
+Revisar conteúdo procurando especialmente afirmações sobre:
+
+- manutenção
+- serviços próprios
+- turismo
+- caça
+
+Remover ou reformular afirmações não confirmadas.
+
+Links de:
+
+- WhatsApp
+- localização/Google Maps
+
+devem ser clicáveis quando já houver URL real no projeto.
+
+Não inventar URLs.
+
+==================================================
+7 — CONTATO / LOCALIZAÇÃO
+==================================================
+
+Preservar estrutura atual:
+
+contato
++
+mapa
+
+Verificar:
+
+- endereço completo;
+- telefone;
+- WhatsApp;
+- mapa;
+- botão "Como chegar";
+- responsividade;
+- ausência de sobreposição;
+- altura natural do card.
+
+Corrigir qualquer sobreposição entre botão, mapa, endereço ou conteúdo.
+
+Não inventar redes sociais.
+
+Adicionar TikTok/Facebook somente se URLs oficiais reais já estiverem presentes no projeto.
+
+Se não estiverem:
+deixar como pendência no relatório.
+
+==================================================
+8 — MENU PRINCIPAL
+==================================================
+
+Remover:
+
+YOUTUBE
+
+do menu principal.
+
+Preservar:
+
+- INÍCIO
+- PRODUTOS
+- O QUE FAZEMOS
+- SOBRE NÓS
+- FAQ
+- CONTATO
+- WhatsApp
+
+Revisar os hrefs.
+
+Não deixar:
+
+- links quebrados;
+- âncoras inexistentes;
+- caminhos provisórios.
+
+Não alterar comportamento sticky já corrigido.
+
+Testar menu mobile.
+
+==================================================
+9 — RODAPÉ
+==================================================
+
+Revisar a navegação do rodapé.
+
+YouTube deve aparecer somente como rede social, não como seção principal da Home.
+
+Revisar links existentes de:
+
+- Instagram
+- Facebook
+- TikTok
+- YouTube
+
+Usar SOMENTE URLs já verificáveis no projeto.
+
+Não inventar links.
+
+Revisar:
+
+- Política de Privacidade
+- Cookies
+- Termos
+
+Se as páginas não existirem:
+
+NÃO criar conteúdo jurídico falso.
+NÃO apontar para páginas inexistentes.
+
+Informe no relatório final como pendência.
+
+==================================================
+PORTABILIDADE — HOSTINGER
+==================================================
+
+REGRA CRÍTICA:
+
+A Vercel é SOMENTE ambiente temporário de teste.
+
+O destino final do site é HOSTINGER.
+
+Toda implementação feita nesta missão deve ser host-agnostic.
+
+NÃO usar como requisito:
+
+- Vercel Functions
+- Edge Functions
+- API da Vercel
+- URLs *.vercel.app
+- GitHub API
+- GitHub Actions
+- URLs github.com
+- recursos que só funcionem na Vercel
+- variáveis exclusivas da Vercel
+
+A versão final do frontend deve funcionar em hospedagem web convencional.
+
+Preferir:
+
+- HTML
+- CSS
+- JavaScript
+- JSON
+- assets locais
+- URLs relativas
+
+O navegador não deve depender de Node.js para executar o site.
+
+Node.js pode existir SOMENTE como ferramenta local de desenvolvimento/build, por exemplo para gerar o manifesto das marcas.
+
+Nenhum elemento público do site deve mencionar Vercel ou GitHub.
+
+Não alterar vercel.json nesta missão.
+
+==================================================
+LIMPEZA TÉCNICA
+==================================================
+
+Durante o trabalho:
+
+- remover somente código morto diretamente relacionado aos ajustes desta missão;
+- não fazer refatoração geral desnecessária;
+- não reformatar o projeto inteiro;
+- não renomear arquivos sem necessidade;
+- não apagar assets sem confirmar que estão sem uso;
+- não mexer nas páginas /produtos e /embarcacoes além do estritamente necessário para links vindos da Home.
+
+Não instalar frameworks.
+
+Não converter o projeto para React, Next.js, WordPress ou outra stack.
+
+Preservar a arquitetura atual.
+
+==================================================
+TESTES OBRIGATÓRIOS
+==================================================
+
+Depois das alterações, testar a HOME localmente.
+
+Desktop:
+
+1366px
+1920px
+
+Tablet:
+
+768px
+1024px
+
+Mobile:
+
+320px
+375px
+390px
+430px
+
+Verificar:
+
+- overflow horizontal
+- header fixo
+- menu mobile
+- Hero intacto
+- CTA principal intacto
+- carrossel Hero intacto
+- carrossel de marcas
+- pausa das marcas no hover
+- loop das marcas
+- logos quebradas
+- vídeo
+- WhatsApp
+- produtos
+- cards
+- FAQ
+- mapa
+- footer
+- console JavaScript
+- imagens 404
+- links quebrados
+- acessibilidade básica
+- navegação por teclado nos controles existentes
+
+Não considere teste concluído apenas porque não houve erro de sintaxe.
+
+Faça validação visual/local sempre que as ferramentas disponíveis permitirem.
+
+==================================================
+REGRA DE SEGURANÇA PARA DÚVIDAS
+==================================================
+
+Se encontrar alguma decisão comercial que não esteja explicitamente definida neste prompt:
+
+NÃO invente.
+
+Preserve a implementação atual ou deixe como pendência.
+
+Exemplos:
+
+- link oficial de rede social ausente;
+- serviço não confirmado;
+- imagem de categoria inexistente;
+- página jurídica inexistente;
+- rota Link Bio inexistente.
+
+==================================================
+FINALIZAÇÃO
+==================================================
+
+Ao terminar:
+
+NÃO faça commit.
+NÃO faça push.
+NÃO faça deploy.
+
+Entregue um relatório objetivo contendo:
+
+1. arquivos alterados;
+2. arquivos criados;
+3. alterações realizadas em cada seção;
+4. itens que já estavam corretos e foram preservados;
+5. pendências por falta de informação/asset/link;
+6. problemas encontrados;
+7. testes executados;
+8. erros de console encontrados e corrigidos;
+9. confirmação de que nenhuma dependência Vercel/GitHub foi adicionada;
+10. confirmação de compatibilidade com hospedagem convencional/Hostinger.
+
+Depois PARE.
