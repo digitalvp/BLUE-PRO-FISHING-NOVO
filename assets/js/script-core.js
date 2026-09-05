@@ -1,10 +1,5 @@
-const header = document.getElementById("header");
 const nav = document.getElementById("nav");
 const menuToggle = document.getElementById("menu-toggle");
-
-function syncHeader() {
-  header.classList.toggle("scrolled", window.scrollY > 50);
-}
 
 function closeMenu() {
   nav.classList.remove("is-open");
@@ -21,11 +16,9 @@ menuToggle.addEventListener("click", () => {
 });
 
 nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-window.addEventListener("scroll", syncHeader, { passive: true });
 window.addEventListener("resize", () => {
   if (window.innerWidth >= 768) closeMenu();
 });
-syncHeader();
 
 const heroCarousel = document.querySelector("[data-hero-carousel]");
 const heroTrack = document.getElementById("hero-track");
