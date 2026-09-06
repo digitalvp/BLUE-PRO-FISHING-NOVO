@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E-commerce DEMO | Blue Pro Fishing</title>
+  <meta name="description" content="Ambiente de teste da futura loja virtual Blue Pro Fishing. Carrinho e valores exclusivamente demonstrativos, sem compra ou checkout.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#031b3d">
+  <link rel="icon" href="/assets/logos/logo-blue-pro-azul.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/ecommerce-demo.css">
+  <script src="/assets/js/ecommerce-demo.js" defer></script>
+</head>
+<body class="demo-page">
+  <a class="demo-skip" href="#catalogo">Ir para os produtos da demonstração</a>
+  <header class="demo-header">
+    <div class="demo-container demo-header-inner">
+      <a class="demo-logo" href="/" aria-label="Blue Pro Fishing — voltar ao site"><img src="/assets/logos/logo-blue-pro-mescla.svg" alt="Blue Pro Fishing" width="160" height="56"></a>
+      <span class="demo-label">E-COMMERCE · DEMO</span>
+      <button class="demo-cart-button" id="open-cart" type="button" aria-haspopup="dialog" aria-controls="demo-cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 3h2l3 13h11l2-9H6M9 20h.01M18 20h.01" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Carrinho DEMO</span><span class="demo-cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+  <main>
+    <section class="demo-intro" aria-labelledby="demo-title">
+      <div class="demo-container">
+        <p class="demo-eyebrow">AMBIENTE DE TESTE</p>
+        <h1 id="demo-title">Simulação do futuro e-commerce da Blue Pro Fishing</h1>
+        <p>Esta página é apenas uma demonstração visual da futura loja virtual da Blue Pro Fishing. Produtos, preços, estoque, carrinho e condições exibidos aqui são exemplos para validação de layout e experiência de compra.</p>
+        <span class="demo-notice">Sem venda, cobrança, reserva de estoque ou checkout.</span>
+      </div>
+    </section>
+    <section class="demo-container demo-catalog" id="catalogo" aria-labelledby="catalog-title">
+      <div class="demo-catalog-head">
+        <div><p class="demo-eyebrow">PESCA · CAMPING · NÁUTICA</p><h2 id="catalog-title" tabindex="-1">Explore a demonstração</h2></div>
+        <form class="demo-search" id="demo-search" role="search">
+          <label for="search">Buscar produtos na demo</label>
+          <div><input id="search" name="q" type="search" placeholder="Nome, categoria ou marca" maxlength="100" autocomplete="off"><button type="submit">Buscar</button></div>
+        </form>
+      </div>
+      <div class="demo-layout">
+        <aside class="demo-sidebar" aria-label="Filtros da demonstração">
+          <details id="filter-panel" open>
+            <summary>Categorias e filtros</summary>
+            <div class="demo-filter-content">
+              <fieldset><legend>Categorias</legend><div id="category-filters"></div></fieldset>
+              <label for="nautica-type">Tipo de item náutico</label>
+              <select id="nautica-type"><option value="todos">Todos os tipos</option></select>
+              <label for="brand">Marca cadastrada</label>
+              <select id="brand"><option value="todas">Todas as marcas</option></select>
+              <label for="price-range">Faixa de preço DEMO</label>
+              <select id="price-range"><option value="todos">Todos os valores DEMO</option><option value="ate200">Até R$ 200 · DEMO</option><option value="acima200">Acima de R$ 200 · DEMO</option></select>
+              <p class="demo-muted">Disponibilidade: não validada. Nenhum estoque real está conectado.</p>
+              <button class="demo-secondary" id="clear-filters" type="button">Limpar filtros e busca</button>
+            </div>
+          </details>
+        </aside>
+        <div class="demo-results">
+          <div class="demo-toolbar">
+            <p id="result-count" role="status" aria-live="polite">Carregando demonstração…</p>
+            <div><label for="sort">Ordenar por</label><select id="sort"><option value="original">Ordem do cadastro</option><option value="nome">Nome: A–Z</option><option value="preco-asc">Menor preço DEMO</option><option value="preco-desc">Maior preço DEMO</option></select></div>
+          </div>
+          <div class="demo-grid" id="demo-grid" aria-busy="true"></div>
+          <p class="demo-empty" id="empty-state" hidden></p>
+          <button class="demo-secondary" id="retry-load" type="button" hidden>Tentar carregar novamente</button>
+          <nav class="demo-pagination" id="pagination" aria-label="Páginas de produtos da demonstração" hidden>
+            <button class="demo-secondary" id="previous-page" type="button">Anterior</button><span id="page-count"></span><button class="demo-secondary" id="next-page" type="button">Próxima</button>
+          </nav>
+          <p class="demo-data-note">PENDÊNCIA DE ASSET/DADO: nomes e modelos comerciais, fotos individuais e marcas ausentes no cadastro precisam de validação. As imagens existentes são referências da demonstração. Camping ainda não possui itens cadastrados.</p>
+          <noscript><p class="demo-empty">Ative o JavaScript para testar busca, filtros e carrinho da demonstração. Nenhuma compra é realizada nesta página.</p></noscript>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="demo-footer"><div class="demo-container"><p>Blue Pro Fishing · Ambiente de teste · Palmas - TO</p><a href="/">Voltar ao site da Blue</a></div></footer>
+  <dialog class="demo-cart" id="demo-cart" aria-labelledby="cart-title" aria-describedby="cart-warning">
+    <div class="demo-cart-head"><h2 id="cart-title">Carrinho DEMO</h2><button class="demo-close" id="close-cart" type="button" aria-label="Fechar carrinho" autofocus>×</button></div>
+    <p id="cart-warning">Somente simulação. Não há compra, pagamento ou reserva de estoque. O carrinho é descartado ao recarregar a página.</p>
+    <ul class="demo-cart-items" id="cart-items"></ul>
+    <p class="demo-cart-total">Total DEMO <strong id="cart-total">R$ 0,00</strong></p>
+    <p id="cart-update" class="demo-sr" role="status" aria-live="polite"></p>
+    <div class="demo-cart-actions"><button class="demo-secondary" id="clear-cart" type="button">Esvaziar carrinho DEMO</button><button class="demo-primary" id="continue-demo" type="button">Continuar demonstração</button></div>
+  </dialog>
+  <div class="demo-toast" id="demo-toast" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+/.codex/
+/.vp/
+/.vercel/
+node_modules/
+/PROMPT.*.txt
+/RELATORIO-PROMPT.*.md

@@ -1,0 +1,11 @@
+.git/
+.codex/
+.vp/
+.vercel/
+node_modules/
+scripts/
+AGENTS.md
+PROMPT.*.txt
+RELATORIO-PROMPT.*.md
+ATUALIZAR-FOTOS.cmd
+FOTOS-DAS-PAGINAS.md

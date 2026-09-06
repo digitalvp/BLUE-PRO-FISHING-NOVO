@@ -2,24 +2,26 @@ const nav = document.getElementById("nav");
 const menuToggle = document.getElementById("menu-toggle");
 
 function closeMenu() {
-  nav.classList.remove("is-open");
-  menuToggle.classList.remove("is-open");
-  menuToggle.setAttribute("aria-expanded", "false");
-  menuToggle.setAttribute("aria-label", "Abrir menu");
+  nav?.classList.remove("is-open");
+  menuToggle?.classList.remove("is-open");
+  menuToggle?.setAttribute("aria-expanded", "false");
+  menuToggle?.setAttribute("aria-label", "Abrir menu");
 }
 
-menuToggle.addEventListener("click", () => {
+menuToggle?.addEventListener("click", () => {
   const isOpen = nav.classList.toggle("is-open");
   menuToggle.classList.toggle("is-open", isOpen);
   menuToggle.setAttribute("aria-expanded", String(isOpen));
   menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
 });
 
-nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
 window.addEventListener("resize", () => {
-  if (window.innerWidth >= 768) closeMenu();
+  if (window.innerWidth >= 1280) closeMenu();
 });
 
+document.addEventListener('keydown', (event) => { if(event.key === 'Escape') { closeMenu(); nav?.querySelectorAll('details[open]').forEach(d => d.open=false); menuToggle?.focus(); } });
+nav?.querySelectorAll('details a').forEach(a => a.addEventListener('click', () => a.closest('details').open=false));
 const heroCarousel = document.querySelector("[data-hero-carousel]");
 const heroTrack = document.getElementById("hero-track");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -168,7 +170,7 @@ function initializeHeroCarousel() {
   startAutoPlay();
 }
 
-fetch("assets/php/hero-carousel.php")
+if (heroTrack) fetch("/assets/hero-carousel.html")
   .then((response) => {
     if (!response.ok || response.status === 204) throw new Error("Hero dinâmico indisponível.");
     if (response.headers.get("content-type")?.includes("application/x-httpd-php")) {
@@ -260,7 +262,7 @@ if ("IntersectionObserver" in window) {
 const brandsTrack = document.getElementById("brands-track");
 const brandsSection = document.getElementById("marcas");
 const brandLabel = (filename) => filename.replace(/\.[^.]+$/, "").replace(/^logo[-_]/i, "").replace(/[-_]+/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
-if (brandsTrack && brandsSection) fetch("assets/data/marcas.json", { cache: "no-cache" })
+if (brandsTrack && brandsSection) fetch("/assets/data/marcas.json", { cache: "no-cache" })
   .then((response) => { if (!response.ok) throw new Error("Manifesto de marcas indisponível."); return response.json(); })
   .then((brands) => {
     if (!Array.isArray(brands) || !brands.length) throw new Error("Nenhuma marca disponível.");
@@ -405,7 +407,7 @@ function renderAboutCarousel(images) {
   initializeCarousels();
 }
 
-if (aboutCarousel) fetch("assets/img/sobre/carousel.json", { cache: "no-cache" })
+if (aboutCarousel) fetch("/assets/img/sobre/carousel.json", { cache: "no-cache" })
   .then((response) => {
     if (!response.ok) throw new Error("Não foi possível carregar o manifesto do carrossel Sobre.");
     return response.json();
@@ -421,11 +423,21 @@ const productsCarousel = document.querySelector("[data-products-carousel]");
 if (productsCarousel) {
   const track = productsCarousel.querySelector(".products-track");
   const cards = Array.from(track.querySelectorAll(".product-card"));
-  cards.slice(0, 3).forEach((card) => { const clone = card.cloneNode(true); clone.setAttribute("aria-hidden", "true"); track.appendChild(clone); });
+  cards.slice(0, 3).forEach((card) => { const clone = card.cloneNode(true); clone.setAttribute("aria-hidden", "true"); clone.tabIndex = -1; clone.inert = true; track.appendChild(clone); });
   let index = 0;
   let timerId;
   const visible = () => window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3;
-  const update = () => { const count = visible(); index = index % cards.length; track.style.transform = `translateX(-${index * (100 / count)}%)`; };
+  const update = () => {
+    const count = visible();
+    index = index % cards.length;
+    track.style.transform = `translateX(-${index * (100 / count)}%)`;
+    Array.from(track.children).forEach((card, position) => {
+      const isVisible = position >= index && position < index + count;
+      card.inert = !isVisible;
+      card.tabIndex = isVisible ? 0 : -1;
+      card.setAttribute("aria-hidden", String(!isVisible));
+    });
+  };
   const move = (step) => { index = (index + step + cards.length) % cards.length; update(); start(); };
   const start = () => { clearInterval(timerId); if (!reducedMotionQuery.matches && !document.hidden) timerId = setInterval(() => move(1), 3000); };
   productsCarousel.querySelector("[data-products-prev]").addEventListener("click", () => move(-1));
@@ -436,6 +448,10 @@ if (productsCarousel) {
   window.addEventListener("resize", update);
   reducedMotionQuery.addEventListener?.("change", start);
   document.addEventListener("visibilitychange", start);
+  productsCarousel.addEventListener("mouseenter", () => clearInterval(timerId));
+  productsCarousel.addEventListener("mouseleave", start);
+  productsCarousel.addEventListener("focusin", () => clearInterval(timerId));
+  productsCarousel.addEventListener("focusout", event => { if (!productsCarousel.contains(event.relatedTarget)) start(); });
   update(); start();
 }
 const currentYear = document.getElementById("current-year");
