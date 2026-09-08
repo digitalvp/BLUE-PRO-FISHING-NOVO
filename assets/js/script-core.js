@@ -20,8 +20,7 @@ window.addEventListener("resize", () => {
   if (window.innerWidth >= 1280) closeMenu();
 });
 
-document.addEventListener('keydown', (event) => { if(event.key === 'Escape') { closeMenu(); nav?.querySelectorAll('details[open]').forEach(d => d.open=false); menuToggle?.focus(); } });
-nav?.querySelectorAll('details a').forEach(a => a.addEventListener('click', () => a.closest('details').open=false));
+document.addEventListener('keydown', (event) => { if(event.key === 'Escape') { closeMenu(); menuToggle?.focus(); } });
 const heroCarousel = document.querySelector("[data-hero-carousel]");
 const heroTrack = document.getElementById("hero-track");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -212,6 +211,7 @@ const showBenefit = (index, restart = false) => {
     const isActive = !isMobile || cardIndex === activeBenefitIndex;
     card.classList.toggle("is-active", isMobile && cardIndex === activeBenefitIndex);
     card.setAttribute("aria-hidden", String(!isActive));
+    card.inert = !isActive;
   });
 
   if (restart) startBenefitsAutoPlay();
@@ -219,9 +219,14 @@ const showBenefit = (index, restart = false) => {
 
 const startBenefitsAutoPlay = () => {
   stopBenefitsAutoPlay();
-  if (!benefitMobileQuery.matches || benefitCards.length < 2 || reducedMotionQuery.matches || document.hidden) return;
+  if (!benefitMobileQuery.matches || benefitCards.length < 2 || reducedMotionQuery.matches || document.hidden || benefitsTrack.matches(":focus-within")) return;
   benefitTimerId = window.setInterval(() => showBenefit(activeBenefitIndex + 1), 5000);
 };
+
+benefitsTrack?.addEventListener("focusin", stopBenefitsAutoPlay);
+benefitsTrack?.addEventListener("focusout", (event) => {
+  if (!benefitsTrack.contains(event.relatedTarget)) startBenefitsAutoPlay();
+});
 
 benefitPreviousButton?.addEventListener("click", () => showBenefit(activeBenefitIndex - 1, true));
 benefitNextButton?.addEventListener("click", () => showBenefit(activeBenefitIndex + 1, true));
@@ -454,5 +459,3 @@ if (productsCarousel) {
   productsCarousel.addEventListener("focusout", event => { if (!productsCarousel.contains(event.relatedTarget)) start(); });
   update(); start();
 }
-const currentYear = document.getElementById("current-year");
-if (currentYear) currentYear.textContent = new Date().getFullYear();

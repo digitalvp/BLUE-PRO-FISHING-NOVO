@@ -54,11 +54,11 @@ h1 { margin: 0; font-size: clamp(27px, 7.4vw, 39px); font-weight: 800; line-heig
 .bio-link-unavailable small { display: block; margin-top: 3px; color: #acc2d4; font-size: 11px; font-weight: 400; }
 .bio-link-unavailable > svg { color: #acc2d4; }
 
-.bio-footer { padding-top: 28px; text-align: center; }
+.bio-social-block { padding-top: 28px; text-align: center; }
 .bio-socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
 .bio-socials a { display: grid; width: 46px; height: 46px; place-items: center; border: 1px solid #ffffff26; border-radius: 50%; color: #b7dbef; transition: color 160ms ease, background 160ms ease; }
 .bio-socials svg { width: 21px; height: 21px; }
-.bio-footer p { margin: 20px 0 0; color: #a5bfd3; font-size: 10px; font-weight: 700; letter-spacing: .2em; }
+.bio-social-block p { margin: 20px 0 0; color: #a5bfd3; font-size: 10px; font-weight: 700; letter-spacing: .2em; }
 
 a:focus-visible { outline: 3px solid #73d4ff; outline-offset: 5px; }
 
@@ -88,3 +88,6 @@ a:focus-visible { outline: 3px solid #73d4ff; outline-offset: 5px; }
 @media (prefers-reduced-motion: reduce) {
   .bio-link, .bio-socials a { transition: none; }
 }
+
+/* Chamada principal centralizada; navegação preservada. */
+.bio-hero-copy { text-align: center; }

@@ -1,0 +1,32 @@
+/* Rodape oficial da Home, compartilhado por todas as paginas publicas. */
+.footer { padding: 64px 0 32px; color: #fff; background: #111827; border-top: 1px solid #1f2937; font: 16px/1.5 "Open Sans", sans-serif; text-align: left; }
+.footer, .footer *, .footer *::before, .footer *::after { box-sizing: border-box; }
+.footer > .container { width: 100%; max-width: 1280px; margin-inline: auto; padding-inline: clamp(16px, 2.5vw, 32px); }
+.footer .footer-grid { display: grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 48px; }
+.footer .footer-grid > div { min-width: 0; }
+.footer .footer-grid h2 { margin: 0 0 16px; color: #0085ca; font-size: 18px; font-weight: 700; line-height: 1.5; letter-spacing: normal; }
+.footer p { margin: 0; }
+.footer .footer-brand img { display: block; width: auto; max-width: 100%; height: 48px; margin-bottom: 24px; object-fit: contain; opacity: .9; }
+.footer .footer-brand p { margin-bottom: 16px; color: #9ca3af; font-size: 14px; line-height: 1.625; }
+.footer .footer-brand strong { color: #9ca3af; font-size: 12px; }
+.footer ul { display: grid; gap: 8px; margin: 0; padding: 0; color: #9ca3af; font-size: 14px; list-style: none; }
+.footer a { color: inherit; text-decoration: none; overflow-wrap: anywhere; transition: color 150ms ease; }
+.footer a:hover { color: #fff; }
+.footer address { display: grid; gap: 8px; color: #9ca3af; font-size: 14px; font-style: normal; }
+.footer li span { color: #0085ca; }
+.footer .hours { margin-top: 24px; }
+.footer .hours strong { display: block; margin-bottom: 8px; color: #6b7280; font-size: 12px; }
+.footer .hours p { color: #9ca3af; font-size: 14px; }
+.footer .footer-bottom { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 16px 24px; padding: 32px 88px 40px 0; color: #6b7280; font-size: 14px; border-top: 1px solid #1f2937; }
+.footer .footer-meta { flex: 1 1 32rem; min-width: 0; }
+.footer .footer-legal { display: flex; flex: 0 1 auto; flex-wrap: wrap; min-width: 0; gap: 8px 16px; }
+.footer .footer-credit { font-size: 12px; }
+
+@media (min-width: 768px) {
+  .footer .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer .footer-bottom { padding-right: 100px; }
+}
+
+@media (min-width: 1024px) {
+  .footer .footer-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
