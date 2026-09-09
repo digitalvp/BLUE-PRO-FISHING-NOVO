@@ -43,9 +43,6 @@
 .editorial-model-photo { margin: 0 0 20px; overflow: hidden; border-radius: 8px; background: #e4ebf3; }
 .editorial-model-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; }
 .editorial-model .pending-label { display: block; margin-bottom: 18px; color: #40566f; font-size: 11px; font-weight: 700; letter-spacing: .07em; }
-.editorial-region-route { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 46px; padding: 18px 0; list-style: none; border-block: 1px solid #cfd9e4; }
-.editorial-region-route li:not(:last-child)::after { content: "→"; margin-left: 12px; color: #60758c; }
-.editorial-region-route a { padding-block: 10px; font-size: 14px; text-decoration: underline; text-underline-offset: 5px; }
 .editorial-destination { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 36px; padding-block: 36px; border-bottom: 1px solid #d5dfe9; }
 .editorial-destination:first-of-type { padding-top: 12px; }
 .editorial-destination.is-featured { padding-block: 44px; }
