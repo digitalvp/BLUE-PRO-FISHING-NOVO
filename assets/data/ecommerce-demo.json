@@ -91,7 +91,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/varas/vara-01.webp",
+      "imagemOriginal": null,
       "precoDemo": 299.7,
       "origem": "pesca",
       "pendencias": [
@@ -107,7 +107,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/varas/vara-02.webp",
+      "imagemOriginal": null,
       "precoDemo": 299.7,
       "origem": "pesca",
       "pendencias": [
@@ -123,7 +123,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/varas/vara-03.webp",
+      "imagemOriginal": null,
       "precoDemo": 299.7,
       "origem": "pesca",
       "pendencias": [
@@ -139,7 +139,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/varas/vara-04.webp",
+      "imagemOriginal": null,
       "precoDemo": 299.7,
       "origem": "pesca",
       "pendencias": [
@@ -155,7 +155,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/molinetes/molinete-01.webp",
+      "imagemOriginal": null,
       "precoDemo": 299.7,
       "origem": "pesca",
       "pendencias": [
@@ -171,7 +171,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/molinetes/molinete-02.webp",
+      "imagemOriginal": null,
       "precoDemo": 299.7,
       "origem": "pesca",
       "pendencias": [
@@ -187,7 +187,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/molinetes/molinete-03.webp",
+      "imagemOriginal": null,
       "precoDemo": 299.7,
       "origem": "pesca",
       "pendencias": [
@@ -203,7 +203,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/molinetes/molinete-04.webp",
+      "imagemOriginal": null,
       "precoDemo": 299.7,
       "origem": "pesca",
       "pendencias": [
@@ -219,7 +219,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/carretilhas/carretilha-01.webp",
+      "imagemOriginal": null,
       "precoDemo": 599.7,
       "origem": "pesca",
       "pendencias": [
@@ -235,7 +235,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/carretilhas/carretilha-02.webp",
+      "imagemOriginal": null,
       "precoDemo": 599.7,
       "origem": "pesca",
       "pendencias": [
@@ -251,7 +251,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/carretilhas/carretilha-03.webp",
+      "imagemOriginal": null,
       "precoDemo": 599.7,
       "origem": "pesca",
       "pendencias": [
@@ -267,7 +267,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/carretilhas/carretilha-04.webp",
+      "imagemOriginal": null,
       "precoDemo": 599.7,
       "origem": "pesca",
       "pendencias": [
@@ -283,7 +283,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/iscas/isca-01.webp",
+      "imagemOriginal": null,
       "precoDemo": 59.7,
       "origem": "pesca",
       "pendencias": [
@@ -299,7 +299,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/iscas/isca-02.webp",
+      "imagemOriginal": null,
       "precoDemo": 59.7,
       "origem": "pesca",
       "pendencias": [
@@ -315,7 +315,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/iscas/isca-03.webp",
+      "imagemOriginal": null,
       "precoDemo": 59.7,
       "origem": "pesca",
       "pendencias": [
@@ -331,7 +331,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/iscas/isca-04.webp",
+      "imagemOriginal": null,
       "precoDemo": 59.7,
       "origem": "pesca",
       "pendencias": [
@@ -347,7 +347,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/linhas/linha-01.webp",
+      "imagemOriginal": null,
       "precoDemo": 89.7,
       "origem": "pesca",
       "pendencias": [
@@ -363,7 +363,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/linhas/linha-02.webp",
+      "imagemOriginal": null,
       "precoDemo": 89.7,
       "origem": "pesca",
       "pendencias": [
@@ -379,7 +379,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/linhas/linha-03.webp",
+      "imagemOriginal": null,
       "precoDemo": 89.7,
       "origem": "pesca",
       "pendencias": [
@@ -395,7 +395,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/linhas/linha-04.webp",
+      "imagemOriginal": null,
       "precoDemo": 89.7,
       "origem": "pesca",
       "pendencias": [
@@ -411,7 +411,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/acessorios/acessorio-01.webp",
+      "imagemOriginal": null,
       "precoDemo": 119.7,
       "origem": "pesca",
       "pendencias": [
@@ -427,7 +427,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/acessorios/acessorio-02.webp",
+      "imagemOriginal": null,
       "precoDemo": 119.7,
       "origem": "pesca",
       "pendencias": [
@@ -443,7 +443,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/acessorios/acessorio-03.webp",
+      "imagemOriginal": null,
       "precoDemo": 119.7,
       "origem": "pesca",
       "pendencias": [
@@ -459,7 +459,7 @@
       "descricao": "Produto disponível para consulta.",
       "ativo": true,
       "marca": null,
-      "imagemOriginal": "assets/img/produtos/acessorios/acessorio-04.webp",
+      "imagemOriginal": null,
       "precoDemo": 119.7,
       "origem": "pesca",
       "pendencias": [
