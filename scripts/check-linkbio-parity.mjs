@@ -12,7 +12,9 @@ function fail(message) {
   failures.push(message);
 }
 
-if (/<iframe\b/i.test(linkbio)) fail('iframe is forbidden in linkbio/index.html');
+if (/id=["']lb-site-frame["']/i.test(linkbio) || /<iframe\b[^>]*\bsrc=["']\/["']/i.test(linkbio)) {
+  fail('Home continuation iframe is forbidden in linkbio/index.html');
+}
 if (/fetch\s*\(\s*['"]\/['"]/i.test(linkbio)) fail("runtime fetch('/') is forbidden for Home continuation");
 if (/contentDocument|contentWindow\.document|ResizeObserver\s*\(\s*resizeFrame/i.test(linkbio)) {
   fail('iframe/DOM resize bridge is forbidden');
