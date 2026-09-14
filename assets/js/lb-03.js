@@ -1,5 +1,0 @@
-(()=>{const B=window.BlueLinkBio;if(!B.site)return;
-B.loadStyle=href=>new Promise(ok=>{if([...document.styleSheets].some(s=>s.href?.endsWith(href)))return ok();const l=document.createElement('link');l.rel='stylesheet';l.href=href;l.onload=ok;document.head.append(l)});
-B.loadScript=src=>new Promise((ok,fail)=>{if(document.querySelector(`script[data-lb="${src}"]`))return ok();const s=document.createElement('script');s.src=src;s.dataset.lb=src;s.onload=ok;s.onerror=fail;document.body.append(s)});
-B.reveal=()=>{const els=[...B.site.querySelectorAll('.section-heading,.video-presentation-content,.video-presentation-player,.product-card,.service-card,.about-content,.about-media,.faq-item,.contact-info,.contact-map')];els.forEach((e,i)=>{e.classList.add('linkbio-reveal');e.style.setProperty('--bio-delay',`${(i%4)*70}ms`)});if(!('IntersectionObserver'in window))return els.forEach(e=>e.classList.add('is-visible'));const o=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('is-visible');o.unobserve(x.target)}}),{threshold:.11,rootMargin:'0px 0px -40px'});els.forEach(e=>o.observe(e))};
-})();
