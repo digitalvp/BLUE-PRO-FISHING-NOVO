@@ -265,9 +265,8 @@ html.is-linkbio-continuation-active body.linkbio-experience .linkbio-continuatio
 }
 
 .linkbio-page [data-linkbio-enter]{opacity:1;transform:none}
-.js .linkbio-page [data-linkbio-enter],
-html:not(.is-linkbio-ready) .linkbio-page [data-linkbio-enter]{opacity:0;transform:translateY(18px)}
-.is-linkbio-ready .linkbio-page [data-linkbio-enter]{
+.has-linkbio-js .linkbio-page [data-linkbio-enter]{opacity:0;transform:translateY(18px)}
+.has-linkbio-js.is-linkbio-ready .linkbio-page [data-linkbio-enter]{
   opacity:1;
   transform:translateY(0);
   transition:opacity .58s cubic-bezier(.2,.72,.2,1),transform .58s cubic-bezier(.2,.72,.2,1);
@@ -328,8 +327,8 @@ html:not(.is-linkbio-ready) .linkbio-page [data-linkbio-enter]{opacity:0;transfo
 
 @media (prefers-reduced-motion:reduce){
   .linkbio-page [data-linkbio-enter],
-  html:not(.is-linkbio-ready) .linkbio-page [data-linkbio-enter],
-  .is-linkbio-ready .linkbio-page [data-linkbio-enter]{
+  .has-linkbio-js .linkbio-page [data-linkbio-enter],
+  .has-linkbio-js.is-linkbio-ready .linkbio-page [data-linkbio-enter]{
     opacity:1!important;
     transform:none!important;
     transition:none!important;
