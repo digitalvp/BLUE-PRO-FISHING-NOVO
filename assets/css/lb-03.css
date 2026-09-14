@@ -1,0 +1,11 @@
+.linkbio-v2-body .bio-links{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.linkbio-v2-body .bio-link{display:flex;min-height:58px;align-items:center;gap:10px;padding:12px 15px;border:1px solid #5fb6ed70;border-radius:15px;color:#fff;background:#082d55d9;font-size:14px;font-weight:800;box-shadow:0 12px 28px #0003;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+.linkbio-v2-body .bio-link:nth-child(n+3){grid-column:1/-1}
+.linkbio-v2-body .bio-link>svg{flex:0 0 20px;width:20px;height:20px;color:#74d5ff}
+.linkbio-v2-body .bio-link .bio-arrow{margin-left:auto}
+.linkbio-v2-body .bio-link.lb-wa{background:linear-gradient(180deg,#129d51,#087a3d);border-color:#73e6a173}
+.linkbio-v2-body .bio-link.lb-wa>svg{color:#fff}
+.linkbio-v2-body .bio-social-block{position:relative;z-index:2;padding-top:20px;text-align:center}
+.linkbio-v2-body .bio-socials{display:flex;justify-content:center;gap:10px}
+.linkbio-v2-body .bio-socials a{display:grid;width:42px;height:42px;place-items:center;border:1px solid #64b9eb63;border-radius:50%;background:#082b50;color:#fff}
+.linkbio-v2-body .bio-social-block p{margin:12px 0 0;color:#9fc6dc;font-size:10px;font-weight:800;letter-spacing:.16em}
