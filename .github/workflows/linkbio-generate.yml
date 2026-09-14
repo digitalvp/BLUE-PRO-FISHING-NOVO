@@ -1,0 +1,50 @@
+name: Generate Link Bio
+
+on:
+  push:
+    branches:
+      - linkbio-v2
+    paths:
+      - 'index.html'
+      - 'linkbio/template.html'
+      - 'scripts/generate-linkbio.mjs'
+      - 'assets/css/linkbio.css'
+      - 'assets/js/linkbio.js'
+      - '.github/workflows/linkbio-generate.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    if: ${{ !contains(github.event.head_commit.message, '[skip linkbio-generate]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: linkbio-v2
+          fetch-depth: 0
+
+      - name: Generate native Link Bio
+        run: node scripts/generate-linkbio.mjs
+
+      - name: Run source guards
+        run: |
+          node scripts/check-linkbio-parity.mjs
+          node scripts/check-linkbio-assets.mjs
+          node --check assets/js/linkbio.js
+          git diff --check
+
+      - name: Commit generated output when needed
+        shell: bash
+        run: |
+          if git diff --quiet -- linkbio/index.html; then
+            echo "linkbio/index.html already current"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add linkbio/index.html
+          git commit -m "build(linkbio): atualiza pagina nativa [skip linkbio-generate]"
+          git push origin HEAD:linkbio-v2
