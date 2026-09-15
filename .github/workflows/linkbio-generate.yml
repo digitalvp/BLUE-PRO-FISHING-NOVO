@@ -15,6 +15,7 @@ on:
       - 'assets/css/linkbio.css'
       - 'assets/css/linkbio-experience.css'
       - 'assets/css/linkbio-fonts.css'
+      - 'assets/css/linkbio-color-sequence.css'
       - 'assets/js/linkbio.js'
       - 'assets/js/linkbio-experience.js'
       - '.github/workflows/linkbio-generate.yml'
