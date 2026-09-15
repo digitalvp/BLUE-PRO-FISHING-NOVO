@@ -1,9 +1,11 @@
 import fs from 'node:fs';
 
 const assets = [
-  { path: 'assets/img/linkbio/fachada-blue-pro-480.webp', width: 480, height: 720, max: 90 * 1024 },
-  { path: 'assets/img/linkbio/fachada-blue-pro-768.webp', width: 768, height: 1152, max: 180 * 1024 },
-  { path: 'assets/img/linkbio/fachada-blue-pro-1024.webp', width: 1024, height: 1536, max: 260 * 1024 },
+  // A Link Bio prioriza nitidez da fachada real; os limites abaixo preservam
+  // a versão HQ sem liberar crescimento ilimitado dos assets.
+  { path: 'assets/img/linkbio/fachada-blue-pro-480.webp', width: 480, height: 720, max: 192 * 1024 },
+  { path: 'assets/img/linkbio/fachada-blue-pro-768.webp', width: 768, height: 1152, max: 416 * 1024 },
+  { path: 'assets/img/linkbio/fachada-blue-pro-1024.webp', width: 1024, height: 1536, max: 672 * 1024 },
 ];
 
 const failures = [];
