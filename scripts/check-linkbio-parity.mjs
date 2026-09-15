@@ -37,6 +37,22 @@ if (!linkbio.includes('data-bp-brand-track')) fail('Carrossel de marcas oficial 
 if (!linkbio.includes('/assets/css/linkbio-experience.css')) fail('CSS da nova experiência não está carregado');
 if (!linkbio.includes('/assets/js/linkbio-experience.js')) fail('JS da nova experiência não está carregado');
 
+const requiredOfficialAssets = [
+  '/assets/logos/logo-blue-pro-mescla.svg',
+  '/assets/img/sobre/DSC09357.jpg',
+  '/assets/img/sobre/DSC09379.jpg',
+  '/assets/img/sobre/DSC09403.jpg',
+  '/assets/img/sobre/DSC09481.jpg',
+];
+
+for (const asset of requiredOfficialAssets) {
+  if (!linkbio.includes(asset)) fail(`Asset oficial obrigatório ausente: ${asset}`);
+}
+
+if (/ChatGPT Image/i.test(linkbio)) {
+  fail('Imagem gerada por IA não pode fazer parte da experiência oficial');
+}
+
 const requiredUrls = [
   'https://api.whatsapp.com/send/?phone=5563991198453',
   'https://wa.me/5563992569790',
