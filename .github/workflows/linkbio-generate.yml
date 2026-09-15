@@ -7,9 +7,14 @@ on:
     paths:
       - 'index.html'
       - 'linkbio/template.html'
+      - 'linkbio/experience.html'
       - 'scripts/generate-linkbio.mjs'
+      - 'scripts/check-linkbio-parity.mjs'
+      - 'scripts/check-linkbio-assets.mjs'
       - 'assets/css/linkbio.css'
+      - 'assets/css/linkbio-experience.css'
       - 'assets/js/linkbio.js'
+      - 'assets/js/linkbio-experience.js'
       - '.github/workflows/linkbio-generate.yml'
 
 permissions:
@@ -34,6 +39,7 @@ jobs:
           node scripts/check-linkbio-parity.mjs
           node scripts/check-linkbio-assets.mjs
           node --check assets/js/linkbio.js
+          if [ -f assets/js/linkbio-experience.js ]; then node --check assets/js/linkbio-experience.js; fi
           git diff --check
 
       - name: Commit generated output when needed
