@@ -10,6 +10,16 @@
   transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease;
 }
 
+/*
+ * Os CTAs da primeira dobra também usam data-linkbio-enter. Depois que a
+ * animação inicial termina, esta regra assume o transform e remove o delay,
+ * permitindo que o hover responda imediatamente.
+ */
+.has-linkbio-js.is-linkbio-ready .linkbio-page .linkbio-action{
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease;
+  transition-delay:0ms;
+}
+
 @media (hover:hover) and (pointer:fine){
   .bp-btn:hover,
   .bp-btn:focus-visible{
@@ -17,10 +27,10 @@
     box-shadow:0 10px 22px rgba(2,17,38,.22);
   }
 
-  .linkbio-action:hover,
-  .linkbio-action:focus-visible{
+  .has-linkbio-js.is-linkbio-ready .linkbio-page .linkbio-action:hover,
+  .has-linkbio-js.is-linkbio-ready .linkbio-page .linkbio-action:focus-visible{
     transform:translateY(-3px);
-    box-shadow:0 10px 22px rgba(0,0,0,.24);
+    box-shadow:0 10px 22px rgba(0,0,0,.30),0 3px 8px rgba(0,0,0,.16);
   }
 
   .linkbio-socials a:hover,
