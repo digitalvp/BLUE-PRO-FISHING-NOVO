@@ -28,17 +28,21 @@
 
   const marquee = document.querySelector('[data-bp-brand-marquee]');
   const track = document.querySelector('[data-bp-brand-track]');
+  let brandAnimation = null;
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   const syncBrandLoop = () => {
     if (!marquee || !track || !track.firstElementChild) return;
 
+    brandAnimation?.cancel();
+    brandAnimation = null;
+    track.style.animation = 'none';
     track.querySelectorAll('[data-bp-brand-clone]').forEach((clone) => clone.remove());
 
     const firstSet = track.firstElementChild;
     const setWidth = firstSet.getBoundingClientRect().width;
     if (!setWidth) return;
-
-    track.style.setProperty('--bp-brand-loop-distance', `-${setWidth}px`);
 
     while (track.scrollWidth < marquee.clientWidth + setWidth * 1.2) {
       const duplicate = firstSet.cloneNode(true);
@@ -47,6 +51,20 @@
       duplicate.querySelectorAll('img').forEach((image) => image.setAttribute('alt', ''));
       track.appendChild(duplicate);
     }
+
+    if (reducedMotion.matches) return;
+
+    brandAnimation = track.animate(
+      [
+        { transform: 'translateX(0)' },
+        { transform: `translateX(-${setWidth}px)` },
+      ],
+      {
+        duration: 30000,
+        iterations: Infinity,
+        easing: 'linear',
+      },
+    );
   };
 
   syncBrandLoop();
@@ -59,9 +77,9 @@
     window.addEventListener('resize', syncBrandLoop, { passive: true });
   }
 
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const syncMotion = () => {
     document.documentElement.classList.toggle('bp-reduced-motion', reducedMotion.matches);
+    syncBrandLoop();
   };
   syncMotion();
   reducedMotion.addEventListener?.('change', syncMotion);
