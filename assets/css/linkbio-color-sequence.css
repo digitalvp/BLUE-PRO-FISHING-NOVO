@@ -58,7 +58,7 @@
   color:var(--bp-blue-soft);
 }
 
-/* Remove os micro-rótulos editoriais acima dos títulos dos cards. */
+/* Micro-rótulos ocultos conforme revisão visual da dobra de equipamentos. */
 #equipamentos .bp-equipment-photo span{
   display:none;
 }
