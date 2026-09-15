@@ -1,7 +1,9 @@
 import fs from 'node:fs';
 
 const js = fs.readFileSync('assets/js/linkbio-experience.js', 'utf8');
-const css = fs.readFileSync('assets/css/linkbio-experience.css', 'utf8');
+const baseCss = fs.readFileSync('assets/css/linkbio-experience.css', 'utf8');
+const overrideCss = fs.readFileSync('assets/css/linkbio-interactions.css', 'utf8');
+const css = `${baseCss}\n${overrideCss}`;
 const failures = [];
 
 if (!js.includes("[data-bp-brand-marquee]")) {
@@ -16,11 +18,11 @@ if (!js.includes('--bp-brand-loop-distance')) {
 if (!/animation:\s*bpBrandRoll\s+30s\s+linear\s+infinite/.test(css)) {
   failures.push('animação das marcas precisa ser linear e infinita');
 }
-if (/\.bp-brand-marquee:hover\s+\.bp-brand-track[^\{]*\{[^}]*animation-play-state:\s*paused/s.test(css)) {
-  failures.push('carrossel infinito não deve pausar no hover');
+if (!/\.bp-brand-marquee:hover\s+\.bp-brand-track[^\{]*\{[^}]*animation-play-state:\s*running/s.test(overrideCss)) {
+  failures.push('carrossel infinito precisa continuar rodando no hover');
 }
-if (!/@keyframes\s+bpBrandRoll\s*\{[^}]*var\(--bp-brand-loop-distance/s.test(css)) {
-  failures.push('keyframe precisa usar a distância calculada para evitar salto no reinício');
+if (!/@keyframes\s+bpBrandRoll\s*\{[^}]*var\(--bp-brand-loop-distance/s.test(overrideCss)) {
+  failures.push('keyframe final precisa usar a distância calculada para evitar salto no reinício');
 }
 
 if (failures.length) {
