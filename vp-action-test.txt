@@ -1,3 +1,0 @@
-VP Digital integration test.
-Temporary file created to validate GitHub write access.
-Safe to delete.
