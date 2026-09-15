@@ -2,6 +2,7 @@ import fs from 'node:fs';
 
 const linkbioPath = 'linkbio/index.html';
 const rhythmPath = 'assets/css/linkbio-color-sequence.css';
+const interactionsPath = 'assets/css/linkbio-interactions.css';
 const linkbio = fs.readFileSync(linkbioPath, 'utf8');
 const failures = [];
 
@@ -65,6 +66,21 @@ if (!linkbio.includes('/assets/css/linkbio-color-sequence.css')) {
   }
   if (!/#categorias\s+\.bp-section-description\s*\{[^}]*color:\s*#b9cde0/s.test(rhythm)) {
     fail('Texto da seção Categorias precisa de contraste adequado');
+  }
+}
+
+if (!fs.existsSync(interactionsPath)) {
+  fail(`Arquivo ausente: ${interactionsPath}`);
+} else {
+  const interactions = fs.readFileSync(interactionsPath, 'utf8');
+  if (!/\.bp-btn:hover[\s\S]*?transform:\s*translateY\(-3px\)/.test(interactions)) {
+    fail('Botões da experiência precisam subir levemente no hover');
+  }
+  if (!/\.bp-btn:hover[\s\S]*?box-shadow:\s*0\s+10px\s+22px/.test(interactions)) {
+    fail('Botões da experiência precisam ganhar sombra suave no hover');
+  }
+  if (!/\.linkbio-action:hover[\s\S]*?box-shadow:\s*0\s+10px\s+22px/.test(interactions)) {
+    fail('Botões da primeira dobra precisam ganhar sombra suave no hover');
   }
 }
 
@@ -154,3 +170,4 @@ console.log('Link Bio experience check PASS');
 console.log(`Nova ordem: ${requiredSectionIds.join(' -> ')}`);
 console.log('Ritmo visual: azul -> branco -> azul -> branco -> azul -> branco -> azul -> branco -> azul');
 console.log('Metadados editoriais redundantes removidos: sem números nas dobras/cards e sem textos sobre o carrossel');
+console.log('Interações de botões: elevação de 3px + sombra suave no hover');
