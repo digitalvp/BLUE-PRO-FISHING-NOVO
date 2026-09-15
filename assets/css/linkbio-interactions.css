@@ -1,0 +1,42 @@
+/*
+ * Microinterações dos CTAs da Link Bio e da experiência Blue.
+ * Movimento curto + sombra discreta para manter sensação premium.
+ */
+
+.linkbio-action,
+.linkbio-socials a,
+.bp-btn,
+.bp-header-whatsapp{
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease;
+}
+
+@media (hover:hover) and (pointer:fine){
+  .bp-btn:hover,
+  .bp-btn:focus-visible{
+    transform:translateY(-3px);
+    box-shadow:0 10px 22px rgba(2,17,38,.22);
+  }
+
+  .linkbio-action:hover,
+  .linkbio-action:focus-visible{
+    transform:translateY(-3px);
+    box-shadow:0 10px 22px rgba(0,0,0,.24);
+  }
+
+  .linkbio-socials a:hover,
+  .linkbio-socials a:focus-visible,
+  .bp-header-whatsapp:hover,
+  .bp-header-whatsapp:focus-visible{
+    transform:translateY(-3px);
+    box-shadow:0 9px 18px rgba(2,17,38,.2);
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .linkbio-action,
+  .linkbio-socials a,
+  .bp-btn,
+  .bp-header-whatsapp{
+    transition:none!important;
+  }
+}
