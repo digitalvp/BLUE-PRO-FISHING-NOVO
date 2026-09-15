@@ -64,9 +64,6 @@ if (!linkbio.includes('/assets/css/linkbio-color-sequence.css')) {
   if (!/#categorias\s+\.bp-section-intro\s+h2\s*\{[^}]*color:\s*#fff/s.test(rhythm)) {
     fail('Título da seção Categorias precisa de contraste branco');
   }
-  if (!/#categorias\s+\.bp-section-description\s*\{[^}]*color:\s*#b9cde0/s.test(rhythm)) {
-    fail('Texto da seção Categorias precisa de contraste adequado');
-  }
 }
 
 if (!fs.existsSync(interactionsPath)) {
@@ -98,6 +95,10 @@ if (/<span>\s*0[1-9]\s*\/\s*(?:Pesca|Náutica|Camping|Serviços)\s*<\/span>/i.te
 
 if (/\b0[1-9]\s*\/\s*Viva a Blue\b/i.test(linkbio)) {
   fail('Numeração da dobra Viva a Blue deve ser removida');
+}
+
+if (/class="bp-section-description"/.test(linkbio)) {
+  fail('Parágrafos auxiliares das dobras devem ser removidos');
 }
 
 if (!linkbio.includes('data-bp-brand-track')) fail('Carrossel de marcas oficial está ausente');
@@ -169,5 +170,5 @@ if (failures.length) {
 console.log('Link Bio experience check PASS');
 console.log(`Nova ordem: ${requiredSectionIds.join(' -> ')}`);
 console.log('Ritmo visual: azul -> branco -> azul -> branco -> azul -> branco -> azul -> branco -> azul');
-console.log('Metadados editoriais redundantes removidos: sem números nas dobras/cards e sem textos sobre o carrossel');
+console.log('Metadados editoriais redundantes removidos: sem números nas dobras/cards, sem textos sobre o carrossel e sem parágrafos auxiliares nas dobras');
 console.log('Interações de botões: elevação de 3px + sombra suave no hover');
