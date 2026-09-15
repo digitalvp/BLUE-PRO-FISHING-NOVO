@@ -12,10 +12,12 @@ on:
       - 'scripts/check-linkbio-parity.mjs'
       - 'scripts/check-linkbio-assets.mjs'
       - 'scripts/check-linkbio-typography.mjs'
+      - 'scripts/check-linkbio-interactions.mjs'
       - 'assets/css/linkbio.css'
       - 'assets/css/linkbio-experience.css'
       - 'assets/css/linkbio-fonts.css'
       - 'assets/css/linkbio-color-sequence.css'
+      - 'assets/css/linkbio-interactions.css'
       - 'assets/js/linkbio.js'
       - 'assets/js/linkbio-experience.js'
       - '.github/workflows/linkbio-generate.yml'
@@ -42,6 +44,7 @@ jobs:
           node scripts/check-linkbio-parity.mjs
           node scripts/check-linkbio-assets.mjs
           node scripts/check-linkbio-typography.mjs
+          node scripts/check-linkbio-interactions.mjs
           node --check assets/js/linkbio.js
           if [ -f assets/js/linkbio-experience.js ]; then node --check assets/js/linkbio-experience.js; fi
           git diff --check
