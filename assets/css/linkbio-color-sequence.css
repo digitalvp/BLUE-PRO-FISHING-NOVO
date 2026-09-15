@@ -6,6 +6,27 @@
  */
 
 /*
+ * O carrossel de marcas fica integrado à transição azul entre a Link Bio
+ * e a experiência editorial, evitando uma faixa branca isolada entre
+ * duas áreas escuras.
+ */
+.bp-brands{
+  background:var(--bp-navy);
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.bp-brand-set img{
+  filter:brightness(0) invert(1) grayscale(1);
+  opacity:.72;
+}
+
+.bp-brand-set img:hover{
+  filter:brightness(0) invert(1) grayscale(1);
+  opacity:1;
+}
+
+/*
  * As introduções ficam limpas: apenas overline + título.
  * Sem coluna lateral de explicação e sem espaço vazio reservado.
  */
