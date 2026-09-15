@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 
 const linkbioPath = 'linkbio/index.html';
+const rhythmPath = 'assets/css/linkbio-color-sequence.css';
 const linkbio = fs.readFileSync(linkbioPath, 'utf8');
 const failures = [];
 
@@ -33,11 +34,9 @@ for (let index = 0; index < orderedIds.length; index += 1) {
   }
 }
 
-const alternatingColorSections = [
+const fixedColorSections = [
   { needle: '<section class="bp-editorial-hero"', label: 'hero azul' },
   { needle: '<section class="bp-brands"', label: 'marcas branca' },
-  { needle: '<section class="bp-section bp-section-blue" id="categorias"', label: 'categorias azul' },
-  { needle: '<section class="bp-section bp-section-white" id="equipamentos"', label: 'equipamentos branca' },
   { needle: '<section class="bp-editorial-blue" id="viva-blue"', label: 'Viva a Blue azul' },
   { needle: '<section class="bp-section bp-section-white" id="loja"', label: 'loja branca' },
   { needle: '<section class="bp-section bp-section-blue" id="especialistas"', label: 'especialistas azul' },
@@ -45,16 +44,28 @@ const alternatingColorSections = [
   { needle: '<section class="bp-final" id="contato-blue"', label: 'contato final azul' },
 ];
 
-for (const section of alternatingColorSections) {
+for (const section of fixedColorSections) {
   if (!linkbio.includes(section.needle)) fail(`Sequência azul/branco inválida: falta ${section.label}`);
 }
 
-if (!/id="categorias"[\s\S]*?bp-section-intro bp-section-intro-dark/.test(linkbio)) {
-  fail('Categorias azul precisa usar contraste de introdução escura');
-}
-
-if (!/id="categorias"[\s\S]*?bp-overline bp-overline-light/.test(linkbio)) {
-  fail('Categorias azul precisa usar overline clara');
+if (!linkbio.includes('/assets/css/linkbio-color-sequence.css')) {
+  fail('CSS da sequência azul/branco não está carregado');
+} else if (!fs.existsSync(rhythmPath)) {
+  fail(`Arquivo ausente: ${rhythmPath}`);
+} else {
+  const rhythm = fs.readFileSync(rhythmPath, 'utf8');
+  if (!/#categorias\.bp-section\s*\{[^}]*background:\s*var\(--bp-navy\)/s.test(rhythm)) {
+    fail('Categorias deve ser a dobra azul da sequência');
+  }
+  if (!/#equipamentos\.bp-section\s*\{[^}]*background:\s*#fff/s.test(rhythm)) {
+    fail('Equipamentos deve ser a dobra branca da sequência');
+  }
+  if (!/#categorias\s+\.bp-section-intro\s+h2\s*\{[^}]*color:\s*#fff/s.test(rhythm)) {
+    fail('Título da seção Categorias precisa de contraste branco');
+  }
+  if (!/#categorias\s+\.bp-section-description\s*\{[^}]*color:\s*#b9cde0/s.test(rhythm)) {
+    fail('Texto da seção Categorias precisa de contraste adequado');
+  }
 }
 
 if (!linkbio.includes('data-bp-brand-track')) fail('Carrossel de marcas oficial está ausente');
