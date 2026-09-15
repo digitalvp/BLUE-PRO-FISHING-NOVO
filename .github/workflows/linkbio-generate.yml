@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - linkbio-v2
+      - 'codex/linkbio-*'
     paths:
       - 'index.html'
       - 'linkbio/template.html'
@@ -17,7 +18,7 @@ on:
       - 'scripts/check-linkbio-brand-loop.mjs'
       - 'scripts/check-linkbio-color-sequence.mjs'
       - 'scripts/check-linkbio-category-card-links.mjs'
-      - 'scripts/check-linkbio-equipment-labels.mjs'
+      - 'scripts/check-linkbio-equipment-cards.mjs'
       - 'assets/css/linkbio.css'
       - 'assets/css/linkbio-experience.css'
       - 'assets/css/linkbio-fonts.css'
@@ -38,7 +39,6 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v4
         with:
-          ref: linkbio-v2
           fetch-depth: 0
 
       - name: Generate native Link Bio
@@ -54,12 +54,13 @@ jobs:
           node scripts/check-linkbio-brand-loop.mjs
           node scripts/check-linkbio-color-sequence.mjs
           node scripts/check-linkbio-category-card-links.mjs
-          node scripts/check-linkbio-equipment-labels.mjs
+          node scripts/check-linkbio-equipment-cards.mjs
           node --check assets/js/linkbio.js
           if [ -f assets/js/linkbio-experience.js ]; then node --check assets/js/linkbio-experience.js; fi
           git diff --check
 
       - name: Commit generated output when needed
+        if: ${{ github.event_name == 'push' && github.ref_name == 'linkbio-v2' }}
         shell: bash
         run: |
           if git diff --quiet -- linkbio/index.html; then

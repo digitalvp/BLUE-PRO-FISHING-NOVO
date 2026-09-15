@@ -58,16 +58,6 @@
   color:var(--bp-blue-soft);
 }
 
-/* Micro-rótulos ocultos conforme revisão visual da dobra de equipamentos. */
-#equipamentos .bp-equipment-photo span{
-  display:none;
-}
-
-/* Cards permanecem claros para dar contraste dentro da dobra azul. */
-#equipamentos .bp-equipment-photo{
-  background:#fff;
-}
-
 /* 3 — Viva a Blue: branco */
 #viva-blue.bp-editorial-blue{
   background:#fff;
