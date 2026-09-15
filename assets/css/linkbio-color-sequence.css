@@ -58,6 +58,11 @@
   color:var(--bp-blue-soft);
 }
 
+/* Remove os micro-rótulos editoriais acima dos títulos dos cards. */
+#equipamentos .bp-equipment-photo span{
+  display:none;
+}
+
 /* Cards permanecem claros para dar contraste dentro da dobra azul. */
 #equipamentos .bp-equipment-photo{
   background:#fff;
