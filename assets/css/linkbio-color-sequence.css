@@ -3,6 +3,19 @@
  * Sequência: azul -> branco -> azul -> branco...
  */
 
+/*
+ * As numerações editoriais foram removidas. A introdução de cada dobra
+ * passa a usar apenas título + descrição, sem reservar coluna vazia.
+ */
+.bp-section-intro{
+  grid-template-columns:minmax(0,1fr) minmax(260px,380px);
+}
+
+.bp-section-intro-compact{
+  grid-template-columns:minmax(0,1fr);
+  max-width:870px;
+}
+
 #categorias.bp-section{
   background:var(--bp-navy);
   color:#fff;
@@ -20,14 +33,6 @@
   color:var(--bp-blue-soft);
 }
 
-#categorias .bp-section-index{
-  color:#91bad8;
-}
-
-#categorias .bp-section-index::after{
-  background:currentColor;
-}
-
 #equipamentos.bp-section{
   background:#fff;
   color:var(--bp-ink);
@@ -41,13 +46,20 @@
   color:var(--bp-blue-dark);
 }
 
-#equipamentos .bp-section-index{
-  color:#91a1b1;
-}
-
 @media (max-width:700px){
   #categorias.bp-section,
   #equipamentos.bp-section{
     background-clip:padding-box;
+  }
+
+  .bp-section-intro,
+  .bp-section-intro-compact{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .bp-section-description{
+    grid-column:1;
+    margin-top:-3px;
   }
 }
