@@ -1,0 +1,53 @@
+/*
+ * Ritmo cromático da experiência Blue Pro Fishing.
+ * Sequência: azul -> branco -> azul -> branco...
+ */
+
+#categorias.bp-section{
+  background:var(--bp-navy);
+  color:#fff;
+}
+
+#categorias .bp-section-intro h2{
+  color:#fff;
+}
+
+#categorias .bp-section-description{
+  color:#b9cde0;
+}
+
+#categorias .bp-overline{
+  color:var(--bp-blue-soft);
+}
+
+#categorias .bp-section-index{
+  color:#91bad8;
+}
+
+#categorias .bp-section-index::after{
+  background:currentColor;
+}
+
+#equipamentos.bp-section{
+  background:#fff;
+  color:var(--bp-ink);
+}
+
+#equipamentos .bp-section-intro h2{
+  color:var(--bp-ink);
+}
+
+#equipamentos .bp-overline{
+  color:var(--bp-blue-dark);
+}
+
+#equipamentos .bp-section-index{
+  color:#91a1b1;
+}
+
+@media (max-width:700px){
+  #categorias.bp-section,
+  #equipamentos.bp-section{
+    background-clip:padding-box;
+  }
+}
