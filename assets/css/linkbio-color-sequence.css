@@ -6,16 +6,13 @@
  */
 
 /*
- * As numerações editoriais foram removidas. A introdução de cada dobra
- * passa a usar apenas título + descrição, sem reservar coluna vazia.
+ * As introduções ficam limpas: apenas overline + título.
+ * Sem coluna lateral de explicação e sem espaço vazio reservado.
  */
-.bp-section-intro{
-  grid-template-columns:minmax(0,1fr) minmax(260px,380px);
-}
-
+.bp-section-intro,
 .bp-section-intro-compact{
   grid-template-columns:minmax(0,1fr);
-  max-width:870px;
+  max-width:900px;
 }
 
 #categorias.bp-section{
@@ -25,10 +22,6 @@
 
 #categorias .bp-section-intro h2{
   color:#fff;
-}
-
-#categorias .bp-section-description{
-  color:#b9cde0;
 }
 
 #categorias .bp-overline{
@@ -58,10 +51,5 @@
   .bp-section-intro-compact{
     grid-template-columns:1fr;
     gap:14px;
-  }
-
-  .bp-section-description{
-    grid-column:1;
-    margin-top:-3px;
   }
 }
