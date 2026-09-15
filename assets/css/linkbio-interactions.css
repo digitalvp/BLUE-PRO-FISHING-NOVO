@@ -20,6 +20,15 @@
   transition-delay:0ms;
 }
 
+.bp-photo-card[data-card-link-ready="true"]{
+  cursor:pointer;
+}
+
+.bp-photo-card[data-card-link-ready="true"]:focus-within{
+  outline:3px solid rgba(10,164,243,.52);
+  outline-offset:3px;
+}
+
 @media (hover:hover) and (pointer:fine){
   .bp-btn:hover,
   .bp-btn:focus-visible{
