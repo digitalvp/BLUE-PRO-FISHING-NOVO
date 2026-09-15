@@ -84,6 +84,18 @@
   syncMotion();
   reducedMotion.addEventListener?.('change', syncMotion);
 
+  document.querySelectorAll('.bp-photo-card').forEach((card) => {
+    const cta = card.querySelector('.bp-photo-card-body a[href]');
+    if (!cta) return;
+
+    card.dataset.cardLinkReady = 'true';
+
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a')) return;
+      cta.click();
+    });
+  });
+
   document.querySelectorAll('.bp-experience a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (event) => {
       const target = document.querySelector(link.getAttribute('href'));
