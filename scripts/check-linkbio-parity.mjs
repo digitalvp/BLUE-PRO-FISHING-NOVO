@@ -35,18 +35,18 @@ for (let index = 0; index < orderedIds.length; index += 1) {
   }
 }
 
-const fixedColorSections = [
-  { needle: '<section class="bp-editorial-hero"', label: 'hero azul' },
-  { needle: '<section class="bp-brands"', label: 'marcas branca' },
-  { needle: '<section class="bp-editorial-blue" id="viva-blue"', label: 'Viva a Blue azul' },
-  { needle: '<section class="bp-section bp-section-white" id="loja"', label: 'loja branca' },
-  { needle: '<section class="bp-section bp-section-blue" id="especialistas"', label: 'especialistas azul' },
-  { needle: '<section class="bp-section bp-section-white" id="blue-na-agua"', label: 'Blue na Água branca' },
-  { needle: '<section class="bp-final" id="contato-blue"', label: 'contato final azul' },
+const requiredStructures = [
+  { needle: '<section class="bp-editorial-hero"', label: 'hero editorial' },
+  { needle: '<section class="bp-brands"', label: 'carrossel de marcas' },
+  { needle: '<section class="bp-editorial-blue" id="viva-blue"', label: 'Viva a Blue' },
+  { needle: '<section class="bp-section bp-section-white" id="loja"', label: 'loja' },
+  { needle: '<section class="bp-section bp-section-blue" id="especialistas"', label: 'especialistas' },
+  { needle: '<section class="bp-section bp-section-white" id="blue-na-agua"', label: 'Blue na Água' },
+  { needle: '<section class="bp-final" id="contato-blue"', label: 'contato final' },
 ];
 
-for (const section of fixedColorSections) {
-  if (!linkbio.includes(section.needle)) fail(`Sequência azul/branco inválida: falta ${section.label}`);
+for (const section of requiredStructures) {
+  if (!linkbio.includes(section.needle)) fail(`Estrutura da experiência inválida: falta ${section.label}`);
 }
 
 if (!linkbio.includes('/assets/css/linkbio-color-sequence.css')) {
@@ -55,14 +55,25 @@ if (!linkbio.includes('/assets/css/linkbio-color-sequence.css')) {
   fail(`Arquivo ausente: ${rhythmPath}`);
 } else {
   const rhythm = fs.readFileSync(rhythmPath, 'utf8');
-  if (!/#categorias\.bp-section\s*\{[^}]*background:\s*var\(--bp-navy\)/s.test(rhythm)) {
-    fail('Categorias deve ser a dobra azul da sequência');
+  const expectedRhythm = [
+    [/#categorias\.bp-section\s*\{[^}]*background:\s*#fff[^}]*color:\s*var\(--bp-ink\)/s, 'Categorias deve ser a dobra branca da sequência'],
+    [/#equipamentos\.bp-section\s*\{[^}]*background:\s*var\(--bp-navy\)[^}]*color:\s*#fff/s, 'Equipamentos deve ser a dobra azul da sequência'],
+    [/#viva-blue\.bp-editorial-blue\s*\{[^}]*background:\s*#fff[^}]*color:\s*var\(--bp-ink\)/s, 'Viva a Blue deve ser a dobra branca da sequência'],
+    [/#loja\.bp-section\s*\{[^}]*background:\s*var\(--bp-navy\)[^}]*color:\s*#fff/s, 'Loja deve ser a dobra azul da sequência'],
+    [/#especialistas\.bp-section\s*\{[^}]*background:\s*#fff[^}]*color:\s*var\(--bp-ink\)/s, 'Especialistas deve ser a dobra branca da sequência'],
+    [/#blue-na-agua\.bp-section\s*\{[^}]*background:\s*var\(--bp-navy\)[^}]*color:\s*#fff/s, 'Blue na Água deve ser a dobra azul da sequência'],
+    [/#contato-blue\.bp-final\s*\{[^}]*background:\s*#fff[^}]*color:\s*var\(--bp-ink\)/s, 'Contato final deve ser a dobra branca da sequência'],
+  ];
+
+  for (const [pattern, message] of expectedRhythm) {
+    if (!pattern.test(rhythm)) fail(message);
   }
-  if (!/#equipamentos\.bp-section\s*\{[^}]*background:\s*#fff/s.test(rhythm)) {
-    fail('Equipamentos deve ser a dobra branca da sequência');
+
+  if (!/#categorias\s+\.bp-section-intro\s+h2\s*\{[^}]*color:\s*var\(--bp-ink\)/s.test(rhythm)) {
+    fail('Título da seção Categorias precisa de contraste escuro no fundo branco');
   }
-  if (!/#categorias\s+\.bp-section-intro\s+h2\s*\{[^}]*color:\s*#fff/s.test(rhythm)) {
-    fail('Título da seção Categorias precisa de contraste branco');
+  if (!/#equipamentos\s+\.bp-section-intro\s+h2\s*\{[^}]*color:\s*#fff/s.test(rhythm)) {
+    fail('Título da seção Equipamentos precisa de contraste branco no fundo azul');
   }
 }
 
@@ -81,25 +92,11 @@ if (!fs.existsSync(interactionsPath)) {
   }
 }
 
-if (/class="bp-section-index"/.test(linkbio)) {
-  fail('Números editoriais das dobras devem ser removidos');
-}
-
-if (/Marcas presentes no universo Blue Pro Fishing|Seleção para pesca e náutica/i.test(linkbio)) {
-  fail('Textos auxiliares acima do carrossel de marcas devem ser removidos');
-}
-
-if (/<span>\s*0[1-9]\s*\/\s*(?:Pesca|Náutica|Camping|Serviços)\s*<\/span>/i.test(linkbio)) {
-  fail('Etiquetas numeradas dos cards de categoria devem ser removidas');
-}
-
-if (/\b0[1-9]\s*\/\s*Viva a Blue\b/i.test(linkbio)) {
-  fail('Numeração da dobra Viva a Blue deve ser removida');
-}
-
-if (/class="bp-section-description"/.test(linkbio)) {
-  fail('Parágrafos auxiliares das dobras devem ser removidos');
-}
+if (/class="bp-section-index"/.test(linkbio)) fail('Números editoriais das dobras devem ser removidos');
+if (/Marcas presentes no universo Blue Pro Fishing|Seleção para pesca e náutica/i.test(linkbio)) fail('Textos auxiliares acima do carrossel de marcas devem ser removidos');
+if (/<span>\s*0[1-9]\s*\/\s*(?:Pesca|Náutica|Camping|Serviços)\s*<\/span>/i.test(linkbio)) fail('Etiquetas numeradas dos cards de categoria devem ser removidas');
+if (/\b0[1-9]\s*\/\s*Viva a Blue\b/i.test(linkbio)) fail('Numeração da dobra Viva a Blue deve ser removida');
+if (/class="bp-section-description"/.test(linkbio)) fail('Parágrafos auxiliares das dobras devem ser removidos');
 
 if (!linkbio.includes('data-bp-brand-track')) fail('Carrossel de marcas oficial está ausente');
 if (!linkbio.includes('/assets/css/linkbio-experience.css')) fail('CSS da nova experiência não está carregado');
@@ -112,14 +109,10 @@ const requiredOfficialAssets = [
   '/assets/img/sobre/DSC09403.jpg',
   '/assets/img/sobre/DSC09481.jpg',
 ];
-
 for (const asset of requiredOfficialAssets) {
   if (!linkbio.includes(asset)) fail(`Asset oficial obrigatório ausente: ${asset}`);
 }
-
-if (/ChatGPT Image/i.test(linkbio)) {
-  fail('Imagem gerada por IA não pode fazer parte da experiência oficial');
-}
+if (/ChatGPT Image/i.test(linkbio)) fail('Imagem gerada por IA não pode fazer parte da experiência oficial');
 
 const requiredUrls = [
   'https://api.whatsapp.com/send/?phone=5563991198453',
@@ -128,7 +121,6 @@ const requiredUrls = [
   'https://www.google.com/maps/place//data=!4m3!3m2!1s0x9324cb1b0cf47fed:0xb0015e11825b71a3!12e1',
   'https://www.youtube.com/@BLUEPROFISHING',
 ];
-
 for (const url of requiredUrls) {
   if (!linkbio.includes(url)) fail(`URL oficial obrigatória ausente: ${url}`);
 }
@@ -136,7 +128,6 @@ for (const url of requiredUrls) {
 if (!/fachada-blue-pro-480\.webp/.test(linkbio) || !/fachada-blue-pro-768\.webp/.test(linkbio) || !/fachada-blue-pro-1024\.webp/.test(linkbio)) {
   fail('srcset responsivo da fachada está incompleto');
 }
-
 if (!/width=["']768["'][^>]*height=["']1152["']|height=["']1152["'][^>]*width=["']768["']/s.test(linkbio)) {
   fail('dimensões intrínsecas 768x1152 da fachada estão ausentes');
 }
@@ -148,18 +139,12 @@ const forbiddenPatterns = [
   { pattern: /\bcheckout\b/i, label: 'checkout' },
   { pattern: /\bem estoque\b/i, label: 'estoque' },
 ];
-
 for (const item of forbiddenPatterns) {
   if (item.pattern.test(linkbio)) fail(`Linguagem de e-commerce proibida encontrada: ${item.label}`);
 }
 
-if (/id=["']inicio["']/i.test(linkbio) && /class=["'][^"']*hero-carousel/i.test(linkbio)) {
-  fail('A Home antiga ainda parece estar incorporada na Link Bio');
-}
-
-if (/id=["']lb-site-frame["']/i.test(linkbio) || /<iframe\b[^>]*\bsrc=["']\/["']/i.test(linkbio)) {
-  fail('iframe da Home é proibido');
-}
+if (/id=["']inicio["']/i.test(linkbio) && /class=["'][^"']*hero-carousel/i.test(linkbio)) fail('A Home antiga ainda parece estar incorporada na Link Bio');
+if (/id=["']lb-site-frame["']/i.test(linkbio) || /<iframe\b[^>]*\bsrc=["']\/["']/i.test(linkbio)) fail('iframe da Home é proibido');
 
 if (failures.length) {
   console.error('Link Bio experience check FAILED:');
@@ -169,6 +154,6 @@ if (failures.length) {
 
 console.log('Link Bio experience check PASS');
 console.log(`Nova ordem: ${requiredSectionIds.join(' -> ')}`);
-console.log('Ritmo visual: azul -> branco -> azul -> branco -> azul -> branco -> azul -> branco -> azul');
+console.log('Ritmo visual a partir de Categorias: branco -> azul -> branco -> azul -> branco -> azul -> branco');
 console.log('Metadados editoriais redundantes removidos: sem números nas dobras/cards, sem textos sobre o carrossel e sem parágrafos auxiliares nas dobras');
 console.log('Interações de botões: elevação de 3px + sombra suave no hover');
