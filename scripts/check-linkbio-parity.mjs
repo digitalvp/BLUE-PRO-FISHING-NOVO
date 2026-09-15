@@ -33,6 +33,30 @@ for (let index = 0; index < orderedIds.length; index += 1) {
   }
 }
 
+const alternatingColorSections = [
+  { needle: '<section class="bp-editorial-hero"', label: 'hero azul' },
+  { needle: '<section class="bp-brands"', label: 'marcas branca' },
+  { needle: '<section class="bp-section bp-section-blue" id="categorias"', label: 'categorias azul' },
+  { needle: '<section class="bp-section bp-section-white" id="equipamentos"', label: 'equipamentos branca' },
+  { needle: '<section class="bp-editorial-blue" id="viva-blue"', label: 'Viva a Blue azul' },
+  { needle: '<section class="bp-section bp-section-white" id="loja"', label: 'loja branca' },
+  { needle: '<section class="bp-section bp-section-blue" id="especialistas"', label: 'especialistas azul' },
+  { needle: '<section class="bp-section bp-section-white" id="blue-na-agua"', label: 'Blue na Água branca' },
+  { needle: '<section class="bp-final" id="contato-blue"', label: 'contato final azul' },
+];
+
+for (const section of alternatingColorSections) {
+  if (!linkbio.includes(section.needle)) fail(`Sequência azul/branco inválida: falta ${section.label}`);
+}
+
+if (!/id="categorias"[\s\S]*?bp-section-intro bp-section-intro-dark/.test(linkbio)) {
+  fail('Categorias azul precisa usar contraste de introdução escura');
+}
+
+if (!/id="categorias"[\s\S]*?bp-overline bp-overline-light/.test(linkbio)) {
+  fail('Categorias azul precisa usar overline clara');
+}
+
 if (!linkbio.includes('data-bp-brand-track')) fail('Carrossel de marcas oficial está ausente');
 if (!linkbio.includes('/assets/css/linkbio-experience.css')) fail('CSS da nova experiência não está carregado');
 if (!linkbio.includes('/assets/js/linkbio-experience.js')) fail('JS da nova experiência não está carregado');
@@ -101,3 +125,4 @@ if (failures.length) {
 
 console.log('Link Bio experience check PASS');
 console.log(`Nova ordem: ${requiredSectionIds.join(' -> ')}`);
+console.log('Ritmo visual: azul -> branco -> azul -> branco -> azul -> branco -> azul -> branco -> azul');
