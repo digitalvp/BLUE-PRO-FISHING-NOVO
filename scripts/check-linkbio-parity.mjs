@@ -68,6 +68,22 @@ if (!linkbio.includes('/assets/css/linkbio-color-sequence.css')) {
   }
 }
 
+if (/class="bp-section-index"/.test(linkbio)) {
+  fail('Números editoriais das dobras devem ser removidos');
+}
+
+if (/Marcas presentes no universo Blue Pro Fishing|Seleção para pesca e náutica/i.test(linkbio)) {
+  fail('Textos auxiliares acima do carrossel de marcas devem ser removidos');
+}
+
+if (/<span>\s*0[1-9]\s*\/\s*(?:Pesca|Náutica|Camping|Serviços)\s*<\/span>/i.test(linkbio)) {
+  fail('Etiquetas numeradas dos cards de categoria devem ser removidas');
+}
+
+if (/\b0[1-9]\s*\/\s*Viva a Blue\b/i.test(linkbio)) {
+  fail('Numeração da dobra Viva a Blue deve ser removida');
+}
+
 if (!linkbio.includes('data-bp-brand-track')) fail('Carrossel de marcas oficial está ausente');
 if (!linkbio.includes('/assets/css/linkbio-experience.css')) fail('CSS da nova experiência não está carregado');
 if (!linkbio.includes('/assets/js/linkbio-experience.js')) fail('JS da nova experiência não está carregado');
@@ -137,3 +153,4 @@ if (failures.length) {
 console.log('Link Bio experience check PASS');
 console.log(`Nova ordem: ${requiredSectionIds.join(' -> ')}`);
 console.log('Ritmo visual: azul -> branco -> azul -> branco -> azul -> branco -> azul -> branco -> azul');
+console.log('Metadados editoriais redundantes removidos: sem números nas dobras/cards e sem textos sobre o carrossel');
