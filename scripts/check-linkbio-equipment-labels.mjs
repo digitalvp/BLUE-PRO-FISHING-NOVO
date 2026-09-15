@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 
 const source = fs.readFileSync('linkbio/experience.html', 'utf8');
+const css = fs.readFileSync('assets/css/linkbio-color-sequence.css', 'utf8');
 const sectionMatch = source.match(/<section class="bp-section bp-section-soft" id="equipamentos"[\s\S]*?<\/section>/);
 
 const failures = [];
@@ -16,11 +17,15 @@ if (!sectionMatch) {
     fail(`Esperados 6 cards de equipamentos; encontrados ${cards.length}`);
   }
 
-  cards.forEach((card, index) => {
-    if (/<span>[^<]+<\/span>/.test(card)) {
-      fail(`Card ${index + 1} ainda possui micro-rótulo acima do título`);
-    }
-  });
+  const labels = cards.filter((card) => /<span>[^<]+<\/span>/.test(card));
+  if (labels.length !== 6) {
+    fail(`Estrutura esperada com 6 micro-rótulos não encontrada; encontrados ${labels.length}`);
+  }
+}
+
+const hiddenRule = /#equipamentos\s+\.bp-equipment-photo\s+span\s*\{[^}]*display\s*:\s*none\s*;?[^}]*\}/s;
+if (!hiddenRule.test(css)) {
+  fail('Os micro-rótulos dos cards de equipamentos precisam estar ocultos por CSS');
 }
 
 if (failures.length) {
@@ -30,4 +35,4 @@ if (failures.length) {
 }
 
 console.log('Equipment label check PASS');
-console.log('Os seis cards de equipamentos não possuem micro-rótulos acima dos títulos.');
+console.log('Os seis micro-rótulos dos cards de equipamentos ficam ocultos sem afetar títulos, imagens ou links.');
