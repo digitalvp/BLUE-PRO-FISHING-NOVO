@@ -2,14 +2,11 @@
 
 /*
  * Ritmo cromático da experiência Blue Pro Fishing.
- * Sequência: azul -> branco -> azul -> branco...
+ * A dobra "O que você procura?" é o primeiro bloco branco da sequência.
+ * A partir dela: branco -> azul -> branco -> azul...
  */
 
-/*
- * O carrossel de marcas fica integrado à transição azul entre a Link Bio
- * e a experiência editorial, evitando uma faixa branca isolada entre
- * duas áreas escuras.
- */
+/* Marcas integradas à transição azul logo após o Explore a Blue. */
 .bp-brands{
   background:var(--bp-navy);
   border-top:1px solid rgba(255,255,255,.08);
@@ -26,45 +23,177 @@
   opacity:1;
 }
 
-/*
- * As introduções ficam limpas: apenas overline + título.
- * Sem coluna lateral de explicação e sem espaço vazio reservado.
- */
+/* Introduções limpas: apenas overline + título. */
 .bp-section-intro,
 .bp-section-intro-compact{
   grid-template-columns:minmax(0,1fr);
   max-width:900px;
 }
 
+/* 1 — Categorias: branco */
 #categorias.bp-section{
-  background:var(--bp-navy);
-  color:#fff;
-}
-
-#categorias .bp-section-intro h2{
-  color:#fff;
-}
-
-#categorias .bp-overline{
-  color:var(--bp-blue-soft);
-}
-
-#equipamentos.bp-section{
   background:#fff;
   color:var(--bp-ink);
 }
 
-#equipamentos .bp-section-intro h2{
+#categorias .bp-section-intro h2{
   color:var(--bp-ink);
 }
 
-#equipamentos .bp-overline{
+#categorias .bp-overline{
   color:var(--bp-blue-dark);
+}
+
+/* 2 — Equipamentos: azul */
+#equipamentos.bp-section{
+  background:var(--bp-navy);
+  color:#fff;
+}
+
+#equipamentos .bp-section-intro h2{
+  color:#fff;
+}
+
+#equipamentos .bp-overline{
+  color:var(--bp-blue-soft);
+}
+
+/* Cards permanecem claros para dar contraste dentro da dobra azul. */
+#equipamentos .bp-equipment-photo{
+  background:#fff;
+}
+
+/* 3 — Viva a Blue: branco */
+#viva-blue.bp-editorial-blue{
+  background:#fff;
+  color:var(--bp-ink);
+}
+
+#viva-blue .bp-overline{
+  color:var(--bp-blue-dark);
+}
+
+#viva-blue h2,
+#viva-blue .bp-facts dt{
+  color:var(--bp-ink);
+}
+
+#viva-blue .bp-editorial-blue-copy>p:not(.bp-overline),
+#viva-blue .bp-facts dd{
+  color:var(--bp-muted);
+}
+
+#viva-blue .bp-facts{
+  border-top-color:var(--bp-line);
+}
+
+#viva-blue .bp-editorial-blue-photo::before{
+  border-top-color:rgba(7,31,63,.3);
+  border-right-color:rgba(7,31,63,.3);
+}
+
+/* 4 — Loja: azul */
+#loja.bp-section{
+  background:var(--bp-navy);
+  color:#fff;
+}
+
+#loja .bp-section-intro h2{
+  color:#fff;
+}
+
+#loja .bp-overline{
+  color:var(--bp-blue-soft);
+}
+
+/* 5 — Especialistas: branco */
+#especialistas.bp-section{
+  background:#fff;
+  color:var(--bp-ink);
+}
+
+#especialistas .bp-section-intro h2{
+  color:var(--bp-ink);
+}
+
+#especialistas .bp-overline{
+  color:var(--bp-blue-dark);
+}
+
+#especialistas .bp-contact-pair{
+  border-top-color:var(--bp-line);
+}
+
+#especialistas .bp-contact-person{
+  border-bottom-color:var(--bp-line);
+}
+
+#especialistas .bp-contact-person span{
+  color:var(--bp-blue-dark);
+}
+
+#especialistas .bp-contact-person h3{
+  color:var(--bp-ink);
+}
+
+#especialistas .bp-contact-person p{
+  color:var(--bp-muted);
+}
+
+/* 6 — Blue na Água: azul */
+#blue-na-agua.bp-section{
+  background:var(--bp-navy);
+  color:#fff;
+}
+
+#blue-na-agua .bp-section-intro h2{
+  color:#fff;
+}
+
+#blue-na-agua .bp-overline{
+  color:var(--bp-blue-soft);
+}
+
+/* 7 — Contato final: branco */
+#contato-blue.bp-final{
+  background:#fff;
+  color:var(--bp-ink);
+  border-top-color:var(--bp-line);
+}
+
+#contato-blue .bp-overline,
+#contato-blue .bp-overline-light{
+  color:var(--bp-blue-dark);
+}
+
+#contato-blue h2{
+  color:var(--bp-ink);
+}
+
+#contato-blue p:not(.bp-overline){
+  color:var(--bp-muted);
+}
+
+#contato-blue .bp-btn-outline{
+  color:var(--bp-ink)!important;
+  border-color:var(--bp-blue-dark);
+  background:transparent;
+}
+
+#contato-blue .bp-btn-outline:hover,
+#contato-blue .bp-btn-outline:focus-visible{
+  color:var(--bp-ink)!important;
+  border-color:var(--bp-blue-dark);
+  background:var(--bp-paper);
 }
 
 @media (max-width:700px){
   #categorias.bp-section,
-  #equipamentos.bp-section{
+  #equipamentos.bp-section,
+  #loja.bp-section,
+  #especialistas.bp-section,
+  #blue-na-agua.bp-section,
+  #contato-blue.bp-final{
     background-clip:padding-box;
   }
 
