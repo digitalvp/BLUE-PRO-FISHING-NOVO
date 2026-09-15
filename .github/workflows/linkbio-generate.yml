@@ -13,6 +13,7 @@ on:
       - 'scripts/check-linkbio-assets.mjs'
       - 'scripts/check-linkbio-typography.mjs'
       - 'scripts/check-linkbio-interactions.mjs'
+      - 'scripts/check-linkbio-brand-position.mjs'
       - 'assets/css/linkbio.css'
       - 'assets/css/linkbio-experience.css'
       - 'assets/css/linkbio-fonts.css'
@@ -45,6 +46,7 @@ jobs:
           node scripts/check-linkbio-assets.mjs
           node scripts/check-linkbio-typography.mjs
           node scripts/check-linkbio-interactions.mjs
+          node scripts/check-linkbio-brand-position.mjs
           node --check assets/js/linkbio.js
           if [ -f assets/js/linkbio-experience.js ]; then node --check assets/js/linkbio-experience.js; fi
           git diff --check
