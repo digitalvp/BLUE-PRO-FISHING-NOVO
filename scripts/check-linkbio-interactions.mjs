@@ -30,6 +30,14 @@ if (!/#loja\s+\.bp-btn-review:hover,[\s\S]*?#loja\s+\.bp-btn-review:focus-visibl
   failures.push('Botão Avaliar no Google precisa ter elevação visível e sombra próprias no hover/foco');
 }
 
+if (!/#loja\s+\.bp-btn-blue\s*\{[^}]*color:\s*var\(--bp-blue-dark\)!important;[^}]*background:\s*#fff;[^}]*border-color:\s*var\(--bp-blue-dark\)/s.test(css)) {
+  failures.push('Botão Como chegar da Loja precisa ficar branco com texto e borda azuis no estado normal');
+}
+
+if (!/#loja\s+\.bp-btn-blue:hover,[\s\S]*?#loja\s+\.bp-btn-blue:focus-visible\s*\{[^}]*color:\s*#fff!important;[^}]*background:\s*var\(--bp-blue-dark\);[^}]*transform:\s*translateY\(-4px\)[^}]*box-shadow:/s.test(css)) {
+  failures.push('Botão Como chegar da Loja precisa ficar azul e elevar no hover/foco');
+}
+
 if (!/\.bp-photo-card\[data-card-link-ready="true"\],\s*\.bp-content-feature,\s*\.bp-content-small\s*\{[^}]*transition:\s*transform\s+\.24s\s+ease,box-shadow\s+\.24s\s+ease/s.test(css)) {
   failures.push('Cards clicáveis precisam compartilhar a transição padrão de elevação');
 }
