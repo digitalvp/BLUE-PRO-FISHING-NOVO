@@ -4,6 +4,7 @@
 .vercel/
 node_modules/
 scripts/
+docs/
 AGENTS.md
 PROMPT.*.txt
 RELATORIO-PROMPT.*.md
