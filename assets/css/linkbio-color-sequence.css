@@ -6,11 +6,31 @@
  * A partir dela: branco -> azul -> branco -> azul...
  */
 
+/*
+ * O wrapper da experiência não pode virar scroll container, senão o header
+ * sticky deixa de usar o viewport como referência. A barra continua no fluxo
+ * normal e só gruda quando alcançar o topo da tela.
+ */
+.bp-experience{
+  overflow:visible;
+}
+
 /* Marcas integradas à transição azul logo após o Explore a Blue. */
 .bp-brands{
   background:var(--bp-navy);
   border-top:1px solid rgba(255,255,255,.08);
   border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+/* Mantém a velocidade do fallback CSS igual à do carrossel oficial. */
+.bp-brand-track{
+  animation-duration:45s;
+}
+
+/* Mantém as logos grandes, mas fecha ainda mais o ritmo horizontal do marquee. */
+.bp-brand-set{
+  gap:10px;
+  padding:0 6px;
 }
 
 .bp-brand-set img{
@@ -56,16 +76,6 @@
 
 #equipamentos .bp-overline{
   color:var(--bp-blue-soft);
-}
-
-/* Micro-rótulos ocultos conforme revisão visual da dobra de equipamentos. */
-#equipamentos .bp-equipment-photo span{
-  display:none;
-}
-
-/* Cards permanecem claros para dar contraste dentro da dobra azul. */
-#equipamentos .bp-equipment-photo{
-  background:#fff;
 }
 
 /* 3 — Viva a Blue: branco */
@@ -206,5 +216,12 @@
   .bp-section-intro-compact{
     grid-template-columns:1fr;
     gap:14px;
+  }
+}
+
+@media (max-width:680px){
+  .bp-brand-set{
+    gap:7px;
+    padding-inline:4px;
   }
 }

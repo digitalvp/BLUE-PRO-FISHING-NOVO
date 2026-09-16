@@ -60,15 +60,28 @@
         { transform: `translateX(-${setWidth}px)` },
       ],
       {
-        duration: 30000,
+        duration: 45000,
         iterations: Infinity,
         easing: 'linear',
       },
     );
+
+    if (marquee.matches(':hover') || marquee.matches(':focus-within')) {
+      brandAnimation.pause();
+    }
   };
 
   syncBrandLoop();
   window.addEventListener('load', syncBrandLoop, { once: true });
+
+  if (marquee) {
+    marquee.addEventListener('mouseenter', () => brandAnimation?.pause());
+    marquee.addEventListener('mouseleave', () => brandAnimation?.play());
+    marquee.addEventListener('focusin', () => brandAnimation?.pause());
+    marquee.addEventListener('focusout', (event) => {
+      if (!marquee.contains(event.relatedTarget)) brandAnimation?.play();
+    });
+  }
 
   if (marquee && 'ResizeObserver' in window) {
     const brandResizeObserver = new ResizeObserver(() => syncBrandLoop());
