@@ -26,6 +26,10 @@ if (/Avaliar no Google\s*↗/.test(html)) {
   failures.push('Avaliar no Google não deve exibir seta externa');
 }
 
+if (!/#loja\s+\.bp-btn-review:hover,[\s\S]*?#loja\s+\.bp-btn-review:focus-visible\s*\{[^}]*transform:\s*translateY\(-4px\)[^}]*box-shadow:/s.test(css)) {
+  failures.push('Botão Avaliar no Google precisa ter elevação visível e sombra próprias no hover/foco');
+}
+
 if (!/\.bp-photo-card\[data-card-link-ready="true"\],\s*\.bp-content-feature,\s*\.bp-content-small\s*\{[^}]*transition:\s*transform\s+\.24s\s+ease,box-shadow\s+\.24s\s+ease/s.test(css)) {
   failures.push('Cards clicáveis precisam compartilhar a transição padrão de elevação');
 }
