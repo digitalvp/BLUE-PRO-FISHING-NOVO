@@ -19,6 +19,7 @@ on:
       - 'scripts/check-linkbio-color-sequence.mjs'
       - 'scripts/check-linkbio-category-card-links.mjs'
       - 'scripts/check-linkbio-equipment-cards.mjs'
+      - 'scripts/check-linkbio-sticky-header.mjs'
       - 'assets/css/linkbio.css'
       - 'assets/css/linkbio-experience.css'
       - 'assets/css/linkbio-fonts.css'
@@ -55,6 +56,7 @@ jobs:
           node scripts/check-linkbio-color-sequence.mjs
           node scripts/check-linkbio-category-card-links.mjs
           node scripts/check-linkbio-equipment-cards.mjs
+          node scripts/check-linkbio-sticky-header.mjs
           node --check assets/js/linkbio.js
           if [ -f assets/js/linkbio-experience.js ]; then node --check assets/js/linkbio-experience.js; fi
           git diff --check
