@@ -13,6 +13,12 @@
   border-bottom:1px solid rgba(255,255,255,.12);
 }
 
+/* Mantém as logos grandes, mas fecha ainda mais o ritmo horizontal do marquee. */
+.bp-brand-set{
+  gap:10px;
+  padding:0 6px;
+}
+
 .bp-brand-set img{
   filter:brightness(0) invert(1) grayscale(1);
   opacity:.72;
@@ -196,5 +202,12 @@
   .bp-section-intro-compact{
     grid-template-columns:1fr;
     gap:14px;
+  }
+}
+
+@media (max-width:680px){
+  .bp-brand-set{
+    gap:7px;
+    padding-inline:4px;
   }
 }
