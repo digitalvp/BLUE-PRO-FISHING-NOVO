@@ -6,6 +6,15 @@
  * A partir dela: branco -> azul -> branco -> azul...
  */
 
+/*
+ * O wrapper da experiência não pode virar scroll container, senão o header
+ * sticky deixa de usar o viewport como referência. A barra continua no fluxo
+ * normal e só gruda quando alcançar o topo da tela.
+ */
+.bp-experience{
+  overflow:visible;
+}
+
 /* Marcas integradas à transição azul logo após o Explore a Blue. */
 .bp-brands{
   background:var(--bp-navy);
