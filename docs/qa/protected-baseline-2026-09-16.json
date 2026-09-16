@@ -1,0 +1,15 @@
+{
+  "baselineCommit": "02b9ffda33e116d022c122c9a5f798d295085e85",
+  "baselineDeployment": "dpl_ModnwLesYC5X6BNVB5hGohMeeex3",
+  "protectedFiles": {
+    "index.html": "d4294d45e378afc50cc6fc56e335aee2f37546e7",
+    "camping-pesca-palmas-to/index.html": "bfa11ebfee51dcd47c62cb5f3eb8278a86e0b373",
+    "embarcacoes-nautica-palmas-to/index.html": "02f4cf73a00412130ba965c7da56a7fdb7f86919",
+    "pesca-camping-acessorios-palmas-to/index.html": "eb4ce1fd0f15014c5390b2f499c02f0e9e9706aa",
+    "assets/css/style.css": "c48825e5d4afa15a610bacd3b1c02af8650ebcf5",
+    "assets/css/editorial.css": "7ef2c9d5db9d449c9e02d3bad60b8ddc50997233",
+    "assets/css/footer.css": "bd8f9d4544f41a1cb790343f1b8d0cfc3712a4a8",
+    "assets/js/script-core.js": "a34326a2b139573ff5a647097f4e472bf69e7566",
+    "assets/js/footer.js": "af48a4ecea16f6393f4c38ce2c27770ad4bc2bf0"
+  }
+}
