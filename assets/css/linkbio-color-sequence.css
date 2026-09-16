@@ -13,6 +13,11 @@
   border-bottom:1px solid rgba(255,255,255,.12);
 }
 
+/* Mantém a velocidade do fallback CSS igual à do carrossel oficial. */
+.bp-brand-track{
+  animation-duration:45s;
+}
+
 /* Mantém as logos grandes, mas fecha ainda mais o ritmo horizontal do marquee. */
 .bp-brand-set{
   gap:10px;
