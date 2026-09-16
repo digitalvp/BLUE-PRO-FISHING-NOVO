@@ -85,8 +85,8 @@ body.linkbio-experience .linkbio-transition{
 .bp-brands-topline span{color:#8795a5}
 .bp-brand-marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 .bp-brand-track{display:flex;width:max-content;animation:bpBrandRoll 30s linear infinite;will-change:transform}
-.bp-brand-set{display:flex;align-items:center;gap:64px;padding:0 28px;min-width:max-content}
-.bp-brand-set img{width:auto;height:42px;max-width:150px;object-fit:contain;filter:grayscale(1);opacity:.68;transition:filter .2s ease,opacity .2s ease}
+.bp-brand-set{display:flex;align-items:center;gap:20px;padding:0 12px;min-width:max-content}
+.bp-brand-set img{width:auto;height:53px;max-width:188px;object-fit:contain;filter:grayscale(1);opacity:.68;transition:filter .2s ease,opacity .2s ease}
 .bp-brand-set img:hover{filter:none;opacity:1}
 .bp-brand-marquee:hover .bp-brand-track,.bp-brand-marquee:focus-within .bp-brand-track{animation-play-state:paused}
 @keyframes bpBrandRoll{to{transform:translateX(-50%)}}
@@ -231,8 +231,8 @@ body.linkbio-experience .linkbio-transition{
   .bp-editorial-hero-copy>p:not(.bp-overline){font-size:15px}
   .bp-editorial-note{min-width:0;width:100%}
   .bp-brands-topline{align-items:flex-start;flex-direction:column;gap:5px}
-  .bp-brand-set{gap:48px;padding-inline:21px}
-  .bp-brand-set img{height:36px;max-width:138px}
+  .bp-brand-set{gap:14px;padding-inline:8px}
+  .bp-brand-set img{height:45px;max-width:173px}
   .bp-section{padding:64px 0}
   .bp-section-intro,.bp-section-intro-compact{grid-template-columns:36px minmax(0,1fr);gap:14px}
   .bp-section-description{grid-column:2;margin-top:-3px}
