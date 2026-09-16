@@ -46,6 +46,7 @@
   letter-spacing:.025em;
   text-transform:none;
   transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease,color .18s ease;
+  will-change:transform;
 }
 
 /* Fallback visual para previews ainda gerados com o markup anterior. */
@@ -80,6 +81,13 @@
     border-color:var(--bp-blue-dark);
     transform:translateY(-3px);
     box-shadow:0 10px 22px rgba(2,17,38,.22);
+  }
+
+  /* CTA da loja: elevação mais perceptível para acompanhar os cards premium. */
+  #loja .bp-btn-review:hover,
+  #loja .bp-btn-review:focus-visible{
+    transform:translateY(-4px);
+    box-shadow:0 12px 26px rgba(2,17,38,.26);
   }
 
   .has-linkbio-js.is-linkbio-ready .linkbio-page .linkbio-action:hover,
