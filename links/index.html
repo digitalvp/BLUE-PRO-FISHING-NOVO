@@ -16,7 +16,13 @@
       const response=await fetch('./source.html',{cache:'no-store'});
       if(!response.ok) throw new Error('Falha ao carregar LinkBio2: '+response.status);
       let html=await response.text();
-      html=html.replaceAll('/assets/','/links/assets/').replaceAll('/linkbio/','/links/');
+      const facadeBase='https://raw.githubusercontent.com/digitalvp/BLUE-PRO-FISHING-NOVO/codex/linkbio-equipment-cards-premium/assets/img/linkbio/';
+      html=html
+        .replaceAll('/assets/img/linkbio/fachada-blue-pro-480.webp',facadeBase+'fachada-blue-pro-480.webp')
+        .replaceAll('/assets/img/linkbio/fachada-blue-pro-768.webp',facadeBase+'fachada-blue-pro-768.webp')
+        .replaceAll('/assets/img/linkbio/fachada-blue-pro-1024.webp',facadeBase+'fachada-blue-pro-1024.webp')
+        .replaceAll('/assets/','/links/assets/')
+        .replaceAll('/linkbio/','/links/');
       document.open();
       document.write(html);
       document.close();
