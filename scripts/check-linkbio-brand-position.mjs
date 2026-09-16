@@ -30,12 +30,12 @@ if (!beforeHeader.trimEnd().endsWith('</section>')) {
   failures.push('o carrossel de marcas deve ser o primeiro bloco visual dentro de #explore-blue');
 }
 
-if (!/\.bp-brand-set\{[^}]*gap:\s*64px[^}]*\}/s.test(css)) {
-  failures.push('carrossel desktop precisa de 64px de respiro entre as marcas');
+if (!/\.bp-brand-set\{[^}]*gap:\s*20px[^}]*padding:\s*0 12px[^}]*\}/s.test(css)) {
+  failures.push('carrossel desktop precisa manter marcas bem próximas: gap 20px e padding lateral 12px');
 }
 
-if (!/\.bp-brand-set img\{[^}]*height:\s*42px[^}]*max-width:\s*150px[^}]*\}/s.test(css)) {
-  failures.push('logos desktop precisam usar 42px de altura e max-width de 150px');
+if (!/\.bp-brand-set img\{[^}]*height:\s*53px[^}]*max-width:\s*188px[^}]*\}/s.test(css)) {
+  failures.push('logos desktop precisam usar 53px de altura e max-width de 188px');
 }
 
 const mobileBlock = css.match(/@media \(max-width:680px\)\{([\s\S]*?)\n\}/);
@@ -43,11 +43,11 @@ if (!mobileBlock) {
   failures.push('bloco responsivo de 680px não foi encontrado');
 } else {
   const mobileCss = mobileBlock[1];
-  if (!/\.bp-brand-set\{[^}]*gap:\s*48px[^}]*\}/s.test(mobileCss)) {
-    failures.push('carrossel mobile precisa de 48px de respiro entre as marcas');
+  if (!/\.bp-brand-set\{[^}]*gap:\s*14px[^}]*padding-inline:\s*8px[^}]*\}/s.test(mobileCss)) {
+    failures.push('carrossel mobile precisa manter marcas bem próximas: gap 14px e padding lateral 8px');
   }
-  if (!/\.bp-brand-set img\{[^}]*height:\s*36px[^}]*max-width:\s*138px[^}]*\}/s.test(mobileCss)) {
-    failures.push('logos mobile precisam usar 36px de altura e max-width de 138px');
+  if (!/\.bp-brand-set img\{[^}]*height:\s*45px[^}]*max-width:\s*173px[^}]*\}/s.test(mobileCss)) {
+    failures.push('logos mobile precisam usar 45px de altura e max-width de 173px');
   }
 }
 
