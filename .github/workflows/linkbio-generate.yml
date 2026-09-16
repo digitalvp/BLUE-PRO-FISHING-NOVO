@@ -7,6 +7,7 @@ on:
       - 'codex/linkbio-*'
     paths:
       - 'index.html'
+      - 'linkbio/index.html'
       - 'linkbio/template.html'
       - 'linkbio/experience.html'
       - 'scripts/generate-linkbio.mjs'
@@ -58,21 +59,30 @@ jobs:
           node scripts/check-linkbio-category-card-links.mjs
           node scripts/check-linkbio-equipment-cards.mjs
           node scripts/check-linkbio-sticky-header.mjs
-          node scripts/check-linkbio-committed-preview.mjs
           node --check assets/js/linkbio.js
           if [ -f assets/js/linkbio-experience.js ]; then node --check assets/js/linkbio-experience.js; fi
           git diff --check
 
-      - name: Commit generated output when needed
-        if: ${{ github.event_name == 'push' && github.ref_name == 'linkbio-v2' }}
+      - name: Prepare generated output commit when needed
+        id: generated
+        if: ${{ github.event_name == 'push' && (github.ref_name == 'linkbio-v2' || startsWith(github.ref_name, 'codex/linkbio-')) }}
         shell: bash
         run: |
           if git diff --quiet -- linkbio/index.html; then
             echo "linkbio/index.html already current"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add linkbio/index.html
           git commit -m "build(linkbio): atualiza pagina nativa [skip linkbio-generate]"
-          git push origin HEAD:linkbio-v2
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Validate committed preview
+        run: node scripts/check-linkbio-committed-preview.mjs
+
+      - name: Push generated output when needed
+        if: ${{ steps.generated.outputs.changed == 'true' }}
+        shell: bash
+        run: git push origin HEAD:${GITHUB_REF_NAME}
