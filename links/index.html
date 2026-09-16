@@ -18,11 +18,14 @@
       let html=await response.text();
       const facadeBase='https://raw.githubusercontent.com/digitalvp/BLUE-PRO-FISHING-NOVO/codex/linkbio-equipment-cards-premium/assets/img/linkbio/';
       html=html
-        .replaceAll('/assets/img/linkbio/fachada-blue-pro-480.webp',facadeBase+'fachada-blue-pro-480.webp')
-        .replaceAll('/assets/img/linkbio/fachada-blue-pro-768.webp',facadeBase+'fachada-blue-pro-768.webp')
-        .replaceAll('/assets/img/linkbio/fachada-blue-pro-1024.webp',facadeBase+'fachada-blue-pro-1024.webp')
+        .replaceAll('/assets/img/linkbio/fachada-blue-pro-480.webp','__FACADE_480__')
+        .replaceAll('/assets/img/linkbio/fachada-blue-pro-768.webp','__FACADE_768__')
+        .replaceAll('/assets/img/linkbio/fachada-blue-pro-1024.webp','__FACADE_1024__')
         .replaceAll('/assets/','/links/assets/')
-        .replaceAll('/linkbio/','/links/');
+        .replaceAll('/linkbio/','/links/')
+        .replaceAll('__FACADE_480__',facadeBase+'fachada-blue-pro-480.webp')
+        .replaceAll('__FACADE_768__',facadeBase+'fachada-blue-pro-768.webp')
+        .replaceAll('__FACADE_1024__',facadeBase+'fachada-blue-pro-1024.webp');
       document.open();
       document.write(html);
       document.close();
