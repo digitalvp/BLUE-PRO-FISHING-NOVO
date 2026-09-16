@@ -18,7 +18,7 @@
       let html=await response.text();
       html=html
         .replaceAll('/assets/','/links/assets/')
-        .replaceAll('/linkbio/','/links/');
+        .replaceAll('"/linkbio/"','"/links/"');
       document.open();
       document.write(html);
       document.close();
