@@ -30,8 +30,8 @@ if (!beforeHeader.trimEnd().endsWith('</section>')) {
   failures.push('o carrossel de marcas deve ser o primeiro bloco visual dentro de #explore-blue');
 }
 
-if (!/\.bp-brand-set\{[^}]*gap:\s*20px[^}]*padding:\s*0 12px[^}]*\}/s.test(css)) {
-  failures.push('carrossel desktop precisa manter marcas bem próximas: gap 20px e padding lateral 12px');
+if (!/\.bp-brand-set\{[^}]*gap:\s*10px[^}]*padding:\s*0 6px[^}]*\}/s.test(css)) {
+  failures.push('carrossel desktop precisa manter marcas muito próximas: gap 10px e padding lateral 6px');
 }
 
 if (!/\.bp-brand-set img\{[^}]*height:\s*53px[^}]*max-width:\s*188px[^}]*\}/s.test(css)) {
@@ -43,8 +43,8 @@ if (!mobileBlock) {
   failures.push('bloco responsivo de 680px não foi encontrado');
 } else {
   const mobileCss = mobileBlock[1];
-  if (!/\.bp-brand-set\{[^}]*gap:\s*14px[^}]*padding-inline:\s*8px[^}]*\}/s.test(mobileCss)) {
-    failures.push('carrossel mobile precisa manter marcas bem próximas: gap 14px e padding lateral 8px');
+  if (!/\.bp-brand-set\{[^}]*gap:\s*7px[^}]*padding-inline:\s*4px[^}]*\}/s.test(mobileCss)) {
+    failures.push('carrossel mobile precisa manter marcas muito próximas: gap 7px e padding lateral 4px');
   }
   if (!/\.bp-brand-set img\{[^}]*height:\s*45px[^}]*max-width:\s*173px[^}]*\}/s.test(mobileCss)) {
     failures.push('logos mobile precisam usar 45px de altura e max-width de 173px');
