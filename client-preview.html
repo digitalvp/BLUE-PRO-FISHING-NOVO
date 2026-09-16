@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Blue Pro Fishing | Protótipo</title>
+  <style>
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;background:#031b3d;color:#fff;font-family:Arial,Helvetica,sans-serif}
+    .preview-loading{min-height:100vh;display:grid;place-items:center;padding:24px;text-align:center}
+    .preview-loading div{max-width:420px}
+    .preview-loading strong{display:block;font-size:18px;margin-bottom:8px}
+    .preview-loading span{color:#b9cce0;font-size:14px;line-height:1.5}
+  </style>
+</head>
+<body>
+  <main class="preview-loading" id="preview-status">
+    <div><strong>Carregando protótipo Blue Pro Fishing…</strong><span>Esta visualização é independente do Link na Bio oficial.</span></div>
+  </main>
+  <script>
+    (async () => {
+      const sourceUrl = 'https://raw.githubusercontent.com/digitalvp/BLUE-PRO-FISHING-NOVO/client-preview/linkbio/index.html';
+      const publicBase = 'https://raw.githack.com/digitalvp/BLUE-PRO-FISHING-NOVO/client-preview/';
+      const response = await fetch(sourceUrl, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`Falha ao carregar o protótipo (${response.status})`);
+
+      let html = await response.text();
+      html = html.replaceAll('/assets/', `${publicBase}assets/`);
+      html = html.replace('<link rel="canonical" href="/linkbio/">', '');
+      html = html.replace('<meta property="og:url" content="/linkbio/">', '');
+      html = html.replace('<body class="linkbio-experience">', '<body class="linkbio-experience" data-client-preview="true">');
+
+      document.open();
+      document.write(html);
+      document.close();
+    })().catch((error) => {
+      const status = document.getElementById('preview-status');
+      if (!status) return;
+      status.innerHTML = `<div><strong>Não foi possível abrir o protótipo.</strong><span>${String(error.message || error)}</span></div>`;
+    });
+  </script>
+</body>
+</html>
