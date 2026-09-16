@@ -1,9 +1,12 @@
 import fs from 'node:fs';
 
 const sourcePath = 'linkbio/experience.html';
-const cssPath = 'assets/css/linkbio-experience.css';
+const experienceCssPath = 'assets/css/linkbio-experience.css';
+const colorCssPath = 'assets/css/linkbio-color-sequence.css';
 const source = fs.readFileSync(sourcePath, 'utf8');
-const css = fs.readFileSync(cssPath, 'utf8');
+const experienceCss = fs.readFileSync(experienceCssPath, 'utf8');
+const colorCss = fs.readFileSync(colorCssPath, 'utf8');
+const css = `${experienceCss}\n${colorCss}`;
 const failures = [];
 
 const brandMarker = '<section class="bp-brands"';
@@ -35,20 +38,15 @@ if (!/\.bp-brand-set\{[^}]*gap:\s*10px[^}]*padding:\s*0 6px[^}]*\}/s.test(css)) 
 }
 
 if (!/\.bp-brand-set img\{[^}]*height:\s*53px[^}]*max-width:\s*188px[^}]*\}/s.test(css)) {
-  failures.push('logos desktop precisam usar 53px de altura e max-width de 188px');
+  failures.push('logos desktop precisam continuar com 53px de altura e max-width de 188px');
 }
 
-const mobileBlock = css.match(/@media \(max-width:680px\)\{([\s\S]*?)\n\}/);
-if (!mobileBlock) {
-  failures.push('bloco responsivo de 680px não foi encontrado');
-} else {
-  const mobileCss = mobileBlock[1];
-  if (!/\.bp-brand-set\{[^}]*gap:\s*7px[^}]*padding-inline:\s*4px[^}]*\}/s.test(mobileCss)) {
-    failures.push('carrossel mobile precisa manter marcas muito próximas: gap 7px e padding lateral 4px');
-  }
-  if (!/\.bp-brand-set img\{[^}]*height:\s*45px[^}]*max-width:\s*173px[^}]*\}/s.test(mobileCss)) {
-    failures.push('logos mobile precisam usar 45px de altura e max-width de 173px');
-  }
+if (!/@media \(max-width:680px\)\{[\s\S]*?\.bp-brand-set\{[^}]*gap:\s*7px[^}]*padding-inline:\s*4px[^}]*\}/s.test(css)) {
+  failures.push('carrossel mobile precisa manter marcas muito próximas: gap 7px e padding lateral 4px');
+}
+
+if (!/@media \(max-width:680px\)\{[\s\S]*?\.bp-brand-set img\{[^}]*height:\s*45px[^}]*max-width:\s*173px[^}]*\}/s.test(css)) {
+  failures.push('logos mobile precisam continuar com 45px de altura e max-width de 173px');
 }
 
 if (failures.length) {
