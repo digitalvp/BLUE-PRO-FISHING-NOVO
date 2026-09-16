@@ -1,0 +1,146 @@
+/*
+ * Tipografia oficial observada no site Blue Pro Fishing.
+ * Montserrat: títulos, navegação, botões e destaques.
+ * Open Sans: leitura, descrições e textos de apoio.
+ */
+
+.linkbio-page,
+.bp-experience{
+  --bp-font-display:"Montserrat",Arial,sans-serif;
+  --bp-font-sans:"Open Sans",Arial,sans-serif;
+  font-family:var(--bp-font-sans);
+  font-synthesis:none;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.linkbio-copy h1,
+.bp-editorial-hero h2,
+.bp-section h2,
+.bp-editorial-blue h2,
+.bp-final h2,
+.bp-photo-card-body h3,
+.bp-equipment-photo h3,
+.bp-store-info h3,
+.bp-contact-person h3,
+.bp-content-copy h3,
+.bp-editorial-note b{
+  font-family:var(--bp-font-display);
+}
+
+.linkbio-copy h1{
+  font-weight:800;
+  letter-spacing:-.035em;
+  line-height:.95;
+}
+
+.bp-editorial-hero h2,
+.bp-section h2,
+.bp-editorial-blue h2,
+.bp-final h2{
+  font-weight:700;
+  letter-spacing:-.035em;
+  line-height:1.04;
+}
+
+.bp-photo-card-body h3,
+.bp-equipment-photo h3,
+.bp-store-info h3,
+.bp-contact-person h3,
+.bp-content-copy h3,
+.bp-editorial-note b{
+  font-weight:600;
+  letter-spacing:-.022em;
+}
+
+.linkbio-brand p,
+.linkbio-kicker,
+.linkbio-action,
+.linkbio-explore,
+.bp-menu a,
+.bp-header-whatsapp,
+.bp-overline,
+.bp-btn,
+.bp-text-link,
+.bp-brands-topline p,
+.bp-brands-topline span,
+.bp-section-index,
+.bp-photo-card-body>span,
+.bp-photo-card-body a,
+.bp-equipment-photo span,
+.bp-store-info>p,
+.bp-contact-person span,
+.bp-content-kicker,
+.bp-footer-title{
+  font-family:var(--bp-font-display);
+}
+
+.linkbio-brand p,
+.linkbio-kicker,
+.linkbio-explore,
+.bp-overline,
+.bp-brands-topline p,
+.bp-brands-topline span,
+.bp-section-index,
+.bp-photo-card-body>span,
+.bp-equipment-photo span,
+.bp-store-info>p,
+.bp-contact-person span,
+.bp-content-kicker,
+.bp-footer-title{
+  font-weight:600;
+  letter-spacing:.11em;
+}
+
+.linkbio-action,
+.bp-menu a,
+.bp-header-whatsapp,
+.bp-btn,
+.bp-text-link,
+.bp-photo-card-body a{
+  font-weight:600;
+  letter-spacing:.015em;
+}
+
+.linkbio-copy,
+.bp-editorial-hero-copy,
+.bp-section-description,
+.bp-photo-card-body p,
+.bp-equipment-photo p,
+.bp-editorial-blue-copy,
+.bp-facts,
+.bp-contact-person p,
+.bp-content-copy p,
+.bp-final-copy p{
+  font-family:var(--bp-font-sans);
+}
+
+.linkbio-copy h1 strong,
+.bp-editorial-hero h2 strong{
+  font-weight:800;
+}
+
+.bp-editorial-hero-copy>p:not(.bp-overline),
+.bp-section-description,
+.bp-photo-card-body p,
+.bp-editorial-blue-copy>p:not(.bp-overline),
+.bp-contact-person p,
+.bp-content-copy p,
+.bp-final-copy p{
+  font-weight:400;
+}
+
+.bp-equipment-photo p,
+.bp-facts dt,
+.bp-facts dd{
+  font-weight:600;
+}
+
+@media (max-width:700px){
+  .linkbio-copy h1{letter-spacing:-.03em;line-height:.97}
+  .bp-editorial-hero h2,
+  .bp-section h2,
+  .bp-editorial-blue h2,
+  .bp-final h2{letter-spacing:-.03em;line-height:1.06}
+}

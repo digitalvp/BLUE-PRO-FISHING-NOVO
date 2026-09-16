@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Blue Pro Fishing | Links</title>
+  <meta name="description" content="Experiência Blue Pro Fishing em Palmas - TO.">
+  <link rel="canonical" href="/links/">
+  <meta name="theme-color" content="#031b3d">
+  <style>html,body{margin:0;min-height:100%;background:#031b3d}body{visibility:hidden}</style>
+</head>
+<body>
+  <script>
+  (async()=>{
+    try{
+      const response=await fetch('./source.html',{cache:'no-store'});
+      if(!response.ok) throw new Error('Falha ao carregar LinkBio2: '+response.status);
+      let html=await response.text();
+      html=html.replaceAll('/assets/','/links/assets/').replaceAll('/linkbio/','/links/');
+      document.open();
+      document.write(html);
+      document.close();
+    }catch(error){
+      document.body.style.visibility='visible';
+      document.body.innerHTML='<main style="font-family:Arial,sans-serif;color:#fff;padding:40px;max-width:760px;margin:auto"><h1>Blue Pro Fishing</h1><p>Não foi possível carregar esta visualização agora.</p></main>';
+      console.error(error);
+    }
+  })();
+  </script>
+</body>
+</html>

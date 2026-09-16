@@ -1,0 +1,146 @@
+/*
+ * Microinterações dos CTAs da Link Bio e da experiência Blue.
+ * Movimento curto + sombra discreta para manter sensação premium.
+ */
+
+.linkbio-action,
+.linkbio-socials a,
+.bp-btn,
+.bp-header-whatsapp{
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease;
+}
+
+/*
+ * Os CTAs da primeira dobra também usam data-linkbio-enter. Depois que a
+ * animação inicial termina, esta regra assume o transform e remove o delay,
+ * permitindo que o hover responda imediatamente.
+ */
+.has-linkbio-js.is-linkbio-ready .linkbio-page .linkbio-action{
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease;
+  transition-delay:0ms;
+}
+
+.bp-photo-card[data-card-link-ready="true"]{
+  cursor:pointer;
+}
+
+.bp-photo-card[data-card-link-ready="true"]:focus-within{
+  outline:3px solid rgba(10,164,243,.52);
+  outline-offset:3px;
+}
+
+/* Botão secundário claro para ações institucionais, como avaliação no Google. */
+.bp-btn-review,
+.bp-text-link{
+  min-height:46px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 19px;
+  border:1px solid var(--bp-blue-dark);
+  border-radius:5px;
+  color:var(--bp-blue-dark)!important;
+  background:#fff;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.025em;
+  text-transform:none;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease,color .18s ease;
+  will-change:transform;
+}
+
+/* Na seção Loja, os dois CTAs compartilham o mesmo estado claro. */
+#loja .bp-btn-blue{
+  color:var(--bp-blue-dark)!important;
+  background:#fff;
+  border-color:var(--bp-blue-dark);
+}
+
+/* Fallback visual para previews ainda gerados com o markup anterior. */
+.bp-text-link{
+  font-size:0;
+}
+
+.bp-text-link::before{
+  content:"Avaliar no Google";
+  font-size:12px;
+}
+
+.bp-photo-card[data-card-link-ready="true"],
+.bp-content-feature,
+.bp-content-small{
+  transition:transform .24s ease,box-shadow .24s ease;
+}
+
+@media (hover:hover) and (pointer:fine){
+  .bp-btn:hover,
+  .bp-btn:focus-visible{
+    transform:translateY(-3px);
+    box-shadow:0 10px 22px rgba(2,17,38,.22);
+  }
+
+  .bp-btn-review:hover,
+  .bp-btn-review:focus-visible,
+  .bp-text-link:hover,
+  .bp-text-link:focus-visible{
+    color:#fff!important;
+    background:var(--bp-blue-dark);
+    border-color:var(--bp-blue-dark);
+    transform:translateY(-3px);
+    box-shadow:0 10px 22px rgba(2,17,38,.22);
+  }
+
+  /* CTAs da loja: mesmo padrão visual e mesma elevação perceptível. */
+  #loja .bp-btn-review:hover,
+  #loja .bp-btn-review:focus-visible{
+    transform:translateY(-4px);
+    box-shadow:0 12px 26px rgba(2,17,38,.26);
+  }
+
+  #loja .bp-btn-blue:hover,
+  #loja .bp-btn-blue:focus-visible{
+    color:#fff!important;
+    background:var(--bp-blue-dark);
+    border-color:var(--bp-blue-dark);
+    transform:translateY(-4px);
+    box-shadow:0 12px 26px rgba(2,17,38,.26);
+  }
+
+  .has-linkbio-js.is-linkbio-ready .linkbio-page .linkbio-action:hover,
+  .has-linkbio-js.is-linkbio-ready .linkbio-page .linkbio-action:focus-visible{
+    transform:translateY(-3px);
+    box-shadow:0 10px 22px rgba(0,0,0,.30),0 3px 8px rgba(0,0,0,.16);
+  }
+
+  .linkbio-socials a:hover,
+  .linkbio-socials a:focus-visible,
+  .bp-header-whatsapp:hover,
+  .bp-header-whatsapp:focus-visible{
+    transform:translateY(-3px);
+    box-shadow:0 9px 18px rgba(2,17,38,.2);
+  }
+
+  .bp-photo-card[data-card-link-ready="true"]:hover,
+  .bp-photo-card[data-card-link-ready="true"]:focus-within,
+  .bp-content-feature:hover,
+  .bp-content-feature:focus-visible,
+  .bp-content-small:hover,
+  .bp-content-small:focus-visible{
+    transform:translateY(-4px);
+    box-shadow:0 14px 28px rgba(2,17,38,.22);
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .linkbio-action,
+  .linkbio-socials a,
+  .bp-btn,
+  .bp-btn-review,
+  .bp-text-link,
+  .bp-header-whatsapp,
+  .bp-photo-card[data-card-link-ready="true"],
+  .bp-content-feature,
+  .bp-content-small{
+    transition:none!important;
+  }
+}

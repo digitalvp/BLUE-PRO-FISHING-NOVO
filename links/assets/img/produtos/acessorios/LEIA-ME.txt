@@ -1,0 +1,1 @@
+Adicione aqui as fotos reais dos acessórios. Para os 4 cards iniciais, use acessorio-01.webp, acessorio-02.webp, acessorio-03.webp e acessorio-04.webp. Se o arquivo não existir, o site usa uma imagem de fallback e não quebra o layout.

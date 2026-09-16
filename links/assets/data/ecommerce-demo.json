@@ -1,0 +1,647 @@
+{
+  "config": {
+    "demo": true,
+    "moeda": "BRL",
+    "parcelasDemo": 3,
+    "fallbackImagem": "assets/img/produtos/fallback-produto.webp",
+    "whatsappNumero": "5563992569790",
+    "whatsappMensagem": "Olá! Vi \"{nome}\" no site da Blue Pro Fishing e gostaria de mais informações.",
+    "aviso": "Valores e condições exclusivamente DEMO, sem estoque real ou checkout."
+  },
+  "categorias": [
+    {
+      "id": "varas",
+      "nome": "Varas",
+      "imagem": "assets/img/produtos/varas.webp",
+      "ativo": true
+    },
+    {
+      "id": "carretilhas",
+      "nome": "Carretilhas",
+      "imagem": "assets/img/produtos/carretilhas.webp",
+      "ativo": true
+    },
+    {
+      "id": "molinetes",
+      "nome": "Molinetes",
+      "imagem": "assets/img/produtos/molinetes.webp",
+      "ativo": true
+    },
+    {
+      "id": "iscas",
+      "nome": "Iscas",
+      "imagem": "assets/img/produtos/iscas.webp",
+      "ativo": true
+    },
+    {
+      "id": "linhas",
+      "nome": "Linhas",
+      "imagem": "assets/img/produtos/linhas.webp",
+      "ativo": true
+    },
+    {
+      "id": "acessorios",
+      "nome": "Acessórios",
+      "imagem": "assets/img/produtos/acessorios.webp",
+      "ativo": true
+    },
+    {
+      "id": "camping",
+      "nome": "Camping",
+      "ativo": true
+    },
+    {
+      "id": "nautica",
+      "nome": "Náutica",
+      "ativo": true
+    }
+  ],
+  "subcategoriasNautica": [
+    {
+      "id": "barcos",
+      "nome": "Barcos"
+    },
+    {
+      "id": "motores",
+      "nome": "Motores de popa"
+    },
+    {
+      "id": "gps",
+      "nome": "GPS náutico"
+    },
+    {
+      "id": "sonares",
+      "nome": "Sonares"
+    },
+    {
+      "id": "eletronicos",
+      "nome": "Eletrônicos náuticos"
+    },
+    {
+      "id": "acessorios",
+      "nome": "Acessórios para embarcações"
+    }
+  ],
+  "produtos": [
+    {
+      "id": "vara-01",
+      "nome": "Vara 01",
+      "categoria": "varas",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/varas/vara-01.webp",
+      "precoDemo": 299.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "vara-02",
+      "nome": "Vara 02",
+      "categoria": "varas",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/varas/vara-02.webp",
+      "precoDemo": 299.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "vara-03",
+      "nome": "Vara 03",
+      "categoria": "varas",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/varas/vara-03.webp",
+      "precoDemo": 299.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "vara-04",
+      "nome": "Vara 04",
+      "categoria": "varas",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/varas/vara-04.webp",
+      "precoDemo": 299.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "molinete-01",
+      "nome": "Molinete 01",
+      "categoria": "molinetes",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/molinetes/molinete-01.webp",
+      "precoDemo": 299.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "molinete-02",
+      "nome": "Molinete 02",
+      "categoria": "molinetes",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/molinetes/molinete-02.webp",
+      "precoDemo": 299.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "molinete-03",
+      "nome": "Molinete 03",
+      "categoria": "molinetes",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/molinetes/molinete-03.webp",
+      "precoDemo": 299.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "molinete-04",
+      "nome": "Molinete 04",
+      "categoria": "molinetes",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/molinetes/molinete-04.webp",
+      "precoDemo": 299.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "carretilha-01",
+      "nome": "Carretilha 01",
+      "categoria": "carretilhas",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/carretilhas/carretilha-01.webp",
+      "precoDemo": 599.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "carretilha-02",
+      "nome": "Carretilha 02",
+      "categoria": "carretilhas",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/carretilhas/carretilha-02.webp",
+      "precoDemo": 599.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "carretilha-03",
+      "nome": "Carretilha 03",
+      "categoria": "carretilhas",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/carretilhas/carretilha-03.webp",
+      "precoDemo": 599.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "carretilha-04",
+      "nome": "Carretilha 04",
+      "categoria": "carretilhas",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/carretilhas/carretilha-04.webp",
+      "precoDemo": 599.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "isca-01",
+      "nome": "Isca 01",
+      "categoria": "iscas",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/iscas/isca-01.webp",
+      "precoDemo": 59.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "isca-02",
+      "nome": "Isca 02",
+      "categoria": "iscas",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/iscas/isca-02.webp",
+      "precoDemo": 59.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "isca-03",
+      "nome": "Isca 03",
+      "categoria": "iscas",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/iscas/isca-03.webp",
+      "precoDemo": 59.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "isca-04",
+      "nome": "Isca 04",
+      "categoria": "iscas",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/iscas/isca-04.webp",
+      "precoDemo": 59.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "linha-01",
+      "nome": "Linha 01",
+      "categoria": "linhas",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/linhas/linha-01.webp",
+      "precoDemo": 89.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "linha-02",
+      "nome": "Linha 02",
+      "categoria": "linhas",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/linhas/linha-02.webp",
+      "precoDemo": 89.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "linha-03",
+      "nome": "Linha 03",
+      "categoria": "linhas",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/linhas/linha-03.webp",
+      "precoDemo": 89.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "linha-04",
+      "nome": "Linha 04",
+      "categoria": "linhas",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/linhas/linha-04.webp",
+      "precoDemo": 89.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "acessorio-01",
+      "nome": "Acessório 01",
+      "categoria": "acessorios",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/acessorios/acessorio-01.webp",
+      "precoDemo": 119.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "acessorio-02",
+      "nome": "Acessório 02",
+      "categoria": "acessorios",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/acessorios/acessorio-02.webp",
+      "precoDemo": 119.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "acessorio-03",
+      "nome": "Acessório 03",
+      "categoria": "acessorios",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/acessorios/acessorio-03.webp",
+      "precoDemo": 119.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "id": "acessorio-04",
+      "nome": "Acessório 04",
+      "categoria": "acessorios",
+      "imagem": "assets/img/produtos/fallback-produto.webp",
+      "descricao": "Produto disponível para consulta.",
+      "ativo": true,
+      "marca": null,
+      "imagemOriginal": "assets/img/produtos/acessorios/acessorio-04.webp",
+      "precoDemo": 119.7,
+      "origem": "pesca",
+      "pendencias": [
+        "Nome comercial/modelo e marca não validados",
+        "Foto individual não validada"
+      ]
+    },
+    {
+      "nome": "Barco de alumínio",
+      "marca": "Blue Pro Fishing",
+      "categoria": "nautica",
+      "id": "nautica-01",
+      "subcategoria": "barcos",
+      "imagem": "assets/img/servicos/servico-embarcacoes.webp",
+      "imagemOriginal": null,
+      "precoDemo": 999.9,
+      "ativo": true,
+      "origem": "nautica",
+      "pendencias": [
+        "Modelo não cadastrado",
+        "Foto individual ausente"
+      ]
+    },
+    {
+      "nome": "Motor de popa",
+      "marca": "Yamaha",
+      "categoria": "nautica",
+      "id": "nautica-02",
+      "subcategoria": "motores",
+      "imagem": "assets/img/servicos/servico-embarcacoes.webp",
+      "imagemOriginal": null,
+      "precoDemo": 999.9,
+      "ativo": true,
+      "origem": "nautica",
+      "pendencias": [
+        "Modelo não cadastrado",
+        "Foto individual ausente"
+      ]
+    },
+    {
+      "nome": "Motor de popa",
+      "marca": "Mercury",
+      "categoria": "nautica",
+      "id": "nautica-03",
+      "subcategoria": "motores",
+      "imagem": "assets/img/servicos/servico-embarcacoes.webp",
+      "imagemOriginal": null,
+      "precoDemo": 999.9,
+      "ativo": true,
+      "origem": "nautica",
+      "pendencias": [
+        "Modelo não cadastrado",
+        "Foto individual ausente"
+      ]
+    },
+    {
+      "nome": "GPS náutico",
+      "marca": "Garmin",
+      "categoria": "nautica",
+      "id": "nautica-04",
+      "subcategoria": "gps",
+      "imagem": "assets/img/servicos/servico-embarcacoes.webp",
+      "imagemOriginal": null,
+      "precoDemo": 999.9,
+      "ativo": true,
+      "origem": "nautica",
+      "pendencias": [
+        "Modelo não cadastrado",
+        "Foto individual ausente"
+      ]
+    },
+    {
+      "nome": "GPS náutico",
+      "marca": "Humminbird",
+      "categoria": "nautica",
+      "id": "nautica-05",
+      "subcategoria": "gps",
+      "imagem": "assets/img/servicos/servico-embarcacoes.webp",
+      "imagemOriginal": null,
+      "precoDemo": 999.9,
+      "ativo": true,
+      "origem": "nautica",
+      "pendencias": [
+        "Modelo não cadastrado",
+        "Foto individual ausente"
+      ]
+    },
+    {
+      "nome": "Sonar",
+      "marca": "Garmin",
+      "categoria": "nautica",
+      "id": "nautica-06",
+      "subcategoria": "sonares",
+      "imagem": "assets/img/servicos/servico-embarcacoes.webp",
+      "imagemOriginal": null,
+      "precoDemo": 999.9,
+      "ativo": true,
+      "origem": "nautica",
+      "pendencias": [
+        "Modelo não cadastrado",
+        "Foto individual ausente"
+      ]
+    },
+    {
+      "nome": "Sonar",
+      "marca": "Humminbird",
+      "categoria": "nautica",
+      "id": "nautica-07",
+      "subcategoria": "sonares",
+      "imagem": "assets/img/servicos/servico-embarcacoes.webp",
+      "imagemOriginal": null,
+      "precoDemo": 999.9,
+      "ativo": true,
+      "origem": "nautica",
+      "pendencias": [
+        "Modelo não cadastrado",
+        "Foto individual ausente"
+      ]
+    },
+    {
+      "nome": "Eletrônico náutico",
+      "marca": "Garmin",
+      "categoria": "nautica",
+      "id": "nautica-08",
+      "subcategoria": "eletronicos",
+      "imagem": "assets/img/servicos/servico-embarcacoes.webp",
+      "imagemOriginal": null,
+      "precoDemo": 999.9,
+      "ativo": true,
+      "origem": "nautica",
+      "pendencias": [
+        "Modelo não cadastrado",
+        "Foto individual ausente"
+      ]
+    },
+    {
+      "nome": "Eletrônico náutico",
+      "marca": "Humminbird",
+      "categoria": "nautica",
+      "id": "nautica-09",
+      "subcategoria": "eletronicos",
+      "imagem": "assets/img/servicos/servico-embarcacoes.webp",
+      "imagemOriginal": null,
+      "precoDemo": 999.9,
+      "ativo": true,
+      "origem": "nautica",
+      "pendencias": [
+        "Modelo não cadastrado",
+        "Foto individual ausente"
+      ]
+    },
+    {
+      "nome": "Acessório náutico",
+      "marca": "Minn Kota",
+      "categoria": "nautica",
+      "id": "nautica-10",
+      "subcategoria": "acessorios",
+      "imagem": "assets/img/servicos/servico-embarcacoes.webp",
+      "imagemOriginal": null,
+      "precoDemo": 999.9,
+      "ativo": true,
+      "origem": "nautica",
+      "pendencias": [
+        "Modelo não cadastrado",
+        "Foto individual ausente"
+      ]
+    },
+    {
+      "nome": "Acessório náutico",
+      "marca": "Blue Pro Fishing",
+      "categoria": "nautica",
+      "id": "nautica-11",
+      "subcategoria": "acessorios",
+      "imagem": "assets/img/servicos/servico-embarcacoes.webp",
+      "imagemOriginal": null,
+      "precoDemo": 999.9,
+      "ativo": true,
+      "origem": "nautica",
+      "pendencias": [
+        "Modelo não cadastrado",
+        "Foto individual ausente"
+      ]
+    }
+  ]
+}

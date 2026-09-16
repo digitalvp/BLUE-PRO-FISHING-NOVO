@@ -1,0 +1,1 @@
+Adicione aqui as fotos reais das varas. Para os 4 cards iniciais, use vara-01.webp, vara-02.webp, vara-03.webp e vara-04.webp. Se o arquivo não existir, o site usa uma imagem de fallback e não quebra o layout.

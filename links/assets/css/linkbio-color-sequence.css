@@ -1,0 +1,227 @@
+@import url('/assets/css/linkbio-interactions.css');
+
+/*
+ * Ritmo cromático da experiência Blue Pro Fishing.
+ * A dobra "O que você procura?" é o primeiro bloco branco da sequência.
+ * A partir dela: branco -> azul -> branco -> azul...
+ */
+
+/*
+ * O wrapper da experiência não pode virar scroll container, senão o header
+ * sticky deixa de usar o viewport como referência. A barra continua no fluxo
+ * normal e só gruda quando alcançar o topo da tela.
+ */
+.bp-experience{
+  overflow:visible;
+}
+
+/* Marcas integradas à transição azul logo após o Explore a Blue. */
+.bp-brands{
+  background:var(--bp-navy);
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+/* Mantém a velocidade do fallback CSS igual à do carrossel oficial. */
+.bp-brand-track{
+  animation-duration:45s;
+}
+
+/* Mantém as logos grandes, mas fecha ainda mais o ritmo horizontal do marquee. */
+.bp-brand-set{
+  gap:10px;
+  padding:0 6px;
+}
+
+.bp-brand-set img{
+  filter:brightness(0) invert(1) grayscale(1);
+  opacity:.72;
+}
+
+.bp-brand-set img:hover{
+  filter:brightness(0) invert(1) grayscale(1);
+  opacity:1;
+}
+
+/* Introduções limpas: apenas overline + título. */
+.bp-section-intro,
+.bp-section-intro-compact{
+  grid-template-columns:minmax(0,1fr);
+  max-width:900px;
+}
+
+/* 1 — Categorias: branco */
+#categorias.bp-section{
+  background:#fff;
+  color:var(--bp-ink);
+}
+
+#categorias .bp-section-intro h2{
+  color:var(--bp-ink);
+}
+
+#categorias .bp-overline{
+  color:var(--bp-blue-dark);
+}
+
+/* 2 — Equipamentos: azul */
+#equipamentos.bp-section{
+  background:var(--bp-navy);
+  color:#fff;
+}
+
+#equipamentos .bp-section-intro h2{
+  color:#fff;
+}
+
+#equipamentos .bp-overline{
+  color:var(--bp-blue-soft);
+}
+
+/* 3 — Viva a Blue: branco */
+#viva-blue.bp-editorial-blue{
+  background:#fff;
+  color:var(--bp-ink);
+}
+
+#viva-blue .bp-overline{
+  color:var(--bp-blue-dark);
+}
+
+#viva-blue h2,
+#viva-blue .bp-facts dt{
+  color:var(--bp-ink);
+}
+
+#viva-blue .bp-editorial-blue-copy>p:not(.bp-overline),
+#viva-blue .bp-facts dd{
+  color:var(--bp-muted);
+}
+
+#viva-blue .bp-facts{
+  border-top-color:var(--bp-line);
+}
+
+#viva-blue .bp-editorial-blue-photo::before{
+  border-top-color:rgba(7,31,63,.3);
+  border-right-color:rgba(7,31,63,.3);
+}
+
+/* 4 — Loja: azul */
+#loja.bp-section{
+  background:var(--bp-navy);
+  color:#fff;
+}
+
+#loja .bp-section-intro h2{
+  color:#fff;
+}
+
+#loja .bp-overline{
+  color:var(--bp-blue-soft);
+}
+
+/* 5 — Especialistas: branco */
+#especialistas.bp-section{
+  background:#fff;
+  color:var(--bp-ink);
+}
+
+#especialistas .bp-section-intro h2{
+  color:var(--bp-ink);
+}
+
+#especialistas .bp-overline{
+  color:var(--bp-blue-dark);
+}
+
+#especialistas .bp-contact-pair{
+  border-top-color:var(--bp-line);
+}
+
+#especialistas .bp-contact-person{
+  border-bottom-color:var(--bp-line);
+}
+
+#especialistas .bp-contact-person span{
+  color:var(--bp-blue-dark);
+}
+
+#especialistas .bp-contact-person h3{
+  color:var(--bp-ink);
+}
+
+#especialistas .bp-contact-person p{
+  color:var(--bp-muted);
+}
+
+/* 6 — Blue na Água: azul */
+#blue-na-agua.bp-section{
+  background:var(--bp-navy);
+  color:#fff;
+}
+
+#blue-na-agua .bp-section-intro h2{
+  color:#fff;
+}
+
+#blue-na-agua .bp-overline{
+  color:var(--bp-blue-soft);
+}
+
+/* 7 — Contato final: branco */
+#contato-blue.bp-final{
+  background:#fff;
+  color:var(--bp-ink);
+  border-top-color:var(--bp-line);
+}
+
+#contato-blue .bp-overline,
+#contato-blue .bp-overline-light{
+  color:var(--bp-blue-dark);
+}
+
+#contato-blue h2{
+  color:var(--bp-ink);
+}
+
+#contato-blue p:not(.bp-overline){
+  color:var(--bp-muted);
+}
+
+#contato-blue .bp-btn-outline{
+  color:var(--bp-ink)!important;
+  border-color:var(--bp-blue-dark);
+  background:transparent;
+}
+
+#contato-blue .bp-btn-outline:hover,
+#contato-blue .bp-btn-outline:focus-visible{
+  color:var(--bp-ink)!important;
+  border-color:var(--bp-blue-dark);
+  background:var(--bp-paper);
+}
+
+@media (max-width:700px){
+  #categorias.bp-section,
+  #equipamentos.bp-section,
+  #loja.bp-section,
+  #especialistas.bp-section,
+  #blue-na-agua.bp-section,
+  #contato-blue.bp-final{
+    background-clip:padding-box;
+  }
+
+  .bp-section-intro,
+  .bp-section-intro-compact{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+}
+
+@media (max-width:680px){
+  .bp-brand-set{
+    gap:7px;
+    padding-inline:4px;
+  }
+}

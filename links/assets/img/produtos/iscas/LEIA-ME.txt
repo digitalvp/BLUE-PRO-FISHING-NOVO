@@ -1,0 +1,1 @@
+Adicione aqui as fotos reais das iscas. Para os 4 cards iniciais, use isca-01.webp, isca-02.webp, isca-03.webp e isca-04.webp. Se o arquivo não existir, o site usa uma imagem de fallback e não quebra o layout.
